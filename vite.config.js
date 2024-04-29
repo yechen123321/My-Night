@@ -22,6 +22,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 8082
+    host: '172.18.7.7', // 替换为你的内网IP地址
+    port: 8089
   }
 })

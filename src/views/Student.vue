@@ -1,0 +1,191 @@
+<script setup>
+import { ref } from 'vue'
+import StudentLeftList from '@/components/StudentComponents/StudentLeftList.vue'
+import StudentTop from '@/components/StudentComponents/StudentTop.vue'
+import StudentMain from '@/components/StudentComponents/StudentMain.vue'
+
+const leftListWidth = ref(13)
+const TopListWidth = ref(83.6)
+const MainListWidth = ref(83.6)
+const shrinkLeftList = () => {
+  const intervalWidth = setInterval(() => {
+    if (leftListWidth.value > 0) {
+      leftListWidth.value -= 0.5
+    } else {
+      clearInterval(intervalWidth)
+    }
+  }, 5)
+
+  const intervalWidth1 = setInterval(() => {
+    if (leftListWidth.value <= 1) {
+      if (TopListWidth.value < 97.6) {
+        TopListWidth.value += 0.2
+        MainListWidth.value += 0.2
+      } else {
+        clearInterval(intervalWidth1)
+      }
+    }
+  }, 5)
+
+  const outLeftElement = document.querySelector('.OutLeft')
+  if (outLeftElement) {
+    let opacityValue = 0
+    const intervalOpacity = setInterval(() => {
+      if (opacityValue < 1) {
+        opacityValue += 0.05
+        outLeftElement.style.opacity = opacityValue
+      } else {
+        clearInterval(intervalOpacity)
+      }
+    }, 10)
+  }
+  const inLeftElement = document.querySelector('.InLeft')
+  if (inLeftElement) {
+    inLeftElement.style.display = 'none'
+  }
+
+  const OutLeftElement = document.querySelector('.OutLeft')
+  if (OutLeftElement) {
+    OutLeftElement.style.display = 'inline-block'
+  }
+}
+
+const AddLeftList = () => {
+  const intervalWidth = setInterval(() => {
+    if (leftListWidth.value < 13) {
+      leftListWidth.value += 0.5
+    } else {
+      clearInterval(intervalWidth)
+    }
+  }, 5)
+
+  const intervalWidth1 = setInterval(() => {
+    if (TopListWidth.value > 83.6) {
+      TopListWidth.value -= 0.2
+      MainListWidth.value -= 0.2
+    } else {
+      clearInterval(intervalWidth1)
+    }
+  }, 5)
+
+  const outLeftElement = document.querySelector('.OutLeft')
+  if (outLeftElement) {
+    let opacityValue = 1
+    const intervalOpacity = setInterval(() => {
+      if (opacityValue > 0) {
+        opacityValue -= 0.05
+        outLeftElement.style.opacity = opacityValue
+      } else {
+        clearInterval(intervalOpacity)
+      }
+    }, 10)
+  }
+
+  const inLeftElement = document.querySelector('.InLeft')
+  if (inLeftElement) {
+    inLeftElement.style.display = 'inline-block'
+  }
+
+  const OutLeftElement = document.querySelector('.OutLeft')
+  if (OutLeftElement) {
+    OutLeftElement.style.display = 'none'
+  }
+}
+</script>
+
+<template>
+  <div class="body">
+    <StudentLeftList :style="{ width: leftListWidth + 'vw' }" class="LeftList"></StudentLeftList>
+    <div class="InLeft" @click="shrinkLeftList">
+      <img src="../assets/向右.png" alt="" class="goLeft" />
+    </div>
+    <div class="OutLeft" @click="AddLeftList">
+      <img src="../assets/向右.png" alt="" class="outLeft" />
+    </div>
+    <StudentTop :style="{ width: TopListWidth + 'vw' }" class="TopList"></StudentTop>
+    <StudentMain :style="{ width: MainListWidth + 'vw' }" class="Main"></StudentMain>
+  </div>
+</template>
+
+<style scoped lang="scss">
+.body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #cddedb;
+
+  .OutLeft {
+    position: absolute;
+    width: 1vw;
+    height: 6vh;
+    background: white;
+    border-radius: 0 0.7vw 0.7vw 0;
+    margin-top: 43vh;
+    opacity: 0;
+    display: none;
+
+    .outLeft {
+      margin-top: 1vh;
+      margin-left: -0.25vw;
+      width: 1.5vw;
+      height: 4vh;
+    }
+  }
+
+  .OutLeft:hover {
+    cursor: pointer;
+  }
+
+  .InLeft {
+    width: 1.5vw;
+    height: 4vh;
+    margin-top: 43vh;
+    margin-left: 12.7vw;
+    position: absolute;
+    opacity: 0;
+
+    .goLeft {
+      width: 1.5vw;
+      height: 5vh;
+      transform: rotate(180deg);
+    }
+  }
+
+  .InLeft:hover {
+    display: inline-block;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .LeftList {
+    position: absolute;
+    height: 96vh;
+    margin-top: 2vh;
+    margin-left: 1.2vw;
+    border-radius: 0.8vw;
+    background: #fff;
+    transition: width 0.5s ease;
+  }
+
+  .TopList {
+    position: absolute;
+    //width: 81.6vw;
+    height: 6.5vh;
+    right: 0;
+    margin-right: 1.2vw;
+    margin-top: 2vh;
+    border-radius: 0.7vw;
+    background: #2f2e2e;
+  }
+
+  .Main {
+    position: absolute;
+    //width: 81.6vw;
+    height: 87.5vh;
+    right: 0;
+    margin-right: 1.2vw;
+    margin-top: 10.5vh;
+    border-radius: 0.8vw;
+  }
+}
+</style>

@@ -14,6 +14,9 @@ dependencies:
   element-plus:
     specifier: ^2.4.2
     version: 2.7.1(vue@3.4.25)
+  mitt:
+    specifier: ^3.0.1
+    version: 3.0.1
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(vue@3.4.25)
@@ -1518,6 +1521,10 @@ packages:
     dependencies:
       brace-expansion: 2.0.1
     dev: true
+
+  /mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==, tarball: https://registry.npmmirror.com/mitt/-/mitt-3.0.1.tgz}
+    dev: false
 
   /mlly@1.6.1:
     resolution: {integrity: sha512-vLgaHvaeunuOXHSmEbZ9izxPx3USsk8KCQ8iC+aTlp5sKRSoZvwhHh5L9VbKSaVC6sJDqbyohIS76E2VmHIPAA==, tarball: https://registry.npmmirror.com/mlly/-/mlly-1.6.1.tgz}

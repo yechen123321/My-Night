@@ -3,11 +3,9 @@
 </script>
 
 <template>
-  <div class='title'>This is A Big Title</div>
+  <img src='../assets/1.png' alt='' style='width: 2020px'>
 </template>
 
-<style scoped>
-.title {
-    font-size: 100px;
-}
+<style scoped lang='scss'>
+
 </style>
