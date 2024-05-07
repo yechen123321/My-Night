@@ -9,11 +9,11 @@ import StudentHomeRightDown from '@/components/StudentComponents/StudentHome/Stu
 // StudentPersonal //
 
 /// BaseInfor ///
-import BaseInforHomeView from '@/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue'
+// import BaseInforHomeView from '@/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue'
 /// \BaseInfor ///
 
 /// SemesterSchedule ///
-import SemesterScheduleHomeView from '@/components/StudentComponents/StudentPersonal/SemesterSchedule/SemesterScheduleHomeView.vue'
+// import SemesterScheduleHomeView from '@/components/StudentComponents/StudentPersonal/SemesterSchedule/SemesterScheduleHomeView.vue'
 /// \SemesterSchedule ///
 
 /// StatusInfor ///
@@ -27,15 +27,14 @@ import SemesterScheduleHomeView from '@/components/StudentComponents/StudentPers
 
 // \StudentPersonal //
 
-
 // StudentClass //
 
 /// ClassMaterials ///
-import ClassMaterialsHomeView from '@/components/StudentComponents/StudentClass/ClassMaterials/ClassMaterialsHomeView.vue'
+// import ClassMaterialsHomeView from '@/components/StudentComponents/StudentClass/ClassMaterials/ClassMaterialsHomeView.vue'
 /// \ClassMaterials ///
 
 /// LearnCenter ///
-import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue'
+// import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue'
 /// \LearnCenter ///
 
 /// ProfessionalTree ///
@@ -48,7 +47,6 @@ import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/Lea
 /// \SelfStudy ///
 
 // \StudentClass //
-
 
 // StudentCourses //
 
@@ -69,7 +67,6 @@ import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/Lea
 
 // \StudentCourses //
 
-
 // StudentStudyInfor //
 
 /// ComprehensiveQuality ///
@@ -88,7 +85,6 @@ import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/Lea
 /// \SecondClass ///
 
 // \StudentStudyInfor //
-
 
 // StudentExams //
 
@@ -109,7 +105,6 @@ import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/Lea
 
 // \StudentExams //
 
-
 // StudentBusiness //
 
 /// CreditApplication ///
@@ -128,36 +123,74 @@ import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/Lea
 /// \RaceRegistration ///
 
 // \StudentBusiness //
-import { ref, onBeforeMount } from 'vue'
+import { ref, onBeforeMount, watch, onMounted } from 'vue'
 import emitter from '@/plugins/Bus'
+// 定义 BeChoose 为一个对象，以便使用动态属性
+const BeChoose = {
+  BeChoose00: ref(false),
+  BeChoose01: ref(false),
+  BeChoose02: ref(false),
+  BeChoose03: ref(false),
+  BeChoose04: ref(false),
+  BeChoose05: ref(false)
+}
 
-let s = ref('')
+const num = ref('')
 
 onBeforeMount(() => {
-  emitter.on('fn', (e) => {
-    s.value = e.value
+  emitter.on('fn1', (e) => {
+    if (e && typeof e === 'object') {
+      num.value = e.value // 检查 e 是否是一个对象，确保正确赋值
+      localStorage.setItem('BeChoose', num.value)
+    }
+    // 使用localStorage.getItem来获取之前保存的值
+    if (num.value) {
+      // 初始化 BeChoose 对象的值
+      updateBeChooseValues(num.value)
+    }
   })
+})
+
+// 监听 s.value 的变化，确保与 BeChoose 同步
+watch(num, (newValue) => {
+  updateBeChooseValues(newValue)
+})
+
+// 更新 BeChoose 对象的值
+function updateBeChooseValues(value) {
+  for (const key in BeChoose) {
+    BeChoose[key].value = key === 'BeChoose' + value
+  }
+}
+onMounted(() => {
+  const Be = localStorage.getItem('BeChoose')
+  updateBeChooseValues(Be)
 })
 </script>
 
 <template>
   <div class="body">
     <div class="left">
-      <StudentHomeView class="left-out"></StudentHomeView>
-      <BaseInforHomeView class="left-out"></BaseInforHomeView>
-      <SemesterScheduleHomeView class="left-out"></SemesterScheduleHomeView>
-      <ClassMaterialsHomeView class="left-out"></ClassMaterialsHomeView>
-      <LearnCenterHomeView class="left-out"></LearnCenterHomeView>
+      <StudentHomeView v-if="BeChoose['BeChoose00'].value" class="left-out"></StudentHomeView>
     </div>
     <div class="right">
       <div class="Top">
-        <StudentHomeRightTop class="Top-out"></StudentHomeRightTop>
+        <StudentHomeRightTop
+          v-if="BeChoose['BeChoose00'].value"
+          class="Top-out"
+        ></StudentHomeRightTop>
       </div>
       <div class="Center">
-        <StudentHomeRightCenter class="Center-out"></StudentHomeRightCenter>
+        <StudentHomeRightCenter
+          v-if="BeChoose['BeChoose00'].value"
+          class="Center-out"
+        ></StudentHomeRightCenter>
       </div>
       <div class="Down">
-        <StudentHomeRightDown class="Down-out"></StudentHomeRightDown>
+        <StudentHomeRightDown
+          v-if="BeChoose['BeChoose00'].value"
+          class="Down-out"
+        ></StudentHomeRightDown>
       </div>
     </div>
   </div>
