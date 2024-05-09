@@ -203,7 +203,7 @@ onMounted(() => {
   position: relative;
 
   .left {
-    width: 75%;
+    width: 70%;
     height: 100%;
     position: absolute;
     background: white;
@@ -218,7 +218,7 @@ onMounted(() => {
   }
 
   .right {
-    width: 23.75%;
+    width: 29%;
     height: 100%;
     position: absolute;
     right: 0;

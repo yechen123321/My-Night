@@ -23,6 +23,13 @@ export default defineConfig({
   },
   server: {
     // host: '172.18.7.7', // 替换为你的内网IP地址
-    port: 8089
+    port: 8089,
+    proxy: {
+      '/api': {
+        target: 'http://172.18.7.47:8084',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })
