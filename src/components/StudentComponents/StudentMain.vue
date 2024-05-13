@@ -2,18 +2,19 @@
 // StudentHome //
 import StudentHomeView from '@/components/StudentComponents/StudentHome/StudentHomeView.vue'
 import StudentHomeRightTop from '@/components/StudentComponents/StudentHome/StudentHomeRightTop.vue'
-import StudentHomeRightCenter from '@/components/StudentComponents/StudentHome/StudentHomeRightCenter.vue'
 import StudentHomeRightDown from '@/components/StudentComponents/StudentHome/StudentHomeRightDown.vue'
+import StudentHomeRightCenter from '@/components/StudentComponents/StudentHome/StudentHomeRightCenter.vue'
 // \StudentHome //
 
 // StudentPersonal //
 
 /// BaseInfor ///
-// import BaseInforHomeView from '@/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue'
+import BaseInforHomeView from '@/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue'
 /// \BaseInfor ///
 
 /// SemesterSchedule ///
-// import SemesterScheduleHomeView from '@/components/StudentComponents/StudentPersonal/SemesterSchedule/SemesterScheduleHomeView.vue'
+import SemesterScheduleHomeView from '@/components/StudentComponents/StudentPersonal/SemesterSchedule/SemesterScheduleHomeView.vue'
+
 /// \SemesterSchedule ///
 
 /// StatusInfor ///
@@ -23,6 +24,7 @@ import StudentHomeRightDown from '@/components/StudentComponents/StudentHome/Stu
 /// \SystemInfor ///
 
 /// TraningPlan ///
+import TraningPlan from '@/components/StudentComponents/StudentPersonal/TraningPlan/TraningPlan.vue'
 /// \TraningPlan ///
 
 // \StudentPersonal //
@@ -34,7 +36,7 @@ import StudentHomeRightDown from '@/components/StudentComponents/StudentHome/Stu
 /// \ClassMaterials ///
 
 /// LearnCenter ///
-// import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue'
+import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue'
 /// \LearnCenter ///
 
 /// ProfessionalTree ///
@@ -132,7 +134,19 @@ const BeChoose = {
   BeChoose02: ref(false),
   BeChoose03: ref(false),
   BeChoose04: ref(false),
-  BeChoose05: ref(false)
+  BeChoose05: ref(false),
+
+  BeChoose11: ref(false),
+  BeChoose12: ref(false),
+  BeChoose13: ref(false),
+  BeChoose14: ref(false),
+  BeChoose15: ref(false),
+
+  BeChoose21: ref(false),
+  BeChoose22: ref(false),
+  BeChoose23: ref(false),
+  BeChoose24: ref(false),
+  BeChoose25: ref(false)
 }
 
 const num = ref('')
@@ -172,25 +186,26 @@ onMounted(() => {
   <div class="body">
     <div class="left">
       <StudentHomeView v-if="BeChoose['BeChoose00'].value" class="left-out"></StudentHomeView>
+      <BaseInforHomeView v-if="BeChoose['BeChoose11'].value" class="left-out"></BaseInforHomeView>
+      <TraningPlan v-if="BeChoose['BeChoose13'].value" class="left-out"></TraningPlan>
+      <SemesterScheduleHomeView
+        v-if="BeChoose['BeChoose15'].value"
+        class="left-out"
+      ></SemesterScheduleHomeView>
+      <LearnCenterHomeView
+        v-if="BeChoose['BeChoose21'].value"
+        class="left-out"
+      ></LearnCenterHomeView>
     </div>
     <div class="right">
       <div class="Top">
-        <StudentHomeRightTop
-          v-if="BeChoose['BeChoose00'].value"
-          class="Top-out"
-        ></StudentHomeRightTop>
+        <StudentHomeRightTop class="Top-out"></StudentHomeRightTop>
       </div>
       <div class="Center">
-        <StudentHomeRightCenter
-          v-if="BeChoose['BeChoose00'].value"
-          class="Center-out"
-        ></StudentHomeRightCenter>
+        <StudentHomeRightCenter class="Down-out"></StudentHomeRightCenter>
       </div>
       <div class="Down">
-        <StudentHomeRightDown
-          v-if="BeChoose['BeChoose00'].value"
-          class="Down-out"
-        ></StudentHomeRightDown>
+        <StudentHomeRightDown class="Center-out"></StudentHomeRightDown>
       </div>
     </div>
   </div>
@@ -201,7 +216,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   position: relative;
-
+  overflow: hidden;
   .left {
     width: 70%;
     height: 100%;
@@ -224,7 +239,7 @@ onMounted(() => {
     right: 0;
     border-radius: 0.7vw;
     .Top {
-      height: 15.75%;
+      height: 20%;
       width: 100%;
       background: white;
       border-radius: 0.7vw;
@@ -237,12 +252,12 @@ onMounted(() => {
     }
 
     .Center {
-      height: 41%;
+      height: 33.75%;
       width: 100%;
       background: white;
-      margin-top: 1vh;
       border-radius: 0.7vw;
-      .Center-out {
+      margin-top: 1vh;
+      .Down-out {
         position: absolute;
         width: 100%;
         height: 41%;
@@ -251,12 +266,12 @@ onMounted(() => {
     }
 
     .Down {
-      height: 41%;
+      height: 44%;
       width: 100%;
       background: white;
-      border-radius: 0.7vw;
       margin-top: 1vh;
-      .Down-out {
+      border-radius: 0.7vw;
+      .Center-out {
         position: absolute;
         width: 100%;
         height: 41%;

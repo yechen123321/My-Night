@@ -14,18 +14,12 @@ const videoRef = ref(null)
 const onMouseEnter = () => {
   showControls.value = true // 显示控制栏
   // 如果video元素存在，开始播放视频
-  if (videoRef.value) {
-    videoRef.value.play()
-  }
 }
 
 // 当鼠标离开视频时，隐藏控制栏并暂停视频
 const onMouseLeave = () => {
   showControls.value = false // 隐藏控制栏
   // 如果video元素存在，暂停视频
-  if (videoRef.value) {
-    videoRef.value.pause()
-  }
 }
 const echartsRef1 = ref(null)
 let myChart1 = null
@@ -194,7 +188,7 @@ onMounted(() => {
             poster="../../../assets/1f.png"
             src="../../../assets/1.mp4"
             class="video-big"
-            muted
+            :controls="showControls"
           ></video>
         </div>
       </div>
@@ -448,15 +442,80 @@ onMounted(() => {
         </svg>
         <div class="used-video-body">
           <video
-            poster="../../../assets/2f.png"
+            ref="videoRef"
+            poster="/src/assets/2f.png"
             src="../../../assets/1.mp4"
             class="used-video-big"
             muted
           ></video>
         </div>
+        <div class="used-intro">
+          <div class="used-time">
+            <div class="left">课程时长：</div>
+            <div class="right">75h</div>
+          </div>
+          <div class="per">57%</div>
+          <div class="done">incomplete</div>
+          <div class="used-last">课程章节： 6/17</div>
+        </div>
       </div>
-      <div class="used-body"></div>
-      <div class="used-body"></div>
+      <div class="used-body">
+        <div class="used-name">Python程序设计</div>
+        <div class="used-author">讲师：姜中玮</div>
+        <svg class="more" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M415.93 223.79c0-52.98 43.004-95.984 95.984-95.984s95.984 43.004 95.984 95.984-43.004 95.984-95.984 95.984-95.984-43.003-95.984-95.984zM415.93 511.742c0-52.98 43.004-95.984 95.984-95.984s95.984 43.004 95.984 95.984-43.004 95.984-95.984 95.984-95.984-43.004-95.984-95.984zM415.93 799.866c0-52.98 43.004-95.984 95.984-95.984s95.984 43.003 95.984 95.984-43.004 95.983-95.984 95.983-95.984-43.175-95.984-95.983z"
+            fill="#707070"
+          ></path>
+        </svg>
+        <div class="used-video-body">
+          <video
+            ref="videoRef"
+            poster="/src/assets/2f.png"
+            src="../../../assets/1.mp4"
+            class="used-video-big"
+            muted
+          ></video>
+        </div>
+        <div class="used-intro">
+          <div class="used-time">
+            <div class="left">课程时长：</div>
+            <div class="right">75h</div>
+          </div>
+          <div class="per">57%</div>
+          <div class="done">incomplete</div>
+          <div class="used-last">课程章节： 6/17</div>
+        </div>
+      </div>
+      <div class="used-body">
+        <div class="used-name">Python程序设计</div>
+        <div class="used-author">讲师：姜中玮</div>
+        <svg class="more" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M415.93 223.79c0-52.98 43.004-95.984 95.984-95.984s95.984 43.004 95.984 95.984-43.004 95.984-95.984 95.984-95.984-43.003-95.984-95.984zM415.93 511.742c0-52.98 43.004-95.984 95.984-95.984s95.984 43.004 95.984 95.984-43.004 95.984-95.984 95.984-95.984-43.004-95.984-95.984zM415.93 799.866c0-52.98 43.004-95.984 95.984-95.984s95.984 43.003 95.984 95.984-43.004 95.983-95.984 95.983-95.984-43.175-95.984-95.983z"
+            fill="#707070"
+          ></path>
+        </svg>
+        <div class="used-video-body">
+          <video
+            ref="videoRef"
+            poster="/src/assets/2f.png"
+            src="../../../assets/1.mp4"
+            class="used-video-big"
+            muted
+          ></video>
+        </div>
+        <div class="used-intro">
+          <div class="used-time">
+            <div class="left">课程时长：</div>
+            <div class="right">75h</div>
+          </div>
+          <div class="per">57%</div>
+          <div class="done">incomplete</div>
+          <div class="used-last">课程章节： 6/17</div>
+        </div>
+      </div>
+      <div style="width: 98%; margin: -1vh auto; height: 2vh; border-top: 2px solid #727070"></div>
     </div>
   </div>
 </template>
@@ -487,17 +546,81 @@ onMounted(() => {
       margin-left: 1vw;
       position: relative;
       font-weight: bolder;
+      .used-intro {
+        position: absolute;
+        width: 33%;
+        height: 75%;
+        bottom: 0.5vh;
+        right: 1.5vw;
+        .used-time {
+          width: 130%;
+          height: 20%;
+          line-height: 3vh;
+          text-align: center;
+          margin-top: 1.5vh;
+          .left {
+            width: 62%;
+            height: 100%;
+            margin-left: -0.6vw;
+            display: inline-block;
+            font-size: 0.7vw;
+          }
+          .right {
+            margin-left: -0.5vw;
+            width: 38%;
+            display: inline-block;
+            background: #5a9a8a;
+            color: white;
+            height: 80%;
+            line-height: 2.5vh;
+            border-radius: 0.5vw;
+            font-size: 0.75vw;
+          }
+        }
+        .per {
+          width: 35%;
+          height: 15%;
+          background: #4b4a4a;
+          text-align: center;
+          line-height: 2.5vh;
+          margin-left: 0.5vw;
+          color: white;
+          border-radius: 0.5vw;
+          font-size: 0.65vw;
+        }
+        .done {
+          width: 100%;
+          height: 20%;
+          margin-top: 1vh;
+          background: #ef778b;
+          border-radius: 0.5vw;
+          margin-left: 0.2vw;
+          text-align: center;
+          line-height: 3.1vh;
+          color: white;
+          font-size: 0.8vw;
+        }
+        .used-last {
+          width: 100%;
+          height: 20%;
+          color: #464545;
+          font-size: 0.75vw;
+          margin-left: 0.4vw;
+          margin-top: 1vh;
+        }
+      }
       .used-name {
         position: absolute;
         margin-left: 1vw;
         margin-top: 0.5vh;
         color: #6aa999;
-        font-size: 1.2vw;
+        font-size: 1.1vw;
       }
       .used-author {
         position: absolute;
-        margin-top: 4vh;
+        margin-top: 3.5vh;
         margin-left: 1.2vw;
+        font-size: 0.85vw;
       }
       .more {
         position: absolute;
@@ -507,9 +630,24 @@ onMounted(() => {
       }
       .used-video-body {
         position: absolute;
-        .used-video-big {
-          width: 60%;
-          height: 30%;
+        z-index: 2;
+        width: 53%;
+        height: 60%;
+        border-radius: 1vw;
+        margin-top: 6.3vh;
+        margin-left: 0.6vw;
+        overflow: hidden;
+        border: 2px solid #cddedb;
+        box-shadow: 2px 2px 2px 2px #cddedb;
+        video {
+          display: inline-block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        video:hover {
+          cursor: pointer;
         }
       }
     }
@@ -772,6 +910,7 @@ onMounted(() => {
       }
 
       .class-going {
+        font-weight: bolder;
         display: inline-block;
       }
 

@@ -4,7 +4,6 @@ import router from './router'
 import '@/assets/main.scss'
 import pinia from '@/stores/index'
 import Element from 'element-plus'
-
 const app = createApp(App)
 app.use(pinia)
 app.use(router)

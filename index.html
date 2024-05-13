@@ -3,7 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <script>
+      document.addEventListener('mousewheel', function (e) {
+        e = e || window.event;
+        if ((e.wheelDelta && event.ctrlKey) || e.detail) {
+          event.preventDefault();
+        }
+      }, {
+        capture: false,
+        passive: false
+      });
+    </script>
+    <style>
+        html {
+            -ms-content-zooming: none;
+        }
+    </style>
     <title>Vite App</title>
   </head>
   <body>
