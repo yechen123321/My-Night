@@ -196,6 +196,7 @@ const question = ref('')
 const responseData = ref([])
 const centerDialogVisible = ref(false)
 const submitQuestion = async () => {
+  resultTexts.value = ''
   try {
     await QuestionGo({
       id: '2',
@@ -419,9 +420,10 @@ function scrollToBottom() {
     height: 4vh;
     right: 0;
     position: absolute;
-    margin: -4.6vh 1vw;
+    margin: -9.5% 1vw;
     border-radius: 0.4vw;
     background: rgba(24, 160, 88, 0.45);
+    transition: background 0.5s ease; /* 定义背景颜色过渡效果 */
     .go {
       width: 1.5vw;
       margin: 0.5vh 0.5vw;
