@@ -8,7 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BaseInforHomeView: typeof import('./src/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue')['default']
-    ClassMaterialsHomeView: typeof import('./src/components/StudentComponents/StudentClass/ClassMaterials/ClassMaterialsHomeView.vue')['default']
+    ClassMaterialsHomeView: typeof import('./src/components/StudentComponents/StudentClass/SelfStudy/ClassMaterialsHomeView.vue')['default']
     ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
@@ -19,6 +19,7 @@ declare module 'vue' {
     LearnCenterHomeView: typeof import('./src/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelfStudy: typeof import('./src/components/StudentComponents/StudentClass/SelfStudy/SelfStudy.vue')['default']
     SemesterScheduleHomeView: typeof import('./src/components/StudentComponents/StudentPersonal/SemesterSchedule/SemesterScheduleHomeView.vue')['default']
     StudentHomeRightCenter: typeof import('./src/components/StudentComponents/StudentHome/StudentHomeRightCenter.vue')['default']
     StudentHomeRightDown: typeof import('./src/components/StudentComponents/StudentHome/StudentHomeRightDown.vue')['default']
@@ -27,6 +28,7 @@ declare module 'vue' {
     StudentLeftList: typeof import('./src/components/StudentComponents/StudentLeftList.vue')['default']
     StudentMain: typeof import('./src/components/StudentComponents/StudentMain.vue')['default']
     StudentTop: typeof import('./src/components/StudentComponents/StudentTop.vue')['default']
+    StudyInfo: typeof import('./src/components/StudentComponents/StudentClass/StudyInfo/StudyInfo.vue')['default']
     TraningPlan: typeof import('./src/components/StudentComponents/StudentPersonal/TraningPlan/TraningPlan.vue')['default']
     VoiceTranslate: typeof import('./src/components/VoiceTranslate.vue')['default']
   }

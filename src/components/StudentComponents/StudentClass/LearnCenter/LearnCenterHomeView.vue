@@ -384,13 +384,13 @@ const options = [
         height: 40%;
         margin: 2vh auto;
         border-radius: 0.5vw;
-        border: 1.5px solid rgba(74, 158, 255, .4);
-        box-shadow: 0 2px 14px 0 rgba(74, 158, 255, .4);
+        border: 1.5px solid rgba(106, 169, 153, 0.2);
+        box-shadow: 0 2px 14px 0 rgba(106, 169, 153, 0.2);
         .title {
           width: 100%;
           height: 30%;
           border-radius: 0.5vw 0.5vw 0 0;
-          background: rgba(14, 135, 255, 0.3);
+          background: rgba(106, 169, 153, 0.2);
           .title-right {
             width: 40%;
             height: 8.7vh;
@@ -501,7 +501,7 @@ const options = [
               margin-top: 0.8vh;
               margin-left: 4%;
               border-radius: 0.4vw;
-              box-shadow: 0 2px 14px 0 rgba(74, 158, 255, .7);
+              box-shadow: 0 2px 14px 0 rgba(106, 169, 153, 0.2);
             }
             .infro {
               position: absolute;
@@ -510,16 +510,21 @@ const options = [
               height: 8.7vh;
               font-weight: bolder;
               .word {
-                font-size: 0.8vw;
+                width: 30vw;
+                font-size: 0.9vw;
                 margin-top: 1vh;
               }
               .teacher {
-                margin-top: 0.7vh;
-                font-size: 0.7vw;
+                margin-top: 0.3vh;
+                font-size: 0.8vw;
                 color: #6e6b6b;
                 span {
                   color: black;
                 }
+              }
+              .time {
+                margin-top: 0.3vh;
+                width: 20vw;
               }
             }
           }
@@ -547,7 +552,7 @@ const options = [
                 width: 20%;
                 height: 12.5vh;
                 border-radius: 0.5vw;
-                box-shadow: 0 2px 14px 0 rgba(74, 158, 255, .5);
+                box-shadow: 0 2px 14px 0 rgba(106, 169, 153, 0.2);
               }
               .message {
                 width: 20%;
@@ -616,7 +621,7 @@ const options = [
           margin-left: 3.1%;
           position: absolute;
           border-radius: 0.5vw;
-          background: rgba(14, 135, 255, 0.4);
+          background: rgba(106, 169, 153, 0.2);
         }
       }
 

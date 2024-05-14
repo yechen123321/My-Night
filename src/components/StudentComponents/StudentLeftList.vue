@@ -443,7 +443,7 @@ const btn6 = () => {
 </script>
 
 <template>
-  <div class="body">
+  <div class="ListBody">
     <div class="Title" @click="btn">
       <img src="../../assets/logo.png" alt="" style="width: 13vw; margin-left: -1vw" />
     </div>
@@ -744,11 +744,14 @@ const btn6 = () => {
 
 <style scoped lang="scss">
 .choose {
-  background: #cdded6;
+  background: #cbdedb;
   color: white;
+  path {
+    fill: white;
+  }
 }
 
-.body {
+.ListBody {
   width: 15vw;
   height: 96vh;
   background: #fff;

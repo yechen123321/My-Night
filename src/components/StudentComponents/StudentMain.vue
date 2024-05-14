@@ -31,9 +31,9 @@ import TraningPlan from '@/components/StudentComponents/StudentPersonal/TraningP
 
 // StudentClass //
 
-/// ClassMaterials ///
-// import ClassMaterialsHomeView from '@/components/StudentComponents/StudentClass/ClassMaterials/ClassMaterialsHomeView.vue'
-/// \ClassMaterials ///
+/// SelfStudy ///
+ import SelfStudy from '@/components/StudentComponents/StudentClass/SelfStudy/SelfStudy.vue'
+/// \SelfStudy ///
 
 /// LearnCenter ///
 import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue'
@@ -45,8 +45,9 @@ import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/Lea
 /// ScheduleQuery ///
 /// \ScheduleQuery ///
 
-/// SelfStudy ///
-/// \SelfStudy ///
+/// StudyInfo ///
+import StudyInfo from '@/components/StudentComponents/StudentClass/StudyInfo/StudyInfo.vue'
+/// \StudyInfo ///
 
 // \StudentClass //
 
@@ -146,7 +147,31 @@ const BeChoose = {
   BeChoose22: ref(false),
   BeChoose23: ref(false),
   BeChoose24: ref(false),
-  BeChoose25: ref(false)
+  BeChoose25: ref(false),
+
+  BeChoose31: ref(false),
+  BeChoose32: ref(false),
+  BeChoose33: ref(false),
+  BeChoose34: ref(false),
+  BeChoose35: ref(false),
+
+  BeChoose41: ref(false),
+  BeChoose42: ref(false),
+  BeChoose43: ref(false),
+  BeChoose44: ref(false),
+  BeChoose45: ref(false),
+
+  BeChoose51: ref(false),
+  BeChoose52: ref(false),
+  BeChoose53: ref(false),
+  BeChoose54: ref(false),
+  BeChoose55: ref(false),
+
+  BeChoose61: ref(false),
+  BeChoose62: ref(false),
+  BeChoose63: ref(false),
+  BeChoose64: ref(false),
+  BeChoose65: ref(false)
 }
 
 const num = ref('')
@@ -183,19 +208,23 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="body">
+  <div class="Mainbody">
     <div class="left">
       <StudentHomeView v-if="BeChoose['BeChoose00'].value" class="left-out"></StudentHomeView>
+
       <BaseInforHomeView v-if="BeChoose['BeChoose11'].value" class="left-out"></BaseInforHomeView>
       <TraningPlan v-if="BeChoose['BeChoose13'].value" class="left-out"></TraningPlan>
       <SemesterScheduleHomeView
         v-if="BeChoose['BeChoose15'].value"
         class="left-out"
       ></SemesterScheduleHomeView>
+
       <LearnCenterHomeView
         v-if="BeChoose['BeChoose21'].value"
         class="left-out"
       ></LearnCenterHomeView>
+      <SelfStudy v-if="BeChoose['BeChoose22'].value" class="left-out"></SelfStudy>
+      <StudyInfo v-if="BeChoose['BeChoose23'].value" class="left-out"></StudyInfo>
     </div>
     <div class="right">
       <div class="Top">
@@ -212,7 +241,7 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-.body {
+.Mainbody {
   width: 100%;
   height: 100%;
   position: relative;

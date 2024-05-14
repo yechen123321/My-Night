@@ -192,10 +192,11 @@ const startRecording = () => {
 }
 
 ///////////////////////////////////////////////////////////
-const question = ref('')
 const responseData = ref([])
 const centerDialogVisible = ref(false)
 const submitQuestion = async () => {
+  let question = ref('')
+  question.value = resultTexts.value
   resultTexts.value = ''
   try {
     await QuestionGo({
@@ -216,7 +217,6 @@ const fetchData = async () => {
   } catch (error) {
     console.error('Error fetching data:', error)
   }
-  console.log(responseData.value)
 }
 
 fetchData()
@@ -372,9 +372,11 @@ function scrollToBottom() {
       width: 100%;
       margin-top: 2vh;
       list-style: none;
+
       div {
         margin-top: 1vh;
         white-space: pre-wrap;
+        overflow-wrap: break-word; /* 允许单词内部换行 */
       }
       .question {
         margin-left: 3vw;
@@ -391,7 +393,7 @@ function scrollToBottom() {
         font-weight: bolder;
         background: rgba(114, 112, 112, 0.2);
         border-radius: 1vw;
-        padding: 1vh 0.2vw 1vh 1vw;
+        padding: 1vh 1.2vw 1vh 1vw;
       }
     }
   }
