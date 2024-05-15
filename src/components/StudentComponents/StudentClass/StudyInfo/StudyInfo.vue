@@ -84,7 +84,7 @@ const datas = ref([
         <div class='ClassInfo'>
           <div class='ClassName'>Java软件开发设计</div>
           <div class='teacher'>讲师：姜大玮 (双师)</div>
-          <div class='loading'>课程已进行至 <span>XX / XX</span></div>
+          <div class='loading'>课程已进行至 <span style='color: #000;'>XX / XX</span></div>
         </div>
 
       </div>
@@ -119,6 +119,11 @@ const datas = ref([
 </template>
 
 <style scoped lang='scss'>
+.custom-select {
+  height: 4.7vh;
+  width: 12vw;
+  font-size: 1vw;
+}
   .Body {
     width: 100%;
     height: 100%;

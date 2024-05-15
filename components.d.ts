@@ -9,6 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     BaseInforHomeView: typeof import('./src/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue')['default']
     ClassMaterialsHomeView: typeof import('./src/components/StudentComponents/StudentClass/SelfStudy/ClassMaterialsHomeView.vue')['default']
+    CourseWork: typeof import('./src/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue')['default']
+    CourseWorks: typeof import('./src/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue')['default']
     ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
@@ -17,6 +19,7 @@ declare module 'vue' {
     ElRate: typeof import('element-plus/es')['ElRate']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     LearnCenterHomeView: typeof import('./src/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue')['default']
+    OnlineClass: typeof import('./src/components/StudentComponents/StudentCourses/OnlineClass/OnlineClass.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SelfStudy: typeof import('./src/components/StudentComponents/StudentClass/SelfStudy/SelfStudy.vue')['default']

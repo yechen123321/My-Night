@@ -60,9 +60,11 @@ import StudyInfo from '@/components/StudentComponents/StudentClass/StudyInfo/Stu
 /// \CourseForum ///
 
 /// CourseWork ///
+import CourseWorks from '@/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue'
 /// \CourseWork ///
 
 /// OnlineClass ///
+import OnlineClass from '@/components/StudentComponents/StudentCourses/OnlineClass/OnlineClass.vue'
 /// \OnlineClass ///
 
 /// VirtualClass ///
@@ -225,6 +227,8 @@ onMounted(() => {
       ></LearnCenterHomeView>
       <SelfStudy v-if="BeChoose['BeChoose22'].value" class="left-out"></SelfStudy>
       <StudyInfo v-if="BeChoose['BeChoose23'].value" class="left-out"></StudyInfo>
+      <OnlineClass v-if="BeChoose['BeChoose31'].value" class="left-out"></OnlineClass>
+      <CourseWorks v-if="BeChoose['BeChoose33'].value" class="left-out"></CourseWorks>
     </div>
     <div class="right">
       <div class="Top">
