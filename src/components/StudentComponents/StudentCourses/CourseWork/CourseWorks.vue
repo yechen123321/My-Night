@@ -1,12 +1,16 @@
+<script setup>
 
+</script>
 
 <template>
-  <div class="container">
-    <button @click="onStart">开始</button>
-    <button @click="onEnd">停止</button>
+  <div class='body'>
   </div>
 </template>
 
 <style scoped lang='scss'>
+.body {
+  width: 100%;
+  height: 100%;
+}
 
 </style>

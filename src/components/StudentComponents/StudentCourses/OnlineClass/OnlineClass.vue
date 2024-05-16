@@ -1,6 +1,32 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-
+const value = ref('Option1')
+const handleClear = () => {
+  // 清除时自动选择第一个选项
+  value.value = options[0].value;
+};
+const options = [
+  {
+    value: 'Option1',
+    label: 'PYTHON',
+  },
+  {
+    value: 'Option2',
+    label: 'JAVA',
+  },
+  {
+    value: 'Option3',
+    label: 'C++',
+  },
+  {
+    value: 'Option4',
+    label: 'GOLANG',
+  },
+  {
+    value: 'Option5',
+    label: 'Option5',
+  },
+]
 const dialogVisible = ref(false)
 
 let NN = '1'
@@ -217,6 +243,21 @@ const ChChange4 = () => {
           <img src='/src/assets/2f.png' alt=''>
           <div class='right'>
             <div class='right-top'>课程介绍</div>
+            <div class='select'>
+              <el-select
+                v-model="value"
+                clearable
+                placeholder="Select"
+                style="width: 240px"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                />
+              </el-select>
+            </div>
             <div class='class-info'>
               欢迎加入我们的《Python程序设计基础》网课！本课程旨在为初学者提供全面的Python编程语言入门教学，
               无论你是编程新手还是希望巩固已有知识，本课程都将帮助你建立扎实的编程基础。
@@ -709,7 +750,13 @@ const ChChange4 = () => {
           right: 3.5%;
           position: absolute;
           margin-top: 3vh;
-
+          .select {
+            position: absolute;
+            width: 10vw;
+            height: 4vh;
+            right: 4vw;
+            margin-top: -3vh;
+          }
           .right-top {
             font-size: 1.2vw;
           }
