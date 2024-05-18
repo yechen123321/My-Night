@@ -94,6 +94,7 @@ import OnlineClass from '@/components/StudentComponents/StudentCourses/OnlineCla
 // StudentExams //
 
 /// AutoPractice ///
+import AutoPractice from '@/components/StudentComponents/StudentExams/AutoPractice/AutoPractice.vue'
 /// \AutoPractice ///
 
 /// ExamArrange ///
@@ -130,6 +131,7 @@ import OnlineClass from '@/components/StudentComponents/StudentCourses/OnlineCla
 // \StudentBusiness //
 import { ref, onBeforeMount, watch, onMounted } from 'vue'
 import emitter from '@/plugins/Bus'
+import { imageProps } from 'element-plus'
 // 定义 BeChoose 为一个对象，以便使用动态属性
 const BeChoose = {
   BeChoose00: ref(false),
@@ -190,6 +192,9 @@ onBeforeMount(() => {
       updateBeChooseValues(num.value)
     }
   })
+  // emitter.on('Working', (e) => {
+  //   emitter.emit('ToWork', e)
+  // })
 })
 
 // 监听 s.value 的变化，确保与 BeChoose 同步
@@ -229,6 +234,8 @@ onMounted(() => {
       <StudyInfo v-if="BeChoose['BeChoose23'].value" class="left-out"></StudyInfo>
       <OnlineClass v-if="BeChoose['BeChoose31'].value" class="left-out"></OnlineClass>
       <CourseWorks v-if="BeChoose['BeChoose33'].value" class="left-out"></CourseWorks>
+
+      <AutoPractice v-if="BeChoose['BeChoose51'].value" class="left-out"></AutoPractice>
     </div>
     <div class="right">
       <div class="Top">

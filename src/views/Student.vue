@@ -1,9 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import StudentLeftList from '@/components/StudentComponents/StudentLeftList.vue'
 import StudentTop from '@/components/StudentComponents/StudentTop.vue'
 import StudentMain from '@/components/StudentComponents/StudentMain.vue'
-
+import WorkView from '@/components/StudentComponents/StudentExams/WorkView.vue'
+import emitter from '@/plugins/Bus'
 const leftListWidth = ref(13)
 const TopListWidth = ref(83.6)
 const MainListWidth = ref(83.6)
@@ -91,10 +92,19 @@ const AddLeftList = () => {
     OutLeftElement.style.display = 'none'
   }
 }
+// onBeforeMount(() => {
+//   emitter.on('Working', (e) => {
+//     if (e && typeof e === 'object') {
+//       Working.value = e.value // 检查 e 是否是一个对象，确保正确赋值
+//     }
+//   })
+// })
+const Working = ref(false)
 </script>
 
 <template>
-  <div class="body">
+<!--  <WorkView v-if='Working'></WorkView>-->
+  <div class="body" v-if='!Working'>
     <StudentLeftList :style="{ width: leftListWidth + 'vw' }" class="LeftList"></StudentLeftList>
     <div class="InLeft" @click="shrinkLeftList">
       <img src="../assets/向右.png" alt="" class="goLeft" />

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useUserStore } from '@/stores'
 
 // createRouter 创建路由实例
 // 配置 history 模式
@@ -23,7 +24,12 @@ const router = createRouter({
     {
       path: '/student',
       name: 'student',
-      component: () => import('@/views/Student.vue')
+      component: () => import('@/views/Student.vue'),
+    },
+    {
+      path: '/student/work',
+      name: 'work',
+      component: () => import('@/components/StudentComponents/StudentExams/WorkView.vue')
     },
   ]
 })

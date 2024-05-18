@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const value = ref('Option1')
 const showq = ref(true)
 const showp = ref(false)
-const changeq = () => {
+const changep = () => {
   showq.value = false
   showp.value = true
   const targetElement1 = document.querySelector('.four-left');
@@ -13,7 +13,7 @@ const changeq = () => {
   targetElement2.classList.add('beChoose');
 }
 
-const changep = () => {
+const changeq = () => {
   showq.value = true
   showp.value = false
   const targetElement1 = document.querySelector('.four-left');
@@ -89,8 +89,8 @@ const options = [
           </div>
         </div>
         <div class="title-four">
-          <div class="four-left beChoose" @click='changep'>进行中 14</div>
-          <div class="four-right" @click='changeq'>已完成 5</div>
+          <div class="four-left beChoose" @click='changeq'>进行中 14</div>
+          <div class="four-right" @click='changep'>已完成 5</div>
         </div>
       </div>
       <div v-if='showq' class='LC-body'>

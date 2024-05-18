@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AutoPractice: typeof import('./src/components/StudentComponents/StudentExams/AutoPractice/AutoPractice.vue')['default']
     BaseInforHomeView: typeof import('./src/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue')['default']
     ClassMaterialsHomeView: typeof import('./src/components/StudentComponents/StudentClass/SelfStudy/ClassMaterialsHomeView.vue')['default']
     CourseWork: typeof import('./src/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue')['default']
@@ -15,9 +16,12 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElDialog: typeof import('element-plus/es')['ElDialog']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElOption: typeof import('element-plus/es')['ElOption']
+    ElProgress: typeof import('element-plus/es')['ElProgress']
     ElRate: typeof import('element-plus/es')['ElRate']
     ElSelect: typeof import('element-plus/es')['ElSelect']
+    ElSelectV2: typeof import('element-plus/es')['ElSelectV2']
     LearnCenterHomeView: typeof import('./src/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue')['default']
     OnlineClass: typeof import('./src/components/StudentComponents/StudentCourses/OnlineClass/OnlineClass.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
@@ -34,5 +38,6 @@ declare module 'vue' {
     StudyInfo: typeof import('./src/components/StudentComponents/StudentClass/StudyInfo/StudyInfo.vue')['default']
     TraningPlan: typeof import('./src/components/StudentComponents/StudentPersonal/TraningPlan/TraningPlan.vue')['default']
     VoiceTranslate: typeof import('./src/components/VoiceTranslate.vue')['default']
+    WorkView: typeof import('./src/components/StudentComponents/StudentExams/WorkView.vue')['default']
   }
 }
