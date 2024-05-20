@@ -34,27 +34,42 @@ const num = ref('22')
 
 const datas = ref([
   {
-    FileName: "JavaEE100套训练项目.zip",
+    FileName: "JavaEE100套训练项目.rar",
     Teacher: "姜大玮",
     UpdateTime: "2024-05-11 13:44:47",
     FileBig: "4.3M",
     FileUrl: "https://12e1wefhiouraewhuiorefwahuierawfhiuo",
   },
-  {
-    FileName: "JavaEE100套训练项目.zip",
-    Teacher: "姜大玮",
-    UpdateTime: "2024-05-11 13:44:47",
-    FileBig: "4.3M",
-    FileUrl: "https://12e1wefhiouraewhuiorefwahuierawfhiuo",
-  },
-  {
-    FileName: "JavaEE100套训练项目.zip",
-    Teacher: "姜大玮",
-    UpdateTime: "2024-05-11 13:44:47",
-    FileBig: "4.3M",
-    FileUrl: "https://12e1wefhiouraewhuiorefwahuierawfhiuo",
-  }
+  // {
+  //   FileName: "JavaEE100套训练项目.zip",
+  //   Teacher: "姜大玮",
+  //   UpdateTime: "2024-05-11 13:44:47",
+  //   FileBig: "4.3M",
+  //   FileUrl: "https://12e1wefhiouraewhuiorefwahuierawfhiuo",
+  // },
+  // {
+  //   FileName: "JavaEE100套训练项目.zip",
+  //   Teacher: "姜大玮",
+  //   UpdateTime: "2024-05-11 13:44:47",
+  //   FileBig: "4.3M",
+  //   FileUrl: "https://12e1wefhiouraewhuiorefwahuierawfhiuo",
+  // }
 ])
+
+
+const downloadLocalWordDoc = () => {
+    // 本地 Word 文档的文件路径
+    const localDocPath = 'https://zhizhi-1325719773.cos.ap-nanjing.myqcloud.com/JavaEE100%E5%A5%97%E8%AE%AD%E7%BB%83%E9%A1%B9%E7%9B%AE.rar';
+    // 创建一个链接元素并设置下载属性
+    const a = document.createElement('a');
+    a.href = localDocPath;
+    a.download = 'local-doc.docx';
+    document.body.appendChild(a);
+    // 模拟点击链接进行下载
+    a.click();
+    // 清理链接元素
+    document.body.removeChild(a);
+};
 </script>
 
 <template>
@@ -84,7 +99,7 @@ const datas = ref([
         <div class='ClassInfo'>
           <div class='ClassName'>Java软件开发设计</div>
           <div class='teacher'>讲师：姜大玮 (双师)</div>
-          <div class='loading'>课程已进行至 <span style='color: #000;'>XX / XX</span></div>
+          <div class='loading'>课程已进行至 <span style='color: #000;'>13 / 16</span></div>
         </div>
 
       </div>
@@ -109,7 +124,7 @@ const datas = ref([
               <div class='FileIn' style="width: 10.5%; margin-left: 40.3%">{{ item.Teacher }}</div>
               <div class='FileIn' style="width: 25%; margin-left: 52.5%">{{ item.UpdateTime }}</div>
               <div class='FileIn' style="width: 9%; margin-left: 78.25%">{{ item.FileBig }}</div>
-              <div class='FileIn DownLoad' style="width: 8%; right: 2.7%">下载</div>
+              <div class='FileIn DownLoad' style="width: 8%; right: 2.7%" @click="downloadLocalWordDoc">下载</div>
             </div>
           </div>
         </div>

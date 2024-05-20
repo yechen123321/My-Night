@@ -195,24 +195,34 @@ const startRecording = () => {
 const responseData = ref([])
 const centerDialogVisible = ref(false)
 const submitQuestion = async () => {
-  let question = ref('')
-  question.value = resultTexts.value
+  const questions = ref('')
+  questions.value = resultTexts.value
   resultTexts.value = ''
-  try {
-    await QuestionGo({
-      id: '2',
-      name: '朱耿键',
-      question: question.value
+  console.log(questions.value)
+  axios.post('http://192.168.58.180:8084/question', {
+    id: '2',
+    name: '朱耿键',
+    question: questions.value
+  }, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(async function(response) {
+      console.log('成功', response.data);
+      await fetchData()
+      // 在这里处理成功后的逻辑
     })
-  } catch (error) {
-    console.error('Error Sending data:', error)
-  }
-  await fetchData()
-}
+    .catch(function(error) {
+      console.error('失败', error);
+      // 在这里处理失败后的逻辑
+    });
+};
+
 
 const fetchData = async () => {
   try {
-    const response = await axios.post('http://172.18.7.47:8084/question/select', { id: '2' })
+    const response = await axios.post('http://192.168.58.180:8084/question/select', { id: '2' })
     responseData.value = response.data
   } catch (error) {
     console.error('Error fetching data:', error)

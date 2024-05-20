@@ -38,6 +38,7 @@ declare module 'vue' {
     StudyInfo: typeof import('./src/components/StudentComponents/StudentClass/StudyInfo/StudyInfo.vue')['default']
     TraningPlan: typeof import('./src/components/StudentComponents/StudentPersonal/TraningPlan/TraningPlan.vue')['default']
     VoiceTranslate: typeof import('./src/components/VoiceTranslate.vue')['default']
+    WorkTitle: typeof import('./src/components/StudentComponents/StudentExams/WorkTitle.vue')['default']
     WorkView: typeof import('./src/components/StudentComponents/StudentExams/WorkView.vue')['default']
   }
 }

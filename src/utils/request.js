@@ -14,10 +14,12 @@ const instance = axios.create({
 instance.interceptors.request.use(
   (config) => {
     // TODO 2. 携带token
-    const useStore = useUserStore()
-    if (useStore.token) {
-      config.headers.Authorization = useStore.token
-    }
+    // const useStore = useUserStore()
+    // const defaultToken = '210a4060295049a9a6f01fd4d50f4b23'; 
+    // if (useStore.token) {
+    //   config.headers.token = useStore.token
+    // } 
+    config.headers.token = defaultToken; // 获取用户token或者使用默认token
     return config
   },
   (err) => Promise.reject(err)

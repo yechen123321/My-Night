@@ -10,4 +10,4 @@ export const userLoginService = ({ username, password }) =>
 
 // 提问接口
 export const QuestionGo = ({ id, name, question }) =>
-  request.post('http://172.18.7.47:8084/question', { id, name, question })
+  request.post('http://192.168.58.180:8084/question', { id, name, question })

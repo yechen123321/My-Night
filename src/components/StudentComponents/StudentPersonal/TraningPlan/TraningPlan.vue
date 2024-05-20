@@ -11,7 +11,7 @@ interface Props {
   fileName?: string // 覆盖pdf文件名
 }
 const props = withDefaults(defineProps<Props>(), {
-  src: 'src/assets/1.pdf',
+  src: 'src/assets/2.pdf',
   width: '100%',
   height: '100vh',
   pageScale: 'page-fit', // 默认自适应展示一页
