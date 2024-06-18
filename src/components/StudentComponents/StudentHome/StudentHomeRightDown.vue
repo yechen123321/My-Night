@@ -199,7 +199,7 @@ const submitQuestion = async () => {
   questions.value = resultTexts.value
   resultTexts.value = ''
   console.log(questions.value)
-  axios.post('http://192.168.58.180:8084/question', {
+  axios.post('http://172.18.7.47:8084/question', {
     id: '2',
     name: '朱耿键',
     question: questions.value
@@ -222,7 +222,7 @@ const submitQuestion = async () => {
 
 const fetchData = async () => {
   try {
-    const response = await axios.post('http://192.168.58.180:8084/question/select', { id: '2' })
+    const response = await axios.post('http://172.18.7.47:8084/question/select', { id: '2' })
     responseData.value = response.data
   } catch (error) {
     console.error('Error fetching data:', error)
@@ -432,7 +432,7 @@ function scrollToBottom() {
     height: 4vh;
     right: 0;
     position: absolute;
-    margin: -9.5% 1vw;
+    margin: -10% 1vw;
     border-radius: 0.4vw;
     background: rgba(24, 160, 88, 0.45);
     transition: background 0.5s ease; /* 定义背景颜色过渡效果 */

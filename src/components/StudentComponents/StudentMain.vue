@@ -135,7 +135,7 @@ import emitter from '@/plugins/Bus'
 import { imageProps } from 'element-plus'
 // 定义 BeChoose 为一个对象，以便使用动态属性
 const BeChoose = {
-  BeChoose00: ref(false),
+  BeChoose00: ref(true),
   BeChoose01: ref(false),
   BeChoose02: ref(false),
   BeChoose03: ref(false),
@@ -431,7 +431,7 @@ const submitQuestion = async () => {
   questions.value = resultTexts.value
   resultTexts.value = ''
   console.log(questions.value)
-  axios.post('http://192.168.58.180:8084/question', {
+  axios.post('http://172.18.7.47:8084/question', {
     id: '2',
     name: '朱耿键',
     question: questions.value
@@ -454,7 +454,7 @@ const submitQuestion = async () => {
 
 const fetchData = async () => {
   try {
-    const response = await axios.post('http://192.168.58.180:8084/question/select', { id: '2' })
+    const response = await axios.post('http://172.18.7.47:8084/question/select', { id: '2' })
     responseData.value = response.data
   } catch (error) {
     console.error('Error fetching data:', error)
@@ -981,8 +981,8 @@ function scrollToBottom() {
 
       .icon {
         width: 1.8vw;
+        height: 5vh;
         right: 4%;
-        margin-top: -7.5vh;
         position: absolute;
         z-index: 2;
       }

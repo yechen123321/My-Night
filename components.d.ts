@@ -7,8 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    111: typeof import('./src/components/StudentComponents/StudentExams/ExamType/111.vue')['default']
     AutoPractice: typeof import('./src/components/StudentComponents/StudentExams/AutoPractice/AutoPractice.vue')['default']
     BaseInforHomeView: typeof import('./src/components/StudentComponents/StudentPersonal/BaseInfor/BaseInforHomeView.vue')['default']
+    CCCCC: typeof import('./src/components/StudentComponents/StudentExams/ExamType/CCCCC.vue')['default']
     ClassMaterialsHomeView: typeof import('./src/components/StudentComponents/StudentClass/SelfStudy/ClassMaterialsHomeView.vue')['default']
     CourseWork: typeof import('./src/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue')['default']
     CourseWorks: typeof import('./src/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue')['default']
@@ -22,6 +24,15 @@ declare module 'vue' {
     ElRate: typeof import('element-plus/es')['ElRate']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     ElSelectV2: typeof import('element-plus/es')['ElSelectV2']
+    ExamAnswer: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamAnswer.vue')['default']
+    ExamBlank: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamBlank.vue')['default']
+    ExamCheckbox: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamCheckbox.vue')['default']
+    ExamChoose: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamChoose.vue')['default']
+    ExamJudge: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamJudge.vue')['default']
+    ExamListen: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamListen.vue')['default']
+    ExamSay: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamSay.vue')['default']
+    ExamTranslate: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamTranslate.vue')['default']
+    ExamWrite: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamWrite.vue')['default']
     LearnCenterHomeView: typeof import('./src/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue')['default']
     OnlineClass: typeof import('./src/components/StudentComponents/StudentCourses/OnlineClass/OnlineClass.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
@@ -38,6 +49,7 @@ declare module 'vue' {
     StudyInfo: typeof import('./src/components/StudentComponents/StudentClass/StudyInfo/StudyInfo.vue')['default']
     TraningPlan: typeof import('./src/components/StudentComponents/StudentPersonal/TraningPlan/TraningPlan.vue')['default']
     VoiceTranslate: typeof import('./src/components/VoiceTranslate.vue')['default']
+    WorkReady: typeof import('./src/components/StudentComponents/StudentExams/WorkReady.vue')['default']
     WorkTitle: typeof import('./src/components/StudentComponents/StudentExams/WorkTitle.vue')['default']
     WorkView: typeof import('./src/components/StudentComponents/StudentExams/WorkView.vue')['default']
   }

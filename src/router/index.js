@@ -29,6 +29,11 @@ const router = createRouter({
     {
       path: '/student/work',
       name: 'work',
+      component: () => import('@/components/StudentComponents/StudentExams/WorkReady.vue')
+    },
+    {
+      path: '/student/exam',
+      name: 'exam',
       component: () => import('@/components/StudentComponents/StudentExams/WorkView.vue')
     },
   ]
@@ -52,4 +57,5 @@ const router = createRouter({
 //     }
 //   }
 // })
+
 export default router

@@ -179,6 +179,10 @@ const forQuestions = ref([
     number: 0
   },
   {
+    name: '简答题',
+    number: 0
+  },
+  {
     name: '编程题',
     number: 0
   }
@@ -218,6 +222,97 @@ const questionData = ref([
       },
       {
         name: '填空题',
+        number: 0
+      },
+      {
+        name: '简答题',
+        number: 0
+      },
+      {
+        name: '编程题',
+        number: 0
+      }
+    ]
+  },
+  {
+    id: '10003',
+    question: [
+      {
+        name: '单选题',
+        number: 0
+      },
+      {
+        name: '多选题',
+        number: 0
+      },
+      {
+        name: '判断题',
+        number: 0
+      },
+      {
+        name: '填空题',
+        number: 0
+      },
+      {
+        name: '简答题',
+        number: 0
+      },
+      {
+        name: '编程题',
+        number: 0
+      }
+    ]
+  },
+  {
+    id: '11000',
+    question: [
+      {
+        name: '单选题',
+        number: 0
+      },
+      {
+        name: '多选题',
+        number: 0
+      },
+      {
+        name: '判断题',
+        number: 0
+      },
+      {
+        name: '填空题',
+        number: 0
+      },
+      {
+        name: '简答题',
+        number: 0
+      },
+      {
+        name: '编程题',
+        number: 0
+      }
+    ]
+  },
+  {
+    id: '10101',
+    question: [
+      {
+        name: '单选题',
+        number: 0
+      },
+      {
+        name: '多选题',
+        number: 0
+      },
+      {
+        name: '判断题',
+        number: 0
+      },
+      {
+        name: '填空题',
+        number: 0
+      },
+      {
+        name: '简答题',
         number: 0
       },
       {
@@ -267,6 +362,9 @@ const questionData = ref([
 const handleInput = (index) => {
   if (forQuestions.value[index].number < 0) {
     forQuestions.value[index].number = 0
+  }
+  if (forQuestions.value[index].number > 20) {
+    forQuestions.value[index].number = 20
   }
 }
 </script>
@@ -348,7 +446,7 @@ const handleInput = (index) => {
               <div class='tips'><span>1、</span>在您看完“练习须知”后，配置嫁习规则，点击“开始练习”按钮进入答题界面，考试开始计时。
               </div>
               <div class='tips'><span>2、</span>在练习过程中，您可以通过顶部的考试时问来掌握自己的做题时间。</div>
-              <div class='tips'><span>3、</span>提交试卷后，可以通过“查看答离和解析”功能进行总结学习。</div>
+              <div class='tips'><span>3、</span>提交试卷后，可以通过“查看答案和解析”功能进行总结学习。</div>
             </div>
             <div v-if='showq || showp' class='midden'>
               <div class='word'>配卷规则</div>
@@ -433,7 +531,7 @@ const handleInput = (index) => {
                     style='margin-left: 9vw; width: 3.5vw; margin-top: -0.3vh'
                     placeholder='Please input'
                     :min='0'
-                    :max='120'
+                    :max='20'
                     @input='handleInput(index)'
                   />
                   <span style='margin-left: 0.4vw'>题</span>
