@@ -7,6 +7,7 @@ import ExamWrite from '@/components/StudentComponents/StudentExams/ExamType/Exam
 import ExamAnswer from '@/components/StudentComponents/StudentExams/ExamType/ExamAnswer.vue'
 import ExamListen from '@/components/StudentComponents/StudentExams/ExamType/ExamListen.vue'
 import ExamSay from '@/components/StudentComponents/StudentExams/ExamType/ExamSay.vue'
+import ExamBlank from '@/components/StudentComponents/StudentExams/ExamType/ExamBlank.vue'
 import { useSharedStore } from '@/stores'
 import router from '@/router'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue' // 确保导入了computed函数
@@ -94,7 +95,7 @@ function padNumber(num) {
     <ExamAnswer v-if='0'></ExamAnswer>
     <ExamListen v-if='0'></ExamListen>
     <ExamSay v-if='0'></ExamSay>
-
+    <ExamBlank></ExamBlank>
   </div>
 </template>
 

@@ -105,9 +105,11 @@ import AutoPractice from '@/components/StudentComponents/StudentExams/AutoPracti
 /// \ExamScores ///
 
 /// OnlineExam ///
+import OnlineExam from '@/components/StudentComponents/StudentExams/OnlineExam/OnlineExam.vue'
 /// \OnlineExam ///
 
 /// QuestionBank ///
+import QuestionBank from '@/components/StudentComponents/StudentExams/QuestionBank/QuestionBank.vue'
 /// \QuestionBank ///
 
 // \StudentExams //
@@ -531,6 +533,9 @@ function scrollToBottom() {
       <CourseWorks v-if="BeChoose['BeChoose33'].value" class='left-out'></CourseWorks>
 
       <AutoPractice v-if="BeChoose['BeChoose51'].value" class='left-out'></AutoPractice>
+
+      <OnlineExam v-if="BeChoose['BeChoose53'].value" class='left-out'></OnlineExam>
+      <QuestionBank v-if="BeChoose['BeChoose55'].value" class='left-out'></QuestionBank>
     </div>
     <div class='right' v-if='!SpeakShows'>
       <div class='Top'>

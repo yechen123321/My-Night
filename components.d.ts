@@ -35,6 +35,8 @@ declare module 'vue' {
     ExamWrite: typeof import('./src/components/StudentComponents/StudentExams/ExamType/ExamWrite.vue')['default']
     LearnCenterHomeView: typeof import('./src/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue')['default']
     OnlineClass: typeof import('./src/components/StudentComponents/StudentCourses/OnlineClass/OnlineClass.vue')['default']
+    OnlineExam: typeof import('./src/components/StudentComponents/StudentExams/OnlineExam/OnlineExam.vue')['default']
+    QuestionBank: typeof import('./src/components/StudentComponents/StudentExams/QuestionBank/QuestionBank.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SelfStudy: typeof import('./src/components/StudentComponents/StudentClass/SelfStudy/SelfStudy.vue')['default']
