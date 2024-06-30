@@ -199,7 +199,7 @@ const submitQuestion = async () => {
   questions.value = resultTexts.value
   resultTexts.value = ''
   console.log(questions.value)
-  axios.post('http://172.18.7.47:8084/question', {
+  axios.post('http://47.121.186.98:8084/question', {
     id: '2',
     name: '朱耿键',
     question: questions.value
@@ -222,7 +222,7 @@ const submitQuestion = async () => {
 
 const fetchData = async () => {
   try {
-    const response = await axios.post('http://172.18.7.47:8084/question/select', { id: '2' })
+    const response = await axios.post('http://47.121.186.98:8084/question/select', { id: '2' })
     responseData.value = response.data
   } catch (error) {
     console.error('Error fetching data:', error)
@@ -285,18 +285,17 @@ function scrollToBottom() {
       </li>
     </ul>
     <textarea id="result" ref="resultDiv" rows="4" cols="50" class="in" v-model="resultTexts" />
-    <div class="button" @click="submitQuestion">
+    <button class="button" @click="submitQuestion">
       <svg class="go" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24">
         <path
           fill="white"
           d="M1.946 9.315c-.522-.174-.527-.455.01-.634L21.044 2.32c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8l-8 6z"
         ></path>
       </svg>
-    </div>
+    </button>
     <button
       @click="centerDialogVisible = true"
       id="btn_control"
-      style="margin-top: -15vh; margin-left: -10vw; position: absolute"
     >
       <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -316,13 +315,32 @@ function scrollToBottom() {
 .Body {
   width: 100%;
   height: 100%;
+  position: relative;
+  .button {
+    width: 2.5vw;
+    height: 4vh;
+    margin: -0.8vh 3vw;
+    position: absolute;
+    border-radius: 0.4vw;
+    border: none;
+    background: rgba(24, 160, 88, 0.45);
+    transition: background 0.5s ease; /* 定义背景颜色过渡效果 */
+    .go {
+      width: 1.5vw;
+      margin: 0.5vh -0.3vw;
+    }
+  }
+  .button:hover {
+    background: rgba(24, 160, 88, 1);
+    cursor: pointer;
+  }
   #btn_control {
     width: 2.5vw;
     height: 4vh;
     border: none;
     position: absolute;
     background: rgba(0, 157, 255, 0.7);
-    margin: -0.8vh 0.2vw !important;
+    margin: -0.8vh 0.2vw;
     border-radius: 0.4vw;
     transition: background 0.5s ease; /* 定义背景颜色过渡效果 */
     path {
@@ -427,24 +445,7 @@ function scrollToBottom() {
     background: rgba(85, 85, 85, 0.8); /* 滑块悬停颜色 */
   }
 
-  .button {
-    width: 2.5vw;
-    height: 4vh;
-    right: 0;
-    position: absolute;
-    margin: -10% 1vw;
-    border-radius: 0.4vw;
-    background: rgba(24, 160, 88, 0.45);
-    transition: background 0.5s ease; /* 定义背景颜色过渡效果 */
-    .go {
-      width: 1.5vw;
-      margin: 0.5vh 0.5vw;
-    }
-  }
-  .button:hover {
-    background: rgba(24, 160, 88, 1);
-    cursor: pointer;
-  }
+
   .in {
     width: 68%;
     height: 3.5vh;

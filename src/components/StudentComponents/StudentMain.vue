@@ -79,6 +79,7 @@ import OnlineClass from '@/components/StudentComponents/StudentCourses/OnlineCla
 /// \ComprehensiveQuality ///
 
 /// GradeInfor ///
+import GradeInfor from '@/components/StudentComponents/StudentStudyInfor/GradeInfor/GradeInfor.vue'
 /// \GradeInfor ///
 
 /// PatentSituation ///
@@ -88,6 +89,7 @@ import OnlineClass from '@/components/StudentComponents/StudentCourses/OnlineCla
 /// \PersonalPlan ///
 
 /// SecondClass ///
+import SecondClass from '@/components/StudentComponents/StudentStudyInfor/SecondClass/SecondClass.vue'
 /// \SecondClass ///
 
 // \StudentStudyInfor //
@@ -237,160 +239,167 @@ import { QuestionGo } from '@/api/Student' // 引入新的函数
 import { onUpdated } from 'vue'
 import axios from 'axios'
 
-import '/src/voice-utils/utilJS/crypto-js.js'; //鉴权的引用地址
-import '/src/voice-utils/utilJS/index.umd.js'; // 调用Web Speech API 的依赖，应该是官方的写的工具类
-const btnText = ref("开始录音");
-const btnStatus =  ref("UNDEFINED"); // "UNDEFINED" "CONNECTING" "OPEN" "CLOSING" "CLOSED"
+import '/src/voice-utils/utilJS/crypto-js.js' //鉴权的引用地址
+import '/src/voice-utils/utilJS/index.umd.js' // 调用Web Speech API 的依赖，应该是官方的写的工具类
+const btnText = ref('开始录音')
+const btnStatus = ref('UNDEFINED') // "UNDEFINED" "CONNECTING" "OPEN" "CLOSING" "CLOSED"
 const recorder = new RecorderManager('/src/voice-utils/dist')
 const APPID = '4d432e1b' // 这里填写从科大讯飞获取的appid
 const API_SECRET = 'YTA0M2EwNDgyNGY3Y2Y3MGVkOTFlNDRj'
 const API_KEY = '4eeea1063b2f6ba480124c1cbe24641a'
-let iatWS; //监听录音的变量
-let resultText = ref(''); // 识别结果
-let resultTexts = ref(''); // 识别结果
-let resultTextTemp = ref('');
-let countdownInterval;
+let iatWS //监听录音的变量
+let resultText = ref('') // 识别结果
+let resultTexts = ref('') // 识别结果
+let resultTextTemp = ref('')
+let countdownInterval
+
 // 生成 WebSocket URL 生成规则由平台决定
 function getWebSocketUrl() {
   // 请求地址根据语种不同变化
-  var url = "wss://iat-api.xfyun.cn/v2/iat";
-  var host = "iat-api.xfyun.cn";
-  var apiKey = API_KEY;
-  var apiSecret = API_SECRET;
-  var date = new Date().toGMTString();
-  var algorithm = "hmac-sha256";
-  var headers = "host date request-line";
-  var signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v2/iat HTTP/1.1`;
-  var signatureSha = CryptoJS.HmacSHA256(signatureOrigin, apiSecret);
-  var signature = CryptoJS.enc.Base64.stringify(signatureSha);
-  var authorizationOrigin = `api_key="${apiKey}", algorithm="${algorithm}", headers="${headers}", signature="${signature}"`;
-  var authorization = btoa(authorizationOrigin);
-  url = `${url}?authorization=${authorization}&date=${date}&host=${host}`;
-  return url;
+  var url = 'wss://iat-api.xfyun.cn/v2/iat'
+  var host = 'iat-api.xfyun.cn'
+  var apiKey = API_KEY
+  var apiSecret = API_SECRET
+  var date = new Date().toGMTString()
+  var algorithm = 'hmac-sha256'
+  var headers = 'host date request-line'
+  var signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v2/iat HTTP/1.1`
+  var signatureSha = CryptoJS.HmacSHA256(signatureOrigin, apiSecret)
+  var signature = CryptoJS.enc.Base64.stringify(signatureSha)
+  var authorizationOrigin = `api_key="${apiKey}", algorithm="${algorithm}", headers="${headers}", signature="${signature}"`
+  var authorization = btoa(authorizationOrigin)
+  url = `${url}?authorization=${authorization}&date=${date}&host=${host}`
+  return url
 }
+
 // 加密工具函数
 function toBase64(buffer) {
-  var binary = "";
-  var bytes = new Uint8Array(buffer);
-  var len = bytes.byteLength;
+  var binary = ''
+  var bytes = new Uint8Array(buffer)
+  var len = bytes.byteLength
   for (var i = 0; i < len; i++) {
-    binary += String.fromCharCode(bytes[i]);
+    binary += String.fromCharCode(bytes[i])
   }
-  return window.btoa(binary);
+  return window.btoa(binary)
 }
+
 // 计数函数
 function countdown() {
-  let seconds = 60;
-  btnText.value = `录音中（${seconds}s）`;
+  let seconds = 60
+  btnText.value = `录音中（${seconds}s）`
   countdownInterval = setInterval(() => {
-    seconds = seconds - 1;
+    seconds = seconds - 1
     if (seconds <= 0) {
-      clearInterval(countdownInterval);
-      recorder.stop();
+      clearInterval(countdownInterval)
+      recorder.stop()
     } else {
-      btnText.value = `录音中（${seconds}s）`;
+      btnText.value = `录音中（${seconds}s）`
     }
-  }, 1000);
+  }, 1000)
 }
+
 // 录音状态变化函数
 function changeStatus(status) {
-  btnStatus.value = status;
-  if (status === "CONNECTING") {
-    btnText.value = "建立连接中";
-    resultText.value = '';
-    resultTextTemp.value = "";
-  } else if (status === "OPEN") {
-    countdown();
-  } else if (status === "CLOSED") {
-    btnText.value = "开始录音";
+  btnStatus.value = status
+  if (status === 'CONNECTING') {
+    btnText.value = '建立连接中'
+    resultText.value = ''
+    resultTextTemp.value = ''
+  } else if (status === 'OPEN') {
+    countdown()
+  } else if (status === 'CLOSED') {
+    btnText.value = '开始录音'
   }
 }
+
 // 结果解析函数
 function renderResult(resultData) {
   // 识别结束
-  let jsonData = JSON.parse(resultData);
+  let jsonData = JSON.parse(resultData)
   if (jsonData.data && jsonData.data.result) {
-    let data = jsonData.data.result;
-    let str = "";
-    let ws = data.ws;
+    let data = jsonData.data.result
+    let str = ''
+    let ws = data.ws
     for (let i = 0; i < ws.length; i++) {
-      str = str + ws[i].cw[0].w;
+      str = str + ws[i].cw[0].w
     }
     // 开启wpgs会有此字段(前提：在控制台开通动态修正功能)
     // 取值为 "apd"时表示该片结果是追加到前面的最终结果；取值为"rpl" 时表示替换前面的部分结果，替换范围为rg字段
     if (data.pgs) {
-      if (data.pgs === "apd") {
+      if (data.pgs === 'apd') {
         // 将resultTextTemp同步给resultText
-        resultText.value = resultTextTemp.value;
+        resultText.value = resultTextTemp.value
       }
       // 将结果存储在resultTextTemp中
-      resultTextTemp.value = resultText.value + str;
+      resultTextTemp.value = resultText.value + str
     } else {
-      resultText.value = resultText.value + str;
+      resultText.value = resultText.value + str
     }
   }
   resultTexts.value += resultText.value
   if (jsonData.code === 0 && jsonData.data.status === 2) {
-    iatWS.close();
+    iatWS.close()
   }
   if (jsonData.code !== 0) {
-    iatWS.close();
-    console.error(jsonData);
+    iatWS.close()
+    console.error(jsonData)
   }
 }
+
 // 连接 WebSocket
 function connectWebSocket() {
-  const websocketUrl = getWebSocketUrl();
-  if ("WebSocket" in window) {
-    iatWS = new WebSocket(websocketUrl);
-  } else if ("MozWebSocket" in window) {
-    iatWS = new MozWebSocket(websocketUrl);
+  const websocketUrl = getWebSocketUrl()
+  if ('WebSocket' in window) {
+    iatWS = new WebSocket(websocketUrl)
+  } else if ('MozWebSocket' in window) {
+    iatWS = new MozWebSocket(websocketUrl)
   } else {
-    alert("浏览器不支持WebSocket");
-    return;
+    alert('浏览器不支持WebSocket')
+    return
   }
-  changeStatus("CONNECTING");
+  changeStatus('CONNECTING')
   iatWS.onopen = (e) => {
     // 开始录音
     recorder.start({
       sampleRate: 16000,
-      frameSize: 1280,
-    });
+      frameSize: 1280
+    })
     var params = {
       common: {
-        app_id: APPID,
+        app_id: APPID
       },
       business: {
-        language: "zh_cn",
-        domain: "iat",
-        accent: "mandarin",
+        language: 'zh_cn',
+        domain: 'iat',
+        accent: 'mandarin',
         vad_eos: 5000,
-        dwa: "wpgs",
+        dwa: 'wpgs'
       },
       data: {
         status: 0,
-        format: "audio/L16;rate=16000",
-        encoding: "raw",
-      },
-    };
-    iatWS.send(JSON.stringify(params));
-  };
+        format: 'audio/L16;rate=16000',
+        encoding: 'raw'
+      }
+    }
+    iatWS.send(JSON.stringify(params))
+  }
   iatWS.onmessage = (e) => {
-    renderResult(e.data);
-  };
+    renderResult(e.data)
+  }
   iatWS.onerror = (e) => {
-    console.error(e);
-    recorder.stop();
-    changeStatus("CLOSED");
-  };
+    console.error(e)
+    recorder.stop()
+    changeStatus('CLOSED')
+  }
   // iatWS.onclose = (e) => {
   //   recorder.stop();
   //   changeStatus("CLOSED");
   // };
 }
+
 // 定义监听开始的函数
 recorder.onStart = () => {
-  changeStatus("OPEN");
+  changeStatus('OPEN')
 }
 // 处理回调的结果
 recorder.onFrameRecorded = ({ isLastFrame, frameBuffer }) => {
@@ -399,29 +408,29 @@ recorder.onFrameRecorded = ({ isLastFrame, frameBuffer }) => {
       JSON.stringify({
         data: {
           status: isLastFrame ? 2 : 1,
-          format: "audio/L16;rate=16000",
-          encoding: "raw",
-          audio: toBase64(frameBuffer),
-        },
+          format: 'audio/L16;rate=16000',
+          encoding: 'raw',
+          audio: toBase64(frameBuffer)
+        }
       })
-    );
+    )
     if (isLastFrame) {
-      changeStatus("CLOSING");
+      changeStatus('CLOSING')
     }
   }
-};
+}
 // 停止录音的处理
 recorder.onStop = () => {
-  clearInterval(countdownInterval);
-};
+  clearInterval(countdownInterval)
+}
 // 按钮点击的启动 | 结束函数
 const startRecording = () => {
-  if (btnStatus.value === "UNDEFINED" || btnStatus.value === "CLOSED") {
-    connectWebSocket();
-  } else if (btnStatus.value === "CONNECTING" || btnStatus.value === "OPEN") {
+  if (btnStatus.value === 'UNDEFINED' || btnStatus.value === 'CLOSED') {
+    connectWebSocket()
+  } else if (btnStatus.value === 'CONNECTING' || btnStatus.value === 'OPEN') {
     // 结束录音
-    recorder.stop();
-    changeStatus("CLOSED");
+    recorder.stop()
+    changeStatus('CLOSED')
   }
 }
 
@@ -433,7 +442,7 @@ const submitQuestion = async () => {
   questions.value = resultTexts.value
   resultTexts.value = ''
   console.log(questions.value)
-  axios.post('http://172.18.7.47:8084/question', {
+  axios.post('http://47.121.186.98:8084/question', {
     id: '2',
     name: '朱耿键',
     question: questions.value
@@ -443,20 +452,20 @@ const submitQuestion = async () => {
     }
   })
     .then(async function(response) {
-      console.log('成功', response.data);
+      console.log('成功', response.data)
       await fetchData()
       // 在这里处理成功后的逻辑
     })
     .catch(function(error) {
-      console.error('失败', error);
+      console.error('失败', error)
       // 在这里处理失败后的逻辑
-    });
-};
+    })
+}
 
 
 const fetchData = async () => {
   try {
-    const response = await axios.post('http://172.18.7.47:8084/question/select', { id: '2' })
+    const response = await axios.post('http://47.121.186.98:8084/question/select', { id: '2' })
     responseData.value = response.data
   } catch (error) {
     console.error('Error fetching data:', error)
@@ -470,6 +479,7 @@ const messageContainer = ref(null)
 // 在组件挂载后和更新后滚动到底部
 onMounted(scrollToBottom)
 onUpdated(scrollToBottom)
+
 function scrollToBottom() {
   if (messageContainer.value) {
     // 使用 $nextTick 确保 DOM 更新完成后再滚动
@@ -485,33 +495,33 @@ function scrollToBottom() {
 <template>
 
   <div class='Mainbody'>
-    <el-dialog v-model="centerDialogVisible" destroy-on-close center class="read">
-      <div class="title">语音转写</div>
-      <div class="reading" @click="startRecording()">
-        <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <el-dialog v-model='centerDialogVisible' destroy-on-close center class='read'>
+      <div class='title'>语音转写</div>
+      <div class='reading' @click='startRecording()'>
+        <svg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'>
           <path
-            d="M704 192v368c0 52.8-21.6 100.8-56.4 135.6S564.8 752 512 752c-105.6 0-192-86.4-192-192V192C320 86.4 406.4 0 512 0s192 86.4 192 192z"
-            fill="#707070"
+            d='M704 192v368c0 52.8-21.6 100.8-56.4 135.6S564.8 752 512 752c-105.6 0-192-86.4-192-192V192C320 86.4 406.4 0 512 0s192 86.4 192 192z'
+            fill='#707070'
           ></path>
           <path
-            d="M816 496v144c0 2.8-0.4 5.6-1.1 8.4-18.5 68.2-58.9 126.1-112.3 166.9-43.5 33.2-95.6 55.2-151.6 62.2-4 0.5-7 3.9-7 7.9V944c0 8.8 7.2 16 16 16h80c35.3 0 64 28.7 64 64H320c0-35.3 28.7-64 64-64h80c8.8 0 16-7.2 16-16v-58.5c0-4-3-7.4-7-7.9-124.8-15.7-230.3-105.5-263.9-229.2-0.7-2.7-1.1-5.6-1.1-8.4V496.7c0-17.4 13.7-32.2 31.1-32.7 18.1-0.5 32.9 14 32.9 32v129.8c0 6.9 1.1 13.8 3.3 20.3C309.3 746.9 404.6 816 512 816s202.7-69.1 236.7-169.9c2.2-6.5 3.3-13.4 3.3-20.3V496.7c0-17.4 13.7-32.2 31.1-32.7 18.1-0.5 32.9 14 32.9 32z"
-            fill="#707070"
+            d='M816 496v144c0 2.8-0.4 5.6-1.1 8.4-18.5 68.2-58.9 126.1-112.3 166.9-43.5 33.2-95.6 55.2-151.6 62.2-4 0.5-7 3.9-7 7.9V944c0 8.8 7.2 16 16 16h80c35.3 0 64 28.7 64 64H320c0-35.3 28.7-64 64-64h80c8.8 0 16-7.2 16-16v-58.5c0-4-3-7.4-7-7.9-124.8-15.7-230.3-105.5-263.9-229.2-0.7-2.7-1.1-5.6-1.1-8.4V496.7c0-17.4 13.7-32.2 31.1-32.7 18.1-0.5 32.9 14 32.9 32v129.8c0 6.9 1.1 13.8 3.3 20.3C309.3 746.9 404.6 816 512 816s202.7-69.1 236.7-169.9c2.2-6.5 3.3-13.4 3.3-20.3V496.7c0-17.4 13.7-32.2 31.1-32.7 18.1-0.5 32.9 14 32.9 32z'
+            fill='#707070'
           ></path>
         </svg>
       </div>
       <div
-        style="
+        style='
           margin: -3vh auto;
           width: 20vw;
           height: 10vh;
           text-align: center;
           font-size: 1vw;
           font-weight: bolder;
-        "
+        '
       >
         {{ btnText }}
       </div>
-      <div class="readWhat">{{ resultTexts }}</div>
+      <div class='readWhat'>{{ resultTexts }}</div>
     </el-dialog>
     <div class='left' v-if='!SpeakShows'>
       <StudentHomeView v-if="BeChoose['BeChoose00'].value" class='left-out'></StudentHomeView>
@@ -531,6 +541,9 @@ function scrollToBottom() {
       <StudyInfo v-if="BeChoose['BeChoose23'].value" class='left-out'></StudyInfo>
       <OnlineClass v-if="BeChoose['BeChoose31'].value" class='left-out'></OnlineClass>
       <CourseWorks v-if="BeChoose['BeChoose33'].value" class='left-out'></CourseWorks>
+
+      <GradeInfor v-if="BeChoose['BeChoose41'].value" class='left-out'></GradeInfor>
+      <SecondClass v-if="BeChoose['BeChoose43'].value" class='left-out'></SecondClass>
 
       <AutoPractice v-if="BeChoose['BeChoose51'].value" class='left-out'></AutoPractice>
 
@@ -556,7 +569,15 @@ function scrollToBottom() {
     </div>
     <div class='SpeakView' v-if='SpeakShows'>
       <div class='left'>
-        <svg t="1716205134832" @click='CloseSpeak' class="out" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" ><path d="M0 192v640c0 70.7 57.3 128 128 128h352c17.7 0 32-14.3 32-32s-14.3-32-32-32H128c-35.3 0-64-28.7-64-64V192c0-35.3 28.7-64 64-64h352c17.7 0 32-14.3 32-32s-14.3-32-32-32H128C57.3 64 0 121.3 0 192z" p-id="2630"></path><path d="M1013.3 488.3L650.9 160.7c-41.2-37.2-106.9-8-106.9 47.5V339c0 4.4-3.6 8-8 8H224c-17.7 0-32 14.3-32 32v266c0 17.7 14.3 32 32 32h312c4.4 0 8 3.6 8 8v130.9c0 55.5 65.8 84.7 106.9 47.5l362.4-327.6c14.1-12.8 14.1-34.8 0-47.5zM256 597V427c0-8.8 7.2-16 16-16h304c17.7 0 32-14.3 32-32V244.9c0-13.9 16.4-21.2 26.7-11.9L938 506.1c3.5 3.2 3.5 8.7 0 11.9L634.7 791c-10.3 9.3-26.7 2-26.7-11.9V645c0-17.7-14.3-32-32-32H272c-8.8 0-16-7.2-16-16z" p-id="2631"></path></svg>
+        <svg t='1716205134832' @click='CloseSpeak' class='out' viewBox='0 0 1024 1024' version='1.1'
+             xmlns='http://www.w3.org/2000/svg'>
+          <path
+            d='M0 192v640c0 70.7 57.3 128 128 128h352c17.7 0 32-14.3 32-32s-14.3-32-32-32H128c-35.3 0-64-28.7-64-64V192c0-35.3 28.7-64 64-64h352c17.7 0 32-14.3 32-32s-14.3-32-32-32H128C57.3 64 0 121.3 0 192z'
+            p-id='2630'></path>
+          <path
+            d='M1013.3 488.3L650.9 160.7c-41.2-37.2-106.9-8-106.9 47.5V339c0 4.4-3.6 8-8 8H224c-17.7 0-32 14.3-32 32v266c0 17.7 14.3 32 32 32h312c4.4 0 8 3.6 8 8v130.9c0 55.5 65.8 84.7 106.9 47.5l362.4-327.6c14.1-12.8 14.1-34.8 0-47.5zM256 597V427c0-8.8 7.2-16 16-16h304c17.7 0 32-14.3 32-32V244.9c0-13.9 16.4-21.2 26.7-11.9L938 506.1c3.5 3.2 3.5 8.7 0 11.9L634.7 791c-10.3 9.3-26.7 2-26.7-11.9V645c0-17.7-14.3-32-32-32H272c-8.8 0-16-7.2-16-16z'
+            p-id='2631'></path>
+        </svg>
         <div class='Top'>
           <img src='/src/assets/speak.png' alt=''>
         </div>
@@ -608,15 +629,20 @@ function scrollToBottom() {
       </div>
       <div class='right'>
         <ul class='chatlist' ref='messageContainer'>
-          <li v-for="(item, index) in responseData" :key="index">
-            <div class="question">{{ item.question }}</div>
-            <div class="answer">{{ item.answer }}</div>
+          <li v-for='(item, index) in responseData' :key='index'>
+            <div class='ddd question'>{{ item.question }}</div>
+            <div class='ddd answer'>{{ item.answer }}</div>
           </li>
         </ul>
         <div class='inputs'>
-          <div class='Sing'  @click="centerDialogVisible = true"
-               id="btn_control">
-            <svg t="1716203833084" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 53.333333a202.666667 202.666667 0 0 1 202.666667 202.666667v181.333333h106.666666a21.333333 21.333333 0 0 1 21.333334 21.333334V554.666667c0 171.818667-131.050667 313.045333-298.666667 329.130666V949.333333a32 32 0 0 1-64 0v-65.536c-167.594667-16.085333-298.666667-157.312-298.666667-329.130666v-96a21.333333 21.333333 0 0 1 21.333334-21.333334h106.666666V256A202.666667 202.666667 0 0 1 512 53.333333z m-202.666667 448h-64V554.666667c0 147.285333 119.381333 266.666667 266.666667 266.666666S778.666667 701.952 778.666667 554.666667v-53.333334h-64V554.666667a202.666667 202.666667 0 0 1-405.333334 0v-53.333334z m202.666667-384a138.666667 138.666667 0 0 0-138.581333 133.696L373.333333 256h42.666667a32 32 0 0 1 0 64h-42.666667v64h42.666667a32 32 0 0 1 0 64h-42.666667v64h42.666667a32 32 0 0 1 0 64h-41.024a138.709333 138.709333 0 0 0 274.048 0H608a32 32 0 0 1 0-64h42.666667v-64h-42.666667a32 32 0 0 1 0-64h42.666667v-64h-42.666667a32 32 0 0 1 0-64h42.666667A138.666667 138.666667 0 0 0 512 117.333333z" fill="#707070" p-id="2746"></path></svg>
+          <div class='Sing' @click='centerDialogVisible = true'
+               id='btn_control'>
+            <svg t='1716203833084' class='icon' viewBox='0 0 1024 1024' version='1.1'
+                 xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M512 53.333333a202.666667 202.666667 0 0 1 202.666667 202.666667v181.333333h106.666666a21.333333 21.333333 0 0 1 21.333334 21.333334V554.666667c0 171.818667-131.050667 313.045333-298.666667 329.130666V949.333333a32 32 0 0 1-64 0v-65.536c-167.594667-16.085333-298.666667-157.312-298.666667-329.130666v-96a21.333333 21.333333 0 0 1 21.333334-21.333334h106.666666V256A202.666667 202.666667 0 0 1 512 53.333333z m-202.666667 448h-64V554.666667c0 147.285333 119.381333 266.666667 266.666667 266.666666S778.666667 701.952 778.666667 554.666667v-53.333334h-64V554.666667a202.666667 202.666667 0 0 1-405.333334 0v-53.333334z m202.666667-384a138.666667 138.666667 0 0 0-138.581333 133.696L373.333333 256h42.666667a32 32 0 0 1 0 64h-42.666667v64h42.666667a32 32 0 0 1 0 64h-42.666667v64h42.666667a32 32 0 0 1 0 64h-41.024a138.709333 138.709333 0 0 0 274.048 0H608a32 32 0 0 1 0-64h42.666667v-64h-42.666667a32 32 0 0 1 0-64h42.666667v-64h-42.666667a32 32 0 0 1 0-64h42.666667A138.666667 138.666667 0 0 0 512 117.333333z'
+                fill='#707070' p-id='2746'></path>
+            </svg>
           </div>
           <div class='one'>
             <svg t='1716202922835' class='icon' viewBox='0 0 1024 1024' version='1.1'
@@ -626,7 +652,7 @@ function scrollToBottom() {
                 p-id='2631' fill='#707070'></path>
             </svg>
           </div>
-          <input id="result" ref="resultDiv" v-model="resultTexts" @keyup.enter="submitQuestion"  class='input' />
+          <input id='result' ref='resultDiv' v-model='resultTexts' @keyup.enter='submitQuestion' class='input' />
         </div>
       </div>
     </div>
@@ -655,6 +681,7 @@ function scrollToBottom() {
   height: 100%;
   position: relative;
   overflow: hidden;
+
   .read {
     .title {
       width: 40%;
@@ -663,6 +690,7 @@ function scrollToBottom() {
       text-align: center;
       font-size: 1.3vw;
     }
+
     .readWhat {
       white-space: pre-wrap;
       width: 30vw;
@@ -671,6 +699,7 @@ function scrollToBottom() {
       margin: auto;
       text-align: center;
     }
+
     .reading {
       width: 37%;
       height: 35vh;
@@ -681,16 +710,19 @@ function scrollToBottom() {
       .icon {
         width: 10vw;
         margin: 8vh 4vw;
+
         path {
           fill: white;
         }
       }
     }
+
     .reading:hover {
       cursor: pointer;
       background: rgba(0, 157, 255);
     }
   }
+
   .SpeakView {
     width: 100%;
     height: 100%;
@@ -707,19 +739,23 @@ function scrollToBottom() {
         width: 95%;
         height: 8vh;
         margin: auto;
+
         .Sing {
           cursor: pointer;
         }
+
         .Sing {
           z-index: 3;
           position: absolute;
           right: 6%;
           margin-top: 0.5vh;
+
           .icon {
             position: absolute;
             width: 2vw;
           }
         }
+
         .input {
           width: 88%;
           height: 4.5vh;
@@ -756,27 +792,40 @@ function scrollToBottom() {
         height: 90%;
         margin: auto;
         overflow: auto;
+
+        li:first-child {
+          margin-top: 5vh;
+        }
+
         li {
+          width: 100%;
           list-style: none;
-          div {
+          clear: both;
+          .ddd {
+            max-width: 80%;
             line-height: 3vh;
             white-space: pre-wrap;
             overflow-wrap: break-word; /* 允许单词内部换行 */
           }
+
           .answer {
             padding: 1vh 1vw;
             background: white;
             border-radius: 1vw 1vw 1vw 0;
-            margin: 3vh;
-            right: 0;
+            margin: 5vh 1vw;
+            width: max-content;
+            float: left;
           }
 
           .question {
-            padding: 2vh 1vw;
+            margin-right: 4vw;
+            float: right;
+            padding: 1vh 1vw;
             color: white;
             border-radius: 1vw 1vw 0 1vw;
             background: rgba(115, 101, 255);
-            margin: 3vh;
+            text-align: right;
+            width: max-content;
           }
         }
       }
@@ -788,18 +837,22 @@ function scrollToBottom() {
       height: 100%;
       position: absolute;
       border-radius: 0;
+
       .out:hover {
         cursor: pointer;
       }
+
       .out {
         position: absolute;
         width: 2vw;
         bottom: 2vh;
         right: 1vw;
+
         path {
-          fill:  rgba(82, 65, 255);
+          fill: rgba(82, 65, 255);
         }
       }
+
       .Top {
         img {
           width: 90%;
