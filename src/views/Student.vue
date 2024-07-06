@@ -126,6 +126,7 @@ import ClassRanks from '@/components/StudentComponent/ClassRanks.vue'
 import ViewDown from '@/components/StudentComponent/ViewDown.vue'
 import CourseRecommend from '@/components/StudentComponent/CourseRecommend.vue'
 import StudyInfo from '@/components/StudentComponent/StudyInfo.vue'
+import QualityComments from '@/components/StudentComponent/QualityComments.vue'
 </script>
 
 <template>
@@ -142,6 +143,9 @@ import StudyInfo from '@/components/StudentComponent/StudyInfo.vue'
       </div>
       <div class='StudyInfo'>
         <StudyInfo></StudyInfo>
+      </div>
+      <div class='QualityComments'>
+        <QualityComments></QualityComments>
       </div>
       <div class='ClassRank'>
         <ClassRanks></ClassRanks>
@@ -167,6 +171,12 @@ import StudyInfo from '@/components/StudentComponent/StudyInfo.vue'
     width: 70%;
     margin-left: 15%;
     padding-top: 6vh;
+
+    .QualityComments {
+      width: 100%;
+      height: 22vh;
+      margin-top: 1vh;
+    }
 
     .CourseRecommend {
       width: 100%;

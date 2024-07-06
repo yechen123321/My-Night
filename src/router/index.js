@@ -29,6 +29,12 @@ const router = createRouter({
       component: () => import('@/views/Student/StudentPersonal.vue'),
     },
 
+    {
+      path: '/student/talk',
+      name: 'studentTalk',
+      component: () => import('@/views/Student/StudentTalk.vue'),
+    },
+
     // {
     //   path: '/login',
     //   name: 'login',

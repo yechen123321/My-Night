@@ -16,7 +16,7 @@ onMounted(() => {
     backgroundColor:'rgba(1,1,1,0 )',
     legend: {
       width:'100%',
-      top:'9%'
+      top:'6%'
     },
     tooltip: {},
     dataset: {

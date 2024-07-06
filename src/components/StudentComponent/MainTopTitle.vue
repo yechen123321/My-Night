@@ -1,6 +1,10 @@
 <script setup>
 import router from '@/router'
 
+const GotoTalk = () => {
+  router.push('/student/talk')
+}
+
 const GotoPersonal = () => {
   router.push('/student/personal')
 }
@@ -18,7 +22,7 @@ const GotoStudentHome = () => {
     </div>
     <div class='MainTopTitle-center'>
       <div class='home' @click='GotoStudentHome'>首页</div>
-      <div class='talk'>论坛</div>
+      <div class='talk' @click='GotoTalk'>论坛</div>
       <div class='study'>学习中心</div>
       <div class='class'>课堂实录</div>
       <div class='exam'>评测</div>
