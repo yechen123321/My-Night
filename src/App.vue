@@ -10,11 +10,13 @@
   height: 100%;
 
 }
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 
 }
 * {
@@ -27,4 +29,16 @@ body {
   //user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 </style>
+
+<script>
+document.addEventListener('mousewheel', function (e) {
+  e = e || window.event;
+  if ((e.wheelDelta && event.ctrlKey) || e.detail) {
+    event.preventDefault();
+  }
+}, {
+  capture: false,
+  passive: false
+});
+</script>
 

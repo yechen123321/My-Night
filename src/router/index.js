@@ -16,31 +16,40 @@ const router = createRouter({
       name: 'home',
       component: () => import('@/views/HomeView.vue')
     },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('@/views/Login.vue')
-    },
-    {
-      path: '/operations',
-      name: 'operations',
-      component: () => import('@/views/Operations.vue'),
-    },
+
     {
       path: '/student',
       name: 'student',
       component: () => import('@/views/Student.vue'),
     },
+
     {
-      path: '/student/work',
-      name: 'work',
-      component: () => import('@/components/StudentComponents/StudentExams/WorkReady.vue')
+      path: '/student/personal',
+      name: 'studentPersonal',
+      component: () => import('@/views/Student/StudentPersonal.vue'),
     },
-    {
-      path: '/student/exam',
-      name: 'exam',
-      component: () => import('@/components/StudentComponents/StudentExams/WorkView.vue')
-    },
+
+    // {
+    //   path: '/login',
+    //   name: 'login',
+    //   component: () => import('@/views/Login.vue')
+    // },
+    // {
+    //   path: '/operations',
+    //   name: 'operations',
+    //   component: () => import('@/views/Operations.vue'),
+    // },
+
+    // {
+    //   path: '/student/work',
+    //   name: 'work',
+    //   component: () => import('@/components/StudentComponents/StudentExams/WorkReady.vue')
+    // },
+    // {
+    //   path: '/student/exam',
+    //   name: 'exam',
+    //   component: () => import('@/components/StudentComponents/StudentExams/WorkView.vue')
+    // },
   ]
 })
 

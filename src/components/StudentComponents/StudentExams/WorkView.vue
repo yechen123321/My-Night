@@ -88,14 +88,14 @@ function padNumber(num) {
       </div>
     </div>
     <ExamChoose v-if='0'></ExamChoose>
-    <ExamTranslate v-if='0'></ExamTranslate>
+    <ExamTranslate v-if='1'></ExamTranslate>
     <ExamCheckbox  v-if='0'></ExamCheckbox>
     <ExamJudge v-if='0'></ExamJudge>
     <ExamWrite v-if='0'></ExamWrite>
     <ExamAnswer v-if='0'></ExamAnswer>
     <ExamListen v-if='0'></ExamListen>
     <ExamSay v-if='0'></ExamSay>
-    <ExamBlank></ExamBlank>
+    <ExamBlank v-if='0'></ExamBlank>
   </div>
 </template>
 
