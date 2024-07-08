@@ -65,6 +65,7 @@ declare module 'vue' {
     StudentMain: typeof import('./src/components/StudentComponents/StudentMain.vue')['default']
     StudentTop: typeof import('./src/components/StudentComponents/StudentTop.vue')['default']
     StudyInfo: typeof import('./src/components/StudentComponent/StudyInfo.vue')['default']
+    TalkMain: typeof import('./src/components/StudentComponent/StudentTalk/TalkMain.vue')['default']
     TopRoad: typeof import('./src/components/StudentComponents/StudentStudyInfor/SecondClass/Eccharts/TopRoad.vue')['default']
     TraningPlan: typeof import('./src/components/StudentComponents/StudentPersonal/TraningPlan/TraningPlan.vue')['default']
     ViewDown: typeof import('./src/components/StudentComponent/ViewDown.vue')['default']

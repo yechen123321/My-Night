@@ -104,11 +104,15 @@ const GotoTalk = () => {
       margin-left: 0;
     }
 
+    .Talk-body:last-child {
+      float: right;
+    }
+
     .Main-talk {
       width: 18%;
       height: 100%;
       float: left;
-      margin-left: 1.73vw;
+      margin-left: 2.5%;
       border-radius: 0.3vw;
       background: white;
 

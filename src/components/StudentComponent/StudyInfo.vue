@@ -62,7 +62,7 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
         <div class='right-top-word'>
           <div style='font-size: 0.85vw; margin-top: 0.6vh; margin-left: 0.8vw'>人物词云</div>
         </div>
-        <WordCloud style='margin-top: -3vh'></WordCloud>
+        <WordCloud style='margin-top: -2vh; width: 100%; height: 90%'></WordCloud>
       </div>
     </div>
   </div>
@@ -73,6 +73,8 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
   width: 100%;
   height: 40vh;
   overflow: hidden;
+
+
 
   .StudyInfo-body-top {
     width: 100%;
@@ -125,13 +127,15 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
             width: 100%;
             height: 100%;
             margin-top: 1vh;
+
             .bg {
               width: 5vw;
               height: 5vw;
               margin-left: 1.6vw;
-              background: rgba(253,122,5);
+              background: rgba(253, 122, 5);
               border-radius: 50%;
               position: relative;
+
               .midden {
                 width: 4vw;
                 height: 4vw;
@@ -145,33 +149,37 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
                   margin: 1.8vh auto;
                   text-align: center;
                   font-size: 1.4vw;
-                  color: rgba(253,122,5);
+                  color: rgba(253, 122, 5);
                 }
               }
             }
           }
-          .one-down{
+
+          .one-down {
             width: 100%;
             height: 10%;
-            bottom: 2vh;
+            bottom: 1.5vh;
             text-align: center;
             position: absolute;
             font-size: 0.8vw;
-            color: rgba(253,122,5);
+            color: rgba(253, 122, 5);
           }
         }
 
         .left-tow {
           width: 100%;
           height: 13vh;
+          margin-top: 1vh;
           position: relative;
+
           .bg {
             width: 5vw;
             height: 5vw;
             margin-left: 1.6vw;
             border-radius: 50%;
-            background: rgba(250,217,126);
+            background: rgba(250, 217, 126);
             position: relative;
+
             .midden {
               width: 4vw;
               height: 4vw;
@@ -185,18 +193,19 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
                 margin: 2vh auto;
                 text-align: center;
                 font-size: 1.2vw;
-                color: rgba(250,217,126);
+                color: rgba(250, 217, 126);
               }
             }
           }
-          .one-down{
+
+          .one-down {
             width: 100%;
             height: 10%;
-            bottom: 2vh;
+            bottom: 1.5vh;
             text-align: center;
             position: absolute;
             font-size: 0.8vw;
-            color: rgba(250,217,126);
+            color: rgba(250, 217, 126);
           }
         }
 
@@ -217,7 +226,7 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
         height: 100%;
         float: left;
 
-        .rida{
+        .rida {
           width: 80%;
           height: 80%;
           margin-top: 5.5vh;
@@ -230,7 +239,7 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
         float: left;
 
         .topRoad {
-          height: 95%;
+          height: 100%;
           width: 135%;
           margin: 2.5vh -4vw;
         }
