@@ -13,6 +13,14 @@ const GotoStudentHome = () => {
   router.push('/student')
 }
 
+const GotoStudentStudy = () => {
+  router.push('/student/study/learncenter')
+}
+
+const GotoStudentVideo = () => {
+  router.push('/student/video')
+}
+
 </script>
 
 <template>
@@ -23,8 +31,8 @@ const GotoStudentHome = () => {
     <div class='MainTopTitle-center'>
       <div class='home' @click='GotoStudentHome'>首页</div>
       <div class='talk' @click='GotoTalk'>论坛</div>
-      <div class='study'>学习中心</div>
-      <div class='class'>课堂实录</div>
+      <div class='study' @click='GotoStudentStudy'>学习中心</div>
+      <div class='class' @click='GotoStudentVideo'>课堂实录</div>
       <div class='exam'>评测</div>
       <div class='ifly'>智界</div>
     </div>

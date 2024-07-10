@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-
+import MainTopTitle from '@/components/StudentComponent/MainTopTitle.vue'
+import ViewDown from '@/components/StudentComponent/ViewDown.vue'
 const markdown = ref('')
 
 onMounted(async () => {
@@ -14,6 +15,7 @@ onMounted(async () => {
 })
 </script>
 <template>
+  <MainTopTitle class='MainTopTitle-out'></MainTopTitle>
   <div class='TalkMain'>
     <div class='TalkMain-top'>
       <div class='TalkMain-title'>
@@ -46,20 +48,55 @@ onMounted(async () => {
           <v-md-editor :model-value='markdown' class='perview' mode='preview'></v-md-editor>
         </div>
       </div>
+      <div class='Section'>
+        <div class='Section-left'>
+          <div class='topTip'>
+            <img src='/src/assets/StudentTalk/louzhu.png' alt=''>
+          </div>
+          <div class='TipBody'>
+            <div class='TipsHead'>
+              <img src='/src/assets/head.png' alt=''>
+              <div class='people'>学生</div>
+            </div>
+            <div class='peopleName'><span
+              style='background: #ff8810; color: white;border-radius: 0.1vw; font-size: 0.5vw; padding-left: 0.1vw; padding-right: 0.1vw'>Lv.11</span><span
+              style='margin-left: 0.5vw'>陈小玮</span></div>
+          </div>
+        </div>
+        <div class='Section-right'>
+          <!--          <v-md-editor v-model="markdown" height="400px"></v-md-editor>-->
+          <v-md-editor :model-value='markdown' class='perview' mode='preview'></v-md-editor>
+        </div>
+      </div>
+      <v-md-editor :model-value='markdown' class='perview' mode='' height='50vh'></v-md-editor>
     </div>
   </div>
+  <ViewDown class='ViewDown'></ViewDown>
 </template>
 
 <style scoped lang='scss'>
-.TalkMain {
+.ViewDown {
   width: 100%;
+  height: 10vh;
+  margin-top: 10vh;
+}
+.MainTopTitle-out {
+  width: 100%;
+  height: 5.5%;
+  position: absolute;
+  z-index: 2;
+  background: white;
+}
+.TalkMain {
+  width: 60%;
   height: 100%;
-
+  margin: auto;
+  padding-top: 7vh;
   .TalkMain-body {
     width: 100%;
     height: 100%;
+    margin: 1vh auto;
     background: white;
-    margin-top: 1vh;
     border-radius: 0.3vw;
     overflow: auto;
 
@@ -70,7 +107,7 @@ onMounted(async () => {
       display: flex;
 
       .Section-left {
-        width: 20%;
+        width: 16.5%;
         float: left;
         border-right: 1px solid #cbcbcb;
 
@@ -80,7 +117,7 @@ onMounted(async () => {
           margin: auto;
 
           .peopleName {
-            width: 67%;
+            width: 70%;
             margin: 0.7vh auto;
             text-align: center;
             font-size: 0.65vw;

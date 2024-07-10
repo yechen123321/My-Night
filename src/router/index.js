@@ -20,20 +20,56 @@ const router = createRouter({
     {
       path: '/student',
       name: 'student',
-      component: () => import('@/views/Student.vue'),
+      component: () => import('@/views/Student.vue')
     },
 
     {
       path: '/student/personal',
       name: 'studentPersonal',
-      component: () => import('@/views/Student/StudentPersonal.vue'),
+      component: () => import('@/views/Student/StudentPersonal.vue')
+    },
+
+    {
+      path: '/student/study/learncenter/homework',
+      name: 'studentPersonal',
+      component: () => import('@/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue')
+    },
+
+    {
+      path: '/student/study',
+      name: 'studentStudy',
+      component: () => import('@/views/Student/StudentStudy.vue'),
+      children: [
+        {
+          path: 'learncenter',
+          name: 'learnCenter',
+          component: () => import('@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue')
+        },
+        {
+          path: 'myclass',
+          name: 'myClass',
+          component: () => import('@/components/StudentComponent/StudentStudy/StudentStudyMyClass.vue')
+        }
+      ]
     },
 
     {
       path: '/student/talk',
       name: 'studentTalk',
-      component: () => import('@/views/Student/StudentTalk.vue'),
+      component: () => import('@/views/Student/StudentTalk.vue')
     },
+
+    {
+      path: '/student/talk/talks',
+      name: 'studentTalkTalks',
+      component: () => import('@/components/StudentComponent/StudentTalk/TalkMain.vue')
+    },
+
+    {
+      path: '/student/video',
+      name: 'studentVideo',
+      component: () => import('@/views/Student/StudentVideo.vue')
+    }
 
     // {
     //   path: '/login',

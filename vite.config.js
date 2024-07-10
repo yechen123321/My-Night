@@ -29,7 +29,7 @@ export default defineConfig({
   },
   server: {
     // host: '172.18.31.92', // 替换为你的内网IP地址 小学期
-    // host: '172.18.7.7', // 实验室
+    host: '172.18.7.7', // 实验室
     port: 8089,
     proxy: {
       '/api': {
