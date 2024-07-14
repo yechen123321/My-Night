@@ -24,8 +24,8 @@ const router = createRouter({
     },
 
     {
-      path: '/student/personal',
-      name: 'studentPersonal',
+      path: '/student/persons',
+      name: 'studentPersons',
       component: () => import('@/views/Student/StudentPersonal.vue')
     },
 
@@ -58,6 +58,13 @@ const router = createRouter({
       name: 'studentTalk',
       component: () => import('@/views/Student/StudentTalk.vue')
     },
+
+    {
+      path: '/student/talk/sendtalk',
+      name: 'studentTalk/sendtalk',
+      component: () => import('@/components/StudentComponent/StudentTalk/SendTalk.vue')
+    },
+
 
     {
       path: '/student/talk/talks',

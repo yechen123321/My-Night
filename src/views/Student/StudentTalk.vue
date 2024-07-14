@@ -2,6 +2,12 @@
 import MainTopTitle from '@/components/StudentComponent/MainTopTitle.vue'
 import ViewDown from '@/components/StudentComponent/ViewDown.vue'
 import TalkList from '@/components/StudentComponent/StudentTalk/TalkList.vue'
+import router from '@/router'
+
+const GotoSendTalk = () => {
+  router.push('/student/talk/sendtalk')
+}
+
 </script>
 
 <template>
@@ -72,7 +78,7 @@ import TalkList from '@/components/StudentComponent/StudentTalk/TalkList.vue'
             </div>
           </div>
           <div class='MySelf-down'>
-            <div class='down-button'>发起话题</div>
+            <div class='down-button' @click='GotoSendTalk'>发起话题</div>
           </div>
         </div>
         <div class='HotList'>

@@ -6,7 +6,7 @@ const GotoTalk = () => {
 }
 
 const GotoPersonal = () => {
-  router.push('/student/personal')
+  router.push('/student/persons')
 }
 
 const GotoStudentHome = () => {
