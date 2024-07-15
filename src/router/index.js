@@ -26,7 +26,24 @@ const router = createRouter({
     {
       path: '/student/persons',
       name: 'studentPersons',
-      component: () => import('@/views/Student/StudentPersonal.vue')
+      component: () => import('@/views/Student/StudentPersonal.vue'),
+      children:[
+        {
+          path: 'baseinfo',
+          name: 'studentPersonsBaseinfo',
+          component: () => import('@/components/StudentComponent/StudentPersonal/BaseInfo.vue')
+        },
+        {
+          path: 'schoolinfo',
+          name: 'studentPersonsSchoolInfo',
+          component: () => import('@/components/StudentComponent/StudentPersonal/SchoolInfo.vue')
+        },
+        {
+          path: 'train',
+          name: 'studentPersonsTrain',
+          component: () => import('@/components/StudentComponent/StudentPersonal/TrainProgram.vue')
+        }
+      ]
     },
 
     {
@@ -76,7 +93,13 @@ const router = createRouter({
       path: '/student/video',
       name: 'studentVideo',
       component: () => import('@/views/Student/StudentVideo.vue')
-    }
+    },
+
+    {
+      path: '/student/iflycode',
+      name: 'studentIflycode',
+      component: () => import('@/views/Student/StudentIfly.vue')
+    },
 
     // {
     //   path: '/login',

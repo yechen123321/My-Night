@@ -6,7 +6,7 @@ const GotoTalk = () => {
 }
 
 const GotoPersonal = () => {
-  router.push('/student/persons')
+  router.push('/student/persons/baseinfo')
 }
 
 const GotoStudentHome = () => {
@@ -19,6 +19,10 @@ const GotoStudentStudy = () => {
 
 const GotoStudentVideo = () => {
   router.push('/student/video')
+}
+
+const GotoStudentIfly = () => {
+  router.push('/student/iflycode')
 }
 
 </script>
@@ -34,7 +38,7 @@ const GotoStudentVideo = () => {
       <div class='study' @click='GotoStudentStudy'>学习中心</div>
       <div class='class' @click='GotoStudentVideo'>课堂实录</div>
       <div class='exam'>评测</div>
-      <div class='ifly'>智界</div>
+      <div class='ifly' @click='GotoStudentIfly'>智界</div>
     </div>
     <div class='MainTopTitle-personal'>
       <div class='searchBox'>
