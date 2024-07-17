@@ -14,7 +14,7 @@ import BaseInforHomeView from '@/components/StudentComponents/StudentPersonal/Ba
 
 /// SemesterSchedule ///
 import SemesterScheduleHomeView
-  from '@/components/StudentComponents/StudentPersonal/SemesterSchedule/SemesterScheduleHomeView.vue'
+  from '@/components/StudentComponent/StudentClass/SemesterScheduleHomeView.vue'
 
 /// \SemesterSchedule ///
 
@@ -33,11 +33,11 @@ import TraningPlan from '@/components/StudentComponents/StudentPersonal/TraningP
 // StudentClass //
 
 /// SelfStudy ///
-import SelfStudy from '@/components/StudentComponents/StudentClass/SelfStudy/SelfStudy.vue'
+import SelfStudy from '@/components/StudentComponent/StudentStudy/SelfStudy.vue'
 /// \SelfStudy ///
 
 /// LearnCenter ///
-import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue'
+import LearnCenterHomeView from '@/components/StudentComponent/StudentStudy/LearnCenterHomeView.vue'
 /// \LearnCenter ///
 
 /// ProfessionalTree ///
@@ -47,7 +47,7 @@ import LearnCenterHomeView from '@/components/StudentComponents/StudentClass/Lea
 /// \ScheduleQuery ///
 
 /// StudyInfo ///
-import StudyInfo from '@/components/StudentComponents/StudentClass/StudyInfo/StudyInfo.vue'
+import StudyInfo from '@/components/StudentComponent/StudentClass/StudyInfo.vue'
 /// \StudyInfo ///
 
 // \StudentClass //
@@ -61,11 +61,11 @@ import StudyInfo from '@/components/StudentComponents/StudentClass/StudyInfo/Stu
 /// \CourseForum ///
 
 /// CourseWork ///
-import CourseWorks from '@/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue'
+import CourseWorks from '@/components/StudentComponent/StudentStudy/CourseWorks.vue'
 /// \CourseWork ///
 
 /// OnlineClass ///
-import OnlineClass from '@/components/StudentComponents/StudentCourses/OnlineClass/OnlineClass.vue'
+import OnlineClass from '@/components/StudentComponent/StudentClass/OnlineClass.vue'
 /// \OnlineClass ///
 
 /// VirtualClass ///
@@ -97,7 +97,7 @@ import SecondClass from '@/components/StudentComponents/StudentStudyInfor/Second
 // StudentExams //
 
 /// AutoPractice ///
-import AutoPractice from '@/components/StudentComponents/StudentExams/AutoPractice/AutoPractice.vue'
+import AutoPractice from '@/components/StudentComponent/StudentExam/AutoPractice.vue'
 /// \AutoPractice ///
 
 /// ExamArrange ///
@@ -107,11 +107,11 @@ import AutoPractice from '@/components/StudentComponents/StudentExams/AutoPracti
 /// \ExamScores ///
 
 /// OnlineExam ///
-import OnlineExam from '@/components/StudentComponents/StudentExams/OnlineExam/OnlineExam.vue'
+import OnlineExam from '@/components/StudentComponent/StudentExam/OnlineExam.vue'
 /// \OnlineExam ///
 
 /// QuestionBank ///
-import QuestionBank from '@/components/StudentComponents/StudentExams/QuestionBank/QuestionBank.vue'
+import QuestionBank from '@/components/StudentComponent/StudentExam/QuestionBank.vue'
 /// \QuestionBank ///
 
 // \StudentExams //

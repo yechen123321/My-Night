@@ -104,53 +104,46 @@ const AITeachingPlanValue = ref(0)
 
 const teachingPlanList = [
   {
-    title: '计算机科学与技术专业人才培养方案.pdf',
-    type: '计算机科学与技术',
+    title: 'LiTPLT.pdf',
+    type: 'LiTPLT',
     time: '2024.7.11',
-    size: '1.08MB',
-    src: '/src/assets/计科培养方案.pdf',
-    fileId: '7b107aac7f6947ebb084188b23633a2a'
+    size: '573 KB',
+    src: '/src/assets/pdf/LiTPLT.pdf',
+    fileId: 'c72524748e9c4b07b10bddf016f84ed2'
   },
   {
-    title: '软件工程专业人才培养方案.pdf',
-    type: '软件工程',
+    title: 'KMP算法.pdf',
+    type: 'KMP算法',
     time: '2024.7.11',
-    size: '1.49MB',
-    src: '/src/assets/pdf/软件培养方案.pdf',
-    fileId: '2167bb563e894a83812ed3ff0b6fb840'
+    size: '617 KB',
+    src: '/src/assets/pdf/KMP算法.pdf',
+    fileId: 'b126ad10684f425c98fd45451ecc5fd4'
   },
   {
-    title: '网络工程专业人才培养方案.pdf',
-    type: '网络工程',
+    title: '大学物理（1）期末复习大纲.pdf',
+    type: '大学物理（1）',
     time: '2024.7.12',
-    size: '1.43MB',
-    src: '/src/assets/pdf/网络培养方案.pdf',
-    fileId: 'aa6e73ec8deb4abb8d219cae65b896e0'
+    size: '394 KB',
+    src: '/src/assets/pdf/大学物理（1）期末复习大纲.pdf',
+    fileId: '2e2bde1b01f8428db832ee3d929a8cb9'
   },
   {
-    title: '人工智能专业人才培养方案.pdf',
-    type: '人工智能',
+    title: '大学物理（1）习题复习(1).pdf',
+    type: '大学物理（1）',
     time: '2024.7.12',
-    size: '1.82MB',
-    src: '/src/assets/pdf/人工智能培养方案.pdf',
-    fileId: '9f6a3a5d926d4dafba38f5cbeb99c836'
+    size: '2.49 MB',
+    src: '/src/assets/pdf/大学物理（1）习题复习(1).pdf',
+    fileId: '0f30abe98b9149eaadc266ada8c7b37a'
   },
   {
-    title: '大数据专业人才培养方案.pdf',
-    type: '大数据',
+    title: 'JavaScript.pdf',
+    type: 'JavaScript',
     time: '2024.7.13',
-    size: '1.82MB',
-    src: '/src/assets/pdf/大数据培养方案.pdf',
-    fileId: '75c7d309ef4b464c9eea5a158f4dd95f'
+    size: '23.6 MB',
+    src: '/src/assets/pdf/JavaScript.pdf',
+    fileId: 'aa0bb5130ddc4a7d92c48e5123801a53'
   },
-  {
-    title: '英语专业人才培养方案.pdf',
-    type: '英语',
-    time: '2024.7.13',
-    size: '2.10MB',
-    src: '/src/assets/pdf/英语培养方案.pdf',
-    fileId: 'd9e88dc7a30a487098ad0b87ac12326b'
-  }
+
 ]
 
 //  pdf 路径
@@ -311,7 +304,7 @@ const onAITeachingPlan = (index) => {
   PDFSrc.value = teachingPlanList[index].src
   isLoading.value = true
 
-  const question = '请帮我总结，针对教师的' + teachingPlanList[index].title + '组教学教案'
+  const question = '请帮我总结这个文件里面的重点，和根据这个文件推荐我的学习路径'
   const fileId = teachingPlanList[index].fileId
   let jsonData = {
     'question': question,

@@ -1,7 +1,12 @@
 <script setup>
-import WordCloud from '@/components/StudentComponents/StudentStudyInfor/SecondClass/Eccharts/WordCloud.vue'
-import AllRida from '@/components/StudentComponents/StudentStudyInfor/SecondClass/Eccharts/AllRida.vue'
-import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClass/Eccharts/TopRoad.vue'
+import WordCloud from '@/components/StudentComponent/SecondClass/Eccharts/WordCloud.vue'
+import AllRida from '@/components/StudentComponent/SecondClass/Eccharts/AllRida.vue'
+import TopRoad from '@/components/StudentComponent/SecondClass/Eccharts/TopRoad.vue'
+import router from '@/router'
+
+const GotoSecond = () => {
+  router.push('/student/second')
+}
 </script>
 
 <template>
@@ -24,6 +29,7 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
         <div class='center-left'>
           <div class='left-top'>
             <div class='word'>综合分析</div>
+            <div class='go' @click='GotoSecond'>详情></div>
           </div>
           <div class='left-one'>
             <div class='one-top'>
@@ -112,11 +118,24 @@ import TopRoad from '@/components/StudentComponents/StudentStudyInfor/SecondClas
       margin-left: 2.5%;
       border-radius: 0.3vw;
       float: left;
+      position: relative;
 
       .center-left {
         width: 20%;
         height: 100%;
         float: left;
+
+        .go:hover {
+          cursor: pointer;
+          color: #ff6666;
+        }
+
+        .go {
+          position: absolute;
+          right: 2vw;
+          top: 1vh;
+          transition: color 0.3s ease;
+        }
 
         .left-one {
           width: 100%;

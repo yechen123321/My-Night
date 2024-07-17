@@ -27,7 +27,7 @@ const router = createRouter({
       path: '/student/persons',
       name: 'studentPersons',
       component: () => import('@/views/Student/StudentPersonal.vue'),
-      children:[
+      children: [
         {
           path: 'baseinfo',
           name: 'studentPersonsBaseinfo',
@@ -49,7 +49,7 @@ const router = createRouter({
     {
       path: '/student/study/learncenter/homework',
       name: 'studentPersonal',
-      component: () => import('@/components/StudentComponents/StudentCourses/CourseWork/CourseWorks.vue')
+      component: () => import('@/components/StudentComponent/StudentStudy/CourseWorks.vue')
     },
 
     {
@@ -60,12 +60,12 @@ const router = createRouter({
         {
           path: 'learncenter',
           name: 'learnCenter',
-          component: () => import('@/components/StudentComponents/StudentClass/LearnCenter/LearnCenterHomeView.vue')
+          component: () => import('@/components/StudentComponent/StudentStudy/LearnCenterHomeView.vue')
         },
         {
           path: 'myclass',
           name: 'myClass',
-          component: () => import('@/components/StudentComponent/StudentStudy/StudentStudyMyClass.vue')
+          component: () => import('@/components/StudentComponent/StudentStudy/StudentStudyWorkView.vue')
         }
       ]
     },
@@ -90,9 +90,33 @@ const router = createRouter({
     },
 
     {
+      path: '/student/second',
+      name: 'studentSecond',
+      component: () => import('@/components/StudentComponent/SecondClass/SecondClass.vue')
+    },
+
+    {
       path: '/student/video',
       name: 'studentVideo',
       component: () => import('@/views/Student/StudentVideo.vue')
+    },
+
+    {
+      path: '/student/exam',
+      name: 'studentExam',
+      component: () => import('@/views/Student/StudentExam.vue')
+    },
+
+    {
+      path: '/student/exam/workready',
+      name: 'studentExamWorkReady',
+      component: () => import('@/components/StudentComponent/StudentExam/WorkReady.vue')
+    },
+
+    {
+      path: '/student/exam/workview',
+      name: 'studentExamWorkView',
+      component: () => import('@/components/StudentComponent/StudentExam/WorkView.vue')
     },
 
     {
@@ -101,11 +125,11 @@ const router = createRouter({
       component: () => import('@/views/Student/StudentIfly.vue')
     },
 
-    // {
-    //   path: '/login',
-    //   name: 'login',
-    //   component: () => import('@/views/Login.vue')
-    // },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/UserLogin.vue')
+    },
     // {
     //   path: '/operations',
     //   name: 'operations',

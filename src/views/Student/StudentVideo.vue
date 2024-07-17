@@ -1,6 +1,6 @@
 <script setup>
 import SemesterScheduleHomeView
-  from '@/components/StudentComponents/StudentPersonal/SemesterSchedule/SemesterScheduleHomeView.vue'
+  from '@/components/StudentComponent/StudentClass/SemesterScheduleHomeView.vue'
 import MainTopTitle from '@/components/StudentComponent/MainTopTitle.vue'
 import ViewDown from '@/components/StudentComponent/ViewDown.vue'
 </script>

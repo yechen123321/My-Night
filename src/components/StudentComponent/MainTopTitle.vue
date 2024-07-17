@@ -6,6 +6,7 @@ const GotoTalk = () => {
 }
 
 const GotoPersonal = () => {
+  localStorage.setItem('Person', '1')
   router.push('/student/persons/baseinfo')
 }
 
@@ -14,11 +15,16 @@ const GotoStudentHome = () => {
 }
 
 const GotoStudentStudy = () => {
+  localStorage.setItem('class', '1')
   router.push('/student/study/learncenter')
 }
 
 const GotoStudentVideo = () => {
   router.push('/student/video')
+}
+
+const GotoStudentExam = () => {
+  router.push('/student/exam')
 }
 
 const GotoStudentIfly = () => {
@@ -37,7 +43,7 @@ const GotoStudentIfly = () => {
       <div class='talk' @click='GotoTalk'>论坛</div>
       <div class='study' @click='GotoStudentStudy'>学习中心</div>
       <div class='class' @click='GotoStudentVideo'>课堂实录</div>
-      <div class='exam'>评测</div>
+      <div class='exam' @click='GotoStudentExam'>评测</div>
       <div class='ifly' @click='GotoStudentIfly'>智界</div>
     </div>
     <div class='MainTopTitle-personal'>

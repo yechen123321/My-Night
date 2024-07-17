@@ -2,12 +2,66 @@
 import MainTopTitle from '@/components/StudentComponent/MainTopTitle.vue'
 import router from '@/router'
 import ViewDown from '@/components/StudentComponent/ViewDown.vue'
+import {onMounted} from 'vue'
+
+onMounted(() =>{
+  const aaa = localStorage.getItem('class')
+  const one = document.getElementById('one')
+  const tow = document.getElementById('tow')
+  const three = document.getElementById('three')
+  if (aaa === '1') {
+    one.classList.add('BeChoosess')
+    tow.classList.remove('BeChoosess')
+    three.classList.remove('BeChoosess')
+  } else if (aaa === '2') {
+    one.classList.remove('BeChoosess')
+    tow.classList.add('BeChoosess')
+    three.classList.remove('BeChoosess')
+  } else if (aaa === '3') {
+    one.classList.remove('BeChoosess')
+    tow.classList.remove('BeChoosess')
+    three.classList.add('BeChoosess')
+  }
+})
 
 const GotoStudyOnline = () => {
+  const one = document.getElementById('one')
+  const tow = document.getElementById('tow')
+  const three = document.getElementById('three')
+
+  one.classList.add('BeChoosess')
+  tow.classList.remove('BeChoosess')
+  three.classList.remove('BeChoosess')
+
+  localStorage.setItem('class', '1')
+
   router.push('/student/study/learncenter')
 }
 const GotoStudyMyClass = () => {
+  const one = document.getElementById('one')
+  const tow = document.getElementById('tow')
+  const three = document.getElementById('three')
+
+
+  one.classList.remove('BeChoosess')
+  tow.classList.add('BeChoosess')
+  three.classList.remove('BeChoosess')
+
+  localStorage.setItem('class', '2')
   router.push('/student/study/myclass')
+}
+
+const GotoStudyChooseClass = () => {
+  const one = document.getElementById('one')
+  const tow = document.getElementById('tow')
+  const three = document.getElementById('three')
+
+  one.classList.remove('BeChoosess')
+  tow.classList.remove('BeChoosess')
+  three.classList.add('BeChoosess')
+
+  localStorage.setItem('class', '3')
+  router.push('/student/study/chooseclass')
 }
 </script>
 
@@ -17,7 +71,7 @@ const GotoStudyMyClass = () => {
     <div class='StudentStudy-main'>
       <div class='StudentStudy-main-left'>
         <div class='ChooseBox'>
-          <div class='Chooses BeChoosess'>
+          <div id='one' class='Chooses BeChoosess'>
             <div class='word' @click='GotoStudyOnline'>
               <svg t='1720551748295' class='icon' viewBox='0 0 1139 1024' version='1.1'
                    xmlns='http://www.w3.org/2000/svg' p-id='4342'>
@@ -30,7 +84,7 @@ const GotoStudyMyClass = () => {
               </svg>
               在线课堂 <span> > </span></div>
           </div>
-          <div class='Chooses'>
+          <div id='tow' class='Chooses'>
             <div class='word' @click='GotoStudyMyClass'>
               <svg t='1720551925690' class='icon' viewBox='0 0 1024 1024' version='1.1'
                    xmlns='http://www.w3.org/2000/svg' p-id='5161' style='top: 1vh; width: 1.1vw; left: 0.8vw'>
@@ -43,7 +97,7 @@ const GotoStudyMyClass = () => {
               </svg>
               我的课程<span> > </span></div>
           </div>
-          <div class='Chooses'>
+          <div id='three' class='Chooses' @click='GotoStudyChooseClass'>
             <div class='word'>
               <svg t='1720552009951' class='icon' viewBox='0 0 1448 1024' version='1.1'
                    xmlns='http://www.w3.org/2000/svg' p-id='4382' style='width: 1.7vw; left: 0.7vw; top: 0.9vh'>
