@@ -142,19 +142,19 @@ const downloadLocalWordDoc = () => {
   .Body {
     width: 100%;
     height: 100%;
+    position: relative;
     .StudyInfo {
       width: 97%;
       height: 96%;
       border-radius: 0.4vw;
       margin: 1.8vh auto;
-      background: #f8f6f6;
       .info-right {
         position: absolute;
         width: 67%;
         height: 92%;
         right: 3%;
-        border: 1px solid rgba(106, 169, 153, 0.2);
-        box-shadow: 0 2px 14px 0 rgba(106, 169, 153, 0.6);
+        border: 1px solid rgba(252, 159, 17, 0.2);
+        box-shadow: 0 1px 4px 0 rgba(245, 137, 12, 0.6);
         border-radius: 0.4vw;
         margin-top: 1.75vh;
         .right-body {
@@ -169,10 +169,10 @@ const downloadLocalWordDoc = () => {
               width: 100%;
               height: 5vh;
               line-height: 5vh;
-              border-bottom: 1.5px solid rgba(106, 169, 153, 0.2);
+              border-bottom: 1.5px solid rgba(245, 137, 12, 0.6);
               .DownLoad:hover {
                 cursor: pointer;
-                color: #0e87ff;
+                color: rgba(245, 137, 12, 0.6);
                 text-decoration: underline;
               }
               .DownLoad:active {
@@ -213,9 +213,10 @@ const downloadLocalWordDoc = () => {
         .right-title {
           width: 100%;
           height: 5vh;
+          color: white;
           line-height: 5vh;
           border-radius: 0.4vw 0.4vw 0 0;
-          background: rgba(106, 169, 153, 0.5);
+          background: #ed742e;
           .title-left {
             font-size: 1vw;
             font-weight: bolder;
@@ -225,7 +226,7 @@ const downloadLocalWordDoc = () => {
           .title-right {
             position: absolute;
             right: 4%;
-            color: #333333;
+            color: #fff;
             margin-top: 1vh;
             font-size: 0.8vw;
           }
@@ -238,7 +239,7 @@ const downloadLocalWordDoc = () => {
         margin-top: 1.75vh;
         margin-left: 2%;
         border: 1px solid rgba(106, 169, 153, 0.2);
-        box-shadow: 0 2px 14px 0 rgba(106, 169, 153, 0.6);
+        box-shadow: 0 1px 3px 0 rgba(245, 137, 12, 0.6);
         border-radius: 0.4vw;
         .img {
           width: 100%;

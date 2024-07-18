@@ -1,7 +1,21 @@
 <script setup>
+import router from '@/router'
+
 const motto = '天行健，君子以自强不息'
 const Level = '11'
 const SourceNumber = '9876'
+
+const GotoHomeWork = () => {
+  router.push('/student/study/learncenter/homework')
+}
+
+const GotoHomeClassVideo = () => {
+  router.push('/student/study/learncenter/classvideo')
+}
+
+const GotoHomeIfly= () => {
+  router.push('/student/iflycode')
+}
 </script>
 
 <template>
@@ -37,7 +51,7 @@ const SourceNumber = '9876'
       </div>
     </div>
     <div class='PersonCard-down'>
-      <div class='PersonCard-down-left'>
+      <div class='PersonCard-down-left' @click='GotoHomeWork'>
         <svg t='1720060675247' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
              p-id='13312' style='width: 2vw; margin: 1.1vh 0.65vw'>
           <path
@@ -53,9 +67,9 @@ const SourceNumber = '9876'
             d='M619.52 576c-12.8 0-23.04-7.68-25.6-20.48-2.56-12.8 7.68-28.16 20.48-30.72l189.44-30.72c12.8-2.56 28.16 7.68 30.72 20.48 2.56 12.8-7.68 28.16-20.48 30.72l-189.44 30.72h-5.12zM619.52 742.4c-12.8 0-23.04-7.68-25.6-20.48-2.56-12.8 7.68-28.16 20.48-30.72l189.44-30.72c12.8-2.56 28.16 7.68 30.72 20.48 2.56 12.8-7.68 28.16-20.48 30.72L622.08 742.4h-2.56z'
             fill='#353535' p-id='13316'></path>
         </svg>
-        <div class='left-info'>学习任务</div>
+        <div class='left-info' >学习任务</div>
       </div>
-      <div class='PersonCard-down-center'>
+      <div class='PersonCard-down-center' @click='GotoHomeClassVideo'>
         <svg t='1720062167165' class='icon' viewBox='0 0 1177 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
              p-id='24274' id='mx_n_1720062167166' data-spm-anchor-id='a313x.search_index.0.i12.480f3a81MLhixU'
              style='width: 2.2vw; margin: 1.32vh 0.85vw'>
@@ -68,7 +82,7 @@ const SourceNumber = '9876'
         </svg>
         <div class='center-info'>在线课堂</div>
       </div>
-      <div class='PersonCard-down-right'>
+      <div class='PersonCard-down-right' @click='GotoHomeIfly'>
         <svg t='1720061451831' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
              p-id='11973' style='width: 2vw !important; margin: 1.3vh 1vw'>
           <path

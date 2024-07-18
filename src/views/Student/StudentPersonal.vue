@@ -7,19 +7,19 @@ import router from '@/router'
 onMounted(() => {
   const num = localStorage.getItem('Person')
   const BB = document.getElementById('BB')
-  const CC = document.getElementById('CC')
+  // const CC = document.getElementById('CC')
   const DD = document.getElementById('DD')
   if (num === '1') {
     BB.classList.add('ChoosesBe')
-    CC.classList.remove('ChoosesBe')
+    // CC.classList.remove('ChoosesBe')
     DD.classList.remove('ChoosesBe')
   } else if (num === '2') {
     BB.classList.remove('ChoosesBe')
-    CC.classList.add('ChoosesBe')
+    // CC.classList.add('ChoosesBe')
     DD.classList.remove('ChoosesBe')
   } else if (num === '3') {
     BB.classList.remove('ChoosesBe')
-    CC.classList.remove('ChoosesBe')
+    // CC.classList.remove('ChoosesBe')
     DD.classList.add('ChoosesBe')
   }
 })
@@ -27,11 +27,11 @@ onMounted(() => {
 
 const GotoBaseInfo = () => {
   const BB = document.getElementById('BB')
-  const CC = document.getElementById('CC')
+  // const CC = document.getElementById('CC')
   const DD = document.getElementById('DD')
 
   BB.classList.add('ChoosesBe')
-  CC.classList.remove('ChoosesBe')
+  // CC.classList.remove('ChoosesBe')
   DD.classList.remove('ChoosesBe')
 
   localStorage.setItem('Person', '1')
@@ -40,11 +40,11 @@ const GotoBaseInfo = () => {
 
 const GotoSchoolInfo = () => {
   const BB = document.getElementById('BB')
-  const CC = document.getElementById('CC')
+  // const CC = document.getElementById('CC')
   const DD = document.getElementById('DD')
 
   BB.classList.remove('ChoosesBe')
-  CC.classList.add('ChoosesBe')
+  // CC.classList.add('ChoosesBe')
   DD.classList.remove('ChoosesBe')
 
   localStorage.setItem('Person', '2')
@@ -53,11 +53,11 @@ const GotoSchoolInfo = () => {
 
 const GotoTrain = () => {
   const BB = document.getElementById('BB')
-  const CC = document.getElementById('CC')
+  // const CC = document.getElementById('CC')
   const DD = document.getElementById('DD')
 
   BB.classList.remove('ChoosesBe')
-  CC.classList.remove('ChoosesBe')
+  // CC.classList.remove('ChoosesBe')
   DD.classList.add('ChoosesBe')
 
   localStorage.setItem('Person', '3')
@@ -82,9 +82,9 @@ const GotoTrain = () => {
             <div id='BB' class='Chooses ChoosesBe' @click='GotoBaseInfo'><span class='left'></span>
               <div>个人信息</div>
             </div>
-            <div id='CC' class='Chooses' @click='GotoSchoolInfo'><span class='left'></span>
-              <div>学籍信息</div>
-            </div>
+<!--            <div id='CC' class='Chooses' @click='GotoSchoolInfo'><span class='left'></span>-->
+<!--              <div>学籍信息</div>-->
+<!--            </div>-->
             <div id='DD' class='Chooses' @click='GotoTrain'><span class='left'></span>
               <div>培养方案</div>
             </div>

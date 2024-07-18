@@ -1,31 +1,36 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import router from '@/router'
+
+const GotoHomeClassVideo = () => {
+  router.push('/student/study/learncenter/videoview')
+}
 const value = ref('Option1')
 const handleClear = () => {
   // 清除时自动选择第一个选项
-  value.value = options[0].value;
-};
+  value.value = options[0].value
+}
 const options = [
   {
     value: 'Option1',
-    label: 'PYTHON',
+    label: 'PYTHON'
   },
   {
     value: 'Option2',
-    label: 'JAVA',
+    label: 'JAVA'
   },
   {
     value: 'Option3',
-    label: 'C++',
+    label: 'C++'
   },
   {
     value: 'Option4',
-    label: 'GOLANG',
+    label: 'GOLANG'
   },
   {
     value: 'Option5',
-    label: 'Option5',
-  },
+    label: 'Option5'
+  }
 ]
 const dialogVisible = ref(false)
 
@@ -33,28 +38,22 @@ let NN = '1'
 
 onMounted(() => {
   const SaveNNs = localStorage.getItem('saveNN')
-  const E1 = document.querySelector('.ttt1');
-  const E2 = document.querySelector('.ttt2');
-  const E3 = document.querySelector('.ttt3');
-  const E4 = document.querySelector('.ttt4');
-  const Element1 = document.querySelector('.one111');
-  const Element2 = document.querySelector('.tow222');
-  const Element3 = document.querySelector('.three333');
-  const Element4 = document.querySelector('.four444');
+  const E1 = document.querySelector('.ttt1')
+  const E3 = document.querySelector('.ttt3')
+  const E4 = document.querySelector('.ttt4')
+  const Element1 = document.querySelector('.one111')
+  const Element3 = document.querySelector('.three333')
+  const Element4 = document.querySelector('.four444')
   E1.classList.remove('none')
   E1.classList.remove('nong')
-  E2.classList.remove('none')
-  E2.classList.remove('nong')
   E3.classList.remove('none')
   E3.classList.remove('nong')
   E4.classList.remove('none')
   E4.classList.remove('nong')
   E1.classList.add('none')
-  E2.classList.add('none')
   E3.classList.add('none')
   E4.classList.add('none')
   Element1.classList.remove('beCC')
-  Element2.classList.remove('beCC')
   Element3.classList.remove('beCC')
   Element4.classList.remove('beCC')
   ch1.value = false
@@ -70,10 +69,6 @@ onMounted(() => {
   }
 
   if (SaveNNs === '2') {
-    Element2.classList.add('beCC')
-    Element2.classList.add('tow222')
-    E2.classList.remove('none')
-    E2.classList.add('nong')
     ch2.value = true
   }
 
@@ -104,51 +99,40 @@ const ChChange1 = () => {
   ch2.value = false
   ch3.value = false
   ch4.value = false
-  const E1 = document.querySelector('.ttt1');
-  const E2 = document.querySelector('.ttt2');
-  const E3 = document.querySelector('.ttt3');
-  const E4 = document.querySelector('.ttt4');
-  const Element1 = document.querySelector('.one111');
-  const Element2 = document.querySelector('.tow222');
-  const Element3 = document.querySelector('.three333');
-  const Element4 = document.querySelector('.four444');
+  const E1 = document.querySelector('.ttt1')
+  const E3 = document.querySelector('.ttt3')
+  const E4 = document.querySelector('.ttt4')
+  const Element1 = document.querySelector('.one111')
+  const Element3 = document.querySelector('.three333')
+  const Element4 = document.querySelector('.four444')
   E1.classList.add('none')
-  E2.classList.add('none')
   E3.classList.add('none')
   E4.classList.add('none')
   E1.classList.remove('none')
   E1.classList.add('nong')
-  Element1.classList.add('beCC');
-  Element2.classList.remove('beCC');
-  Element3.classList.remove('beCC');
-  Element4.classList.remove('beCC');
+  Element1.classList.add('beCC')
+  Element3.classList.remove('beCC')
+  Element4.classList.remove('beCC')
   NN = '1'
   localStorage.setItem('saveNN', NN)
 }
 
-const ChChange2= () => {
+const ChChange2 = () => {
   ch1.value = false
-  ch2.value = true
   ch3.value = false
   ch4.value = false
-  const E1 = document.querySelector('.ttt1');
-  const E2 = document.querySelector('.ttt2');
-  const E3 = document.querySelector('.ttt3');
-  const E4 = document.querySelector('.ttt4');
-  const Element1 = document.querySelector('.one111');
-  const Element2 = document.querySelector('.tow222');
-  const Element3 = document.querySelector('.three333');
-  const Element4 = document.querySelector('.four444');
+  const E1 = document.querySelector('.ttt1')
+  const E3 = document.querySelector('.ttt3')
+  const E4 = document.querySelector('.ttt4')
+  const Element1 = document.querySelector('.one111')
+  const Element3 = document.querySelector('.three333')
+  const Element4 = document.querySelector('.four444')
   E1.classList.add('none')
-  E2.classList.add('none')
   E3.classList.add('none')
   E4.classList.add('none')
-  E2.classList.remove('none')
-  E2.classList.add('nong')
-  Element2.classList.add('beCC');
-  Element1.classList.remove('beCC');
-  Element3.classList.remove('beCC');
-  Element4.classList.remove('beCC');
+  Element1.classList.remove('beCC')
+  Element3.classList.remove('beCC')
+  Element4.classList.remove('beCC')
   NN = '2'
   localStorage.setItem('saveNN', NN)
 }
@@ -158,24 +142,20 @@ const ChChange3 = () => {
   ch2.value = false
   ch3.value = true
   ch4.value = false
-  const E1 = document.querySelector('.ttt1');
-  const E2 = document.querySelector('.ttt2');
-  const E3 = document.querySelector('.ttt3');
-  const E4 = document.querySelector('.ttt4');
-  const Element1 = document.querySelector('.one111');
-  const Element2 = document.querySelector('.tow222');
-  const Element3 = document.querySelector('.three333');
-  const Element4 = document.querySelector('.four444');
+  const E1 = document.querySelector('.ttt1')
+  const E3 = document.querySelector('.ttt3')
+  const E4 = document.querySelector('.ttt4')
+  const Element1 = document.querySelector('.one111')
+  const Element3 = document.querySelector('.three333')
+  const Element4 = document.querySelector('.four444')
   E1.classList.add('none')
-  E2.classList.add('none')
   E3.classList.add('none')
   E4.classList.add('none')
   E3.classList.remove('none')
   E3.classList.add('nong')
-  Element3.classList.add('beCC');
-  Element2.classList.remove('beCC');
-  Element1.classList.remove('beCC');
-  Element4.classList.remove('beCC');
+  Element3.classList.add('beCC')
+  Element1.classList.remove('beCC')
+  Element4.classList.remove('beCC')
   NN = '3'
   localStorage.setItem('saveNN', NN)
 }
@@ -185,24 +165,20 @@ const ChChange4 = () => {
   ch2.value = false
   ch3.value = false
   ch4.value = true
-  const E1 = document.querySelector('.ttt1');
-  const E2 = document.querySelector('.ttt2');
-  const E3 = document.querySelector('.ttt3');
-  const E4 = document.querySelector('.ttt4');
-  const Element1 = document.querySelector('.one111');
-  const Element2 = document.querySelector('.tow222');
-  const Element3 = document.querySelector('.three333');
-  const Element4 = document.querySelector('.four444');
+  const E1 = document.querySelector('.ttt1')
+  const E3 = document.querySelector('.ttt3')
+  const E4 = document.querySelector('.ttt4')
+  const Element1 = document.querySelector('.one111')
+  const Element3 = document.querySelector('.three333')
+  const Element4 = document.querySelector('.four444')
   E1.classList.add('none')
-  E2.classList.add('none')
   E3.classList.add('none')
   E4.classList.add('none')
   E4.classList.remove('none')
   E4.classList.add('nong')
-  Element4.classList.add('beCC');
-  Element2.classList.remove('beCC');
-  Element3.classList.remove('beCC');
-  Element1.classList.remove('beCC');
+  Element4.classList.add('beCC')
+  Element3.classList.remove('beCC')
+  Element1.classList.remove('beCC')
   NN = '4'
   localStorage.setItem('saveNN', NN)
 }
@@ -211,9 +187,9 @@ const ChChange4 = () => {
 <template>
   <div class='On-Body'>
     <el-dialog
-      v-model="dialogVisible"
-      title="课程介绍"
-      width="900"
+      v-model='dialogVisible'
+      title='课程介绍'
+      width='900'
       style='margin-top: 25vh'
     >
       <div style='height: 20vh; font-size: 0.9vw; margin-top: 2vh; line-height: 4vh; letter-spacing: 2.5px;'>
@@ -223,9 +199,9 @@ const ChChange4 = () => {
         我们的目标是通过理论与实践相结合的方式，使学生能够掌握编写高效、清晰且易于维护的Python代码。
       </div>
       <template #footer>
-        <div class="dialog-footer">
-          <el-button @click="dialogVisible = false">关闭</el-button>
-          <el-button type="primary" @click="dialogVisible = false">
+        <div class='dialog-footer'>
+          <el-button @click='dialogVisible = false'>关闭</el-button>
+          <el-button type='primary' @click='dialogVisible = false'>
             确定
           </el-button>
         </div>
@@ -234,7 +210,7 @@ const ChChange4 = () => {
     <div class='MainBody'>
       <div class='on-title'>
         <div class='img'>
-          <img src='/src/assets/bg1.png' alt=''>
+          <img src='/src/assets/StudentInfo/img(1).png' alt=''>
           <div class='Words'>Python语言基础</div>
         </div>
       </div>
@@ -245,17 +221,17 @@ const ChChange4 = () => {
             <div class='right-top'>课程介绍</div>
             <div class='select'>
               <el-select
-                v-model="value"
+                v-model='value'
                 clearable
-                placeholder="Select"
-                style="width: 240px"
-                @clear="handleClear"
+                placeholder='Select'
+                style='width: 240px'
+                @clear='handleClear'
               >
                 <el-option
-                  v-for="item in options"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value"
+                  v-for='item in options'
+                  :key='item.value'
+                  :label='item.label'
+                  :value='item.value'
                 />
               </el-select>
             </div>
@@ -265,20 +241,60 @@ const ChChange4 = () => {
               在这一系列课程中，我们将从Python语言的基础语法开始，逐步深入到数据结构、控制流、函数、模块和面向对象编程等高级概念。
               我们的目标是通过理论与实践相结合的方式，使学生能够掌握编写高效、清晰且易于维护的Python代码。
             </div>
-            <el-button plain @click="dialogVisible = true" style='position:absolute; right: 0; border: none; color: #0e87ff; font-size: 0.9vw;'>
-             查看更多 》
+            <el-button plain @click='dialogVisible = true'
+                       style='position:absolute; right: 0; border: none; color: #ff7200; font-size: 0.9vw;'>
+              查看更多 》
             </el-button>
             <div class='class-intor'>
-              <svg t="1715769903297" class="icon" viewBox="0 0 1228 1024" xmlns="http://www.w3.org/2000/svg" style='position:absolute; width: 1.4vw;'><path d="M249.582933 882.2784c-22.528 0-41.984-20.0704-41.984-43.485867V470.6304c0-23.415467 19.387733-43.485867 41.984-43.485867s41.984 20.0704 41.984 43.485867v368.162133c0 23.415467-19.387733 43.485867-41.984 43.485867z" fill="#707070" p-id="4329"></path><path d="M604.706133 1020.586667c-132.573867 0-313.685333-66.9696-371.848533-127.317334-16.1792-16.725333-25.941333-36.864-25.941333-53.589333 0-23.483733 19.456-43.6224 42.052266-43.6224 19.456 0 35.566933 13.448533 42.052267 33.518933 25.941333 33.518933 197.290667 107.246933 323.3792 103.901867 129.365333-3.345067 297.506133-73.728 323.3792-103.901867 3.208533-20.0704 22.596267-33.450667 42.052267-33.450666 22.596267 0 41.984 20.0704 41.984 43.554133 0 97.143467-284.535467 177.629867-407.415467 184.32-3.208533-3.413333-6.485333-3.413333-9.693867-3.413333zM614.4 712.362667c-6.485333 0-12.970667 0-19.387733-3.413334L22.664533 393.898667C6.485333 387.140267 0 373.76 0 357.034667c0-16.725333 9.693867-30.173867 22.664533-40.277334L595.012267 5.12a39.936 39.936 0 0 1 38.775466 0l572.347734 311.7056c12.970667 6.690133 22.664533 23.483733 22.664533 40.277333 0 16.725333-9.693867 30.1056-22.664533 40.1408l-572.347734 311.773867c-6.485333 0-12.970667 3.345067-19.387733 3.345067zM132.573867 356.9664L614.4 618.496l481.826133-261.461333L614.4 95.573333 132.573867 357.034667z" fill="#707070" p-id="4330"></path><path d="M979.217067 882.2784c-22.596267 0-41.984-20.0704-41.984-43.485867V470.6304c0-23.415467 19.387733-43.485867 41.984-43.485867 22.528 0 41.984 20.0704 41.984 43.485867v368.162133c0 23.415467-19.387733 43.485867-41.984 43.485867z m206.574933-13.380267c-22.528 0-41.915733-20.0704-41.915733-43.485866V356.829867c0-23.415467 19.319467-43.485867 41.915733-43.485867s41.984 20.0704 41.984 43.485867v468.5824c0 23.415467-16.110933 43.485867-41.984 43.485866z" fill="#707070" p-id="4331"></path></svg>
+              <svg t='1715769903297' class='icon' viewBox='0 0 1228 1024' xmlns='http://www.w3.org/2000/svg'
+                   style='position:absolute; width: 1.4vw;'>
+                <path
+                  d='M249.582933 882.2784c-22.528 0-41.984-20.0704-41.984-43.485867V470.6304c0-23.415467 19.387733-43.485867 41.984-43.485867s41.984 20.0704 41.984 43.485867v368.162133c0 23.415467-19.387733 43.485867-41.984 43.485867z'
+                  fill='#707070' p-id='4329'></path>
+                <path
+                  d='M604.706133 1020.586667c-132.573867 0-313.685333-66.9696-371.848533-127.317334-16.1792-16.725333-25.941333-36.864-25.941333-53.589333 0-23.483733 19.456-43.6224 42.052266-43.6224 19.456 0 35.566933 13.448533 42.052267 33.518933 25.941333 33.518933 197.290667 107.246933 323.3792 103.901867 129.365333-3.345067 297.506133-73.728 323.3792-103.901867 3.208533-20.0704 22.596267-33.450667 42.052267-33.450666 22.596267 0 41.984 20.0704 41.984 43.554133 0 97.143467-284.535467 177.629867-407.415467 184.32-3.208533-3.413333-6.485333-3.413333-9.693867-3.413333zM614.4 712.362667c-6.485333 0-12.970667 0-19.387733-3.413334L22.664533 393.898667C6.485333 387.140267 0 373.76 0 357.034667c0-16.725333 9.693867-30.173867 22.664533-40.277334L595.012267 5.12a39.936 39.936 0 0 1 38.775466 0l572.347734 311.7056c12.970667 6.690133 22.664533 23.483733 22.664533 40.277333 0 16.725333-9.693867 30.1056-22.664533 40.1408l-572.347734 311.773867c-6.485333 0-12.970667 3.345067-19.387733 3.345067zM132.573867 356.9664L614.4 618.496l481.826133-261.461333L614.4 95.573333 132.573867 357.034667z'
+                  fill='#707070' p-id='4330'></path>
+                <path
+                  d='M979.217067 882.2784c-22.596267 0-41.984-20.0704-41.984-43.485867V470.6304c0-23.415467 19.387733-43.485867 41.984-43.485867 22.528 0 41.984 20.0704 41.984 43.485867v368.162133c0 23.415467-19.387733 43.485867-41.984 43.485867z m206.574933-13.380267c-22.528 0-41.915733-20.0704-41.915733-43.485866V356.829867c0-23.415467 19.319467-43.485867 41.915733-43.485867s41.984 20.0704 41.984 43.485867v468.5824c0 23.415467-16.110933 43.485867-41.984 43.485866z'
+                  fill='#707070' p-id='4331'></path>
+              </svg>
               <div class='point'>学分 <span>1.0</span></div>
-              <svg t="1715770162426" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4324" style='position:absolute; width: 1.4vw; margin-left: 24%; margin-top: -0.1vh'><path d="M529.088 149.312a341.312 341.312 0 1 1 0 682.688 341.312 341.312 0 0 1 0-682.688m0-85.312a426.688 426.688 0 1 0 0 853.312A426.688 426.688 0 0 0 529.088 64z" fill="#707070" p-id="4325"></path><path d="M529.088 298.688a42.688 42.688 0 0 0-42.688 42.624v213.376a42.688 42.688 0 0 0 85.312 0V341.312a42.688 42.688 0 0 0-42.624-42.624z" fill="#707070" p-id="4326"></path><path d="M742.4 512H529.088a42.688 42.688 0 1 0 0 85.312H742.4A42.688 42.688 0 0 0 742.4 512z" fill="#707070" p-id="4327"></path></svg>
+              <svg t='1715770162426' class='icon' viewBox='0 0 1024 1024' version='1.1'
+                   xmlns='http://www.w3.org/2000/svg' p-id='4324'
+                   style='position:absolute; width: 1.4vw; margin-left: 24%; margin-top: -0.1vh'>
+                <path
+                  d='M529.088 149.312a341.312 341.312 0 1 1 0 682.688 341.312 341.312 0 0 1 0-682.688m0-85.312a426.688 426.688 0 1 0 0 853.312A426.688 426.688 0 0 0 529.088 64z'
+                  fill='#707070' p-id='4325'></path>
+                <path
+                  d='M529.088 298.688a42.688 42.688 0 0 0-42.688 42.624v213.376a42.688 42.688 0 0 0 85.312 0V341.312a42.688 42.688 0 0 0-42.624-42.624z'
+                  fill='#707070' p-id='4326'></path>
+                <path d='M742.4 512H529.088a42.688 42.688 0 1 0 0 85.312H742.4A42.688 42.688 0 0 0 742.4 512z'
+                      fill='#707070' p-id='4327'></path>
+              </svg>
               <div class='time'>学时 <span>21.0</span></div>
             </div>
             <div class='teacher'>
-              <svg t="1715770265388" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4398" style='position:absolute; margin-top: -0.2vh;width: 1.4vw; margin-left: -7%'><path d="M272.128 538.752l207.36 409.472H204.736c-31.488-1.152-57.728-12.224-78.72-33.28s-32.064-47.232-33.28-78.72v-185.472c1.152-31.488 12.224-57.728 33.28-78.72s47.232-32.064 78.72-33.28h67.392z m88.768-414.784c38.784-39.104 87.616-59.52 146.56-61.248 58.944 1.728 107.776 22.144 146.56 61.248 38.784 39.104 59.072 87.808 60.8 146.112-0.576 37.952-9.92 72.64-28.032 104.128s-43.456 56.576-76.096 75.264c-32.704 18.688-67.072 28.032-103.232 28.032-36.16 0-70.592-9.344-103.232-28.032-32.704-18.688-58.048-43.776-76.096-75.264-18.112-31.488-27.456-66.176-28.032-104.128 1.728-58.304 22.016-107.008 60.8-146.112z m241.984 532.928l-95.36 201.28-95.36-201.28 95.36-83.968 95.36 83.968z m286.976-84.928c21.568 20.992 34.112 47.232 37.632 78.72v185.472c-0.576 31.488-11.52 57.728-32.832 78.72-21.312 20.992-47.68 32.064-79.168 33.28H540.736l202.112-409.472h67.392c31.488 1.216 58.048 12.288 79.616 33.28z" p-id="4399" fill="#707070"></path></svg>
-              教师： <span>姜大玮</span></div>
+              <svg t='1715770265388' class='icon' viewBox='0 0 1024 1024' version='1.1'
+                   xmlns='http://www.w3.org/2000/svg' p-id='4398'
+                   style='position:absolute; margin-top: -0.2vh;width: 1.4vw; margin-left: -7%'>
+                <path
+                  d='M272.128 538.752l207.36 409.472H204.736c-31.488-1.152-57.728-12.224-78.72-33.28s-32.064-47.232-33.28-78.72v-185.472c1.152-31.488 12.224-57.728 33.28-78.72s47.232-32.064 78.72-33.28h67.392z m88.768-414.784c38.784-39.104 87.616-59.52 146.56-61.248 58.944 1.728 107.776 22.144 146.56 61.248 38.784 39.104 59.072 87.808 60.8 146.112-0.576 37.952-9.92 72.64-28.032 104.128s-43.456 56.576-76.096 75.264c-32.704 18.688-67.072 28.032-103.232 28.032-36.16 0-70.592-9.344-103.232-28.032-32.704-18.688-58.048-43.776-76.096-75.264-18.112-31.488-27.456-66.176-28.032-104.128 1.728-58.304 22.016-107.008 60.8-146.112z m241.984 532.928l-95.36 201.28-95.36-201.28 95.36-83.968 95.36 83.968z m286.976-84.928c21.568 20.992 34.112 47.232 37.632 78.72v185.472c-0.576 31.488-11.52 57.728-32.832 78.72-21.312 20.992-47.68 32.064-79.168 33.28H540.736l202.112-409.472h67.392c31.488 1.216 58.048 12.288 79.616 33.28z'
+                  p-id='4399' fill='#707070'></path>
+              </svg>
+              教师： <span>朱大键</span></div>
             <div class='many'>
-              <svg t="1715770502589" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4373" style='position:absolute;margin-left: -7%; width: 1.4vw; margin-top: -0.2vh'><path d="M264.9 390.1h127.2v127.2H264.9V390.1z m184.7 0h127.2v127.2H449.6V390.1z m184.6 0h127.2v127.2H634.2V390.1z m6.2 44.7M264.9 597.8h127.2V725H264.9V597.8z m184.7 0h127.2V725H449.6V597.8z m184.6 0h127.2V725H634.2V597.8z m6.2 0" fill="#707070" p-id="4374"></path><path d="M825 201v626.1H198.8V201H825m10-70H188.8c-33 0-60 27-60 60v646.1c0 33 27 60 60 60H835c33 0 60-27 60-60V191c0-33-27-60-60-60z" fill="#707070" p-id="4375"></path><path d="M192.2 201.4h639.2v74H192.2z" fill="#707070" p-id="4376"></path><path d="M806.4 226.4v24H217.2v-24h589.2m50-50H167.2v124h689.2v-124z" fill="#707070" p-id="4377"></path></svg>
+              <svg t='1715770502589' class='icon' viewBox='0 0 1024 1024' version='1.1'
+                   xmlns='http://www.w3.org/2000/svg' p-id='4373'
+                   style='position:absolute;margin-left: -7%; width: 1.4vw; margin-top: -0.2vh'>
+                <path
+                  d='M264.9 390.1h127.2v127.2H264.9V390.1z m184.7 0h127.2v127.2H449.6V390.1z m184.6 0h127.2v127.2H634.2V390.1z m6.2 44.7M264.9 597.8h127.2V725H264.9V597.8z m184.7 0h127.2V725H449.6V597.8z m184.6 0h127.2V725H634.2V597.8z m6.2 0'
+                  fill='#707070' p-id='4374'></path>
+                <path
+                  d='M825 201v626.1H198.8V201H825m10-70H188.8c-33 0-60 27-60 60v646.1c0 33 27 60 60 60H835c33 0 60-27 60-60V191c0-33-27-60-60-60z'
+                  fill='#707070' p-id='4375'></path>
+                <path d='M192.2 201.4h639.2v74H192.2z' fill='#707070' p-id='4376'></path>
+                <path d='M806.4 226.4v24H217.2v-24h589.2m50-50H167.2v124h689.2v-124z' fill='#707070' p-id='4377'></path>
+              </svg>
               课程数：
               <div class='zhang'>章数：7章</div>
               <div class='jie'>节数：44节</div>
@@ -291,7 +307,10 @@ const ChChange4 = () => {
               <div class='word'>开课6学期</div>
               <div class='when' style='margin-left: -15%'>
                 2024春夏
-                <div style='position:absolute; width: 33%; border-radius: 1vw; color: #11d911;height: 2.5vh; line-height: 2.5vh;background: rgba(114,112,112,0.1); margin-top: -2.2vh; margin-left: 8vw'>已上线</div>
+                <div
+                  style='position:absolute; width: 33%; border-radius: 1vw; color: #11d911;height: 2.5vh; line-height: 2.5vh;background: rgba(114,112,112,0.1); margin-top: -2.2vh; margin-left: 8vw'>
+                  已上线
+                </div>
               </div>
               <div class='updatetime'>更新时间：2024-04-11</div>
             </div>
@@ -320,22 +339,42 @@ const ChChange4 = () => {
             <div class='tow-left'>
               <div class='ChooseButton beCC one111' @click='ChChange1'>
                 <div class='none ttt1'></div>
-                <svg t="1715775957011" class="icon" viewBox="0 0 1297 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4328" ><path d="M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z" fill="#707070" p-id="4329"></path></svg>
+                <svg t='1715775957011' class='icon' viewBox='0 0 1297 1024' version='1.1'
+                     xmlns='http://www.w3.org/2000/svg' p-id='4328'>
+                  <path
+                    d='M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z'
+                    fill='#707070' p-id='4329'></path>
+                </svg>
                 教学团队
               </div>
-              <div class='ChooseButton tow222' @click='ChChange2'>
-                <div class='none ttt2'></div>
-                <svg t="1715775957011" class="icon" viewBox="0 0 1297 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4328" ><path d="M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z" fill="#707070" p-id="4329"></path></svg>
-                课程设计
-              </div>
+              <!--              <div class='ChooseButton tow222' @click='ChChange2'>-->
+              <!--                <div class='none ttt2'></div>-->
+              <!--                <svg t='1715775957011' class='icon' viewBox='0 0 1297 1024' version='1.1'-->
+              <!--                     xmlns='http://www.w3.org/2000/svg' p-id='4328'>-->
+              <!--                  <path-->
+              <!--                    d='M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z'-->
+              <!--                    fill='#707070' p-id='4329'></path>-->
+              <!--                </svg>-->
+              <!--                课程设计-->
+              <!--              </div>-->
               <div class='ChooseButton three333' @click='ChChange3'>
                 <div class='none ttt3'></div>
-                <svg t="1715775957011" class="icon" viewBox="0 0 1297 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4328" ><path d="M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z" fill="#707070" p-id="4329"></path></svg>
+                <svg t='1715775957011' class='icon' viewBox='0 0 1297 1024' version='1.1'
+                     xmlns='http://www.w3.org/2000/svg' p-id='4328'>
+                  <path
+                    d='M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z'
+                    fill='#707070' p-id='4329'></path>
+                </svg>
                 在线课程
               </div>
               <div class='ChooseButton four444' @click='ChChange4'>
                 <div class='none ttt4'></div>
-                <svg t="1715775957011" class="icon" viewBox="0 0 1297 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4328" ><path d="M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z" fill="#707070" p-id="4329"></path></svg>
+                <svg t='1715775957011' class='icon' viewBox='0 0 1297 1024' version='1.1'
+                     xmlns='http://www.w3.org/2000/svg' p-id='4328'>
+                  <path
+                    d='M1197.018513 720.222852c22.936881 12.492409 38.705987 38.228136 38.705987 67.991469 0 41.91442-31.265154 75.910155-69.902876 75.910155-38.637723 0-69.971141-33.995735-69.971141-75.910155 0-27.988456 13.994228-52.427157 34.746644-65.602211v-336.544121l-474.77979 170.661319a28.398044 28.398044 0 0 1-24.780024 0L23.346488 318.008254C9.693582 311.591389 0.6144 295.276167 0.6144 276.981273c0-18.294893 9.079182-34.67838 22.732088-41.095245L631.037313 2.83093a29.012424 29.012424 0 0 1 24.780024 0l619.159266 233.055098c13.652906 6.416866 22.663823 22.800352 22.663824 41.095245 0 18.226629-9.079182 34.610116-22.732088 41.026981l-77.889826 36.794581v365.420017zM616.36044 629.772352L239.403718 482.116179s-1.433555 30.787302-1.433555 38.091606c0 54.816416 0.477852 139.396166 1.36529 253.602721 0 220.016573 281.249854 250.189494 367.263159 250.189494h86.149834c64.441714 0 354.770751-30.172921 354.770751-250.189494-1.570084-188.137038-1.570084-282.137293 0-282.137293s-124.104911 46.010292-377.093251 138.099139a58.297907 58.297907 0 0 1-26.964489 6.758189 58.570965 58.570965 0 0 1-27.032753-6.826453z'
+                    fill='#707070' p-id='4329'></path>
+                </svg>
                 考核标准
               </div>
             </div>
@@ -344,7 +383,7 @@ const ChChange4 = () => {
                 <div class='teacherCard'>
                   <div class='CardTitle'>
                     <div class='leftTitle'>
-                      <img src='/src/assets/p.png' alt=''/>
+                      <img src='/src/assets/p.png' alt='' />
                     </div>
                     <div class='rightTitle'>
                       <div class='peopleName'>朱大键 · 熬夜大学</div>
@@ -357,6 +396,157 @@ const ChChange4 = () => {
                   </div>
                 </div>
               </div>
+
+              <div class='BigBody' v-if='ch4'>
+                <p class='questionanswer-num-p'>考核标准<span
+                  class='hintnotes-span'>（该考核标准为课程统一标准，选课方可自定义，请在学堂内查看）</span>
+                </p>
+                <div class='total-score-wrap'>总分<span>100</span>分
+                </div>
+                <svg version='1.1' class='highcharts-root'
+                     style='font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;'
+                     xmlns='http://www.w3.org/2000/svg' width='530' height='300' viewBox='0 0 530 300'>
+                  <desc>Created with Highcharts 6.1.4</desc>
+                  <defs>
+                    <clipPath id='highcharts-quuqwf2-1'>
+                      <rect x='0' y='0' width='530' height='220' fill='none'></rect>
+                    </clipPath>
+                  </defs>
+                  <rect fill='#ffffff' class='highcharts-background' x='0' y='0' width='530' height='300' rx='0'
+                        ry='0'></rect>
+                  <rect fill='none' class='highcharts-plot-background' x='0' y='40' width='530' height='220'></rect>
+                  <rect fill='none' class='highcharts-plot-border' data-z-index='1' x='0' y='40' width='530'
+                        height='220'></rect>
+                  <g class='highcharts-series-group' data-z-index='3'>
+                    <g data-z-index='0.1' class='highcharts-series highcharts-series-0 highcharts-pie-series '
+                       transform='translate(0,40) scale(1 1)'>
+                      <path fill='#269BFF'
+                            d='M 264.9858447123432 20.000001441526408 A 69.5 69.5 0 0 1 331.1232806346651 110.90004107728132 L 317.89862450773205 106.62003286182505 A 55.6 55.6 0 0 0 264.98867576987453 33.900001153221126 Z'
+                            transform='translate(0,0)' stroke='#ffffff' stroke-width='1' stroke-linejoin='round'
+                            class='highcharts-point highcharts-color-0'></path>
+                      <path fill='#5BEEFC'
+                            d='M 331.10184753551687 110.96615364687578 A 69.5 69.5 0 0 1 305.9341219659052 145.66625017642173 L 297.74729757272416 134.4330001411374 A 55.6 55.6 0 0 0 317.88147802841354 106.67292291750063 Z'
+                            transform='translate(0,0)' stroke='#ffffff' stroke-width='1' stroke-linejoin='round'
+                            class='highcharts-point highcharts-color-1'></path>
+                      <path fill='#997CFC'
+                            d='M 305.87793525803056 145.70715620844254 A 69.5 69.5 0 0 1 224.21163507759178 145.77218928526293 L 232.36930806207343 134.51775142821032 A 55.6 55.6 0 0 0 297.70234820642446 134.46572496675404 Z'
+                            transform='translate(0,0)' stroke='#ffffff' stroke-width='1' stroke-linejoin='round'
+                            class='highcharts-point highcharts-color-2'></path>
+                      <path fill='#FFCF61'
+                            d='M 224.15538329186597 145.73137279104628 A 69.5 69.5 0 0 1 264.903465894304 20.00006704200041 L 264.9227727154432 33.90005363360032 A 55.6 55.6 0 0 0 232.3243066334928 134.48509823283703 Z'
+                            transform='translate(0,0)' stroke='#ffffff' stroke-width='1' stroke-linejoin='round'
+                            class='highcharts-point highcharts-color-3'></path>
+                    </g>
+                    <g data-z-index='0.1' class='highcharts-markers highcharts-series-0 highcharts-pie-series '
+                       transform='translate(0,40) scale(1 1)'></g>
+                  </g>
+                  <text x='265' text-anchor='middle' class='highcharts-subtitle' data-z-index='4'
+                        style='color:#666666;fill:#666666;' y='54'></text>
+                  <text x='265' text-anchor='middle' class='highcharts-title' data-z-index='4'
+                        style='color:#333333;font-size:18px;fill:#333333;' y='125'>
+                    <tspan style='font-size:14px;'>-课程总分-</tspan>
+                    <tspan style='font-size:24px;' x='265' dy='29'>100</tspan>
+                  </text>
+                  <g data-z-index='6' class='highcharts-data-labels highcharts-series-0 highcharts-pie-series '
+                     transform='translate(0,40) scale(1 1)' opacity='1'>
+                    <path fill='none' class='highcharts-data-label-connector highcharts-color-0' stroke='#269BFF'
+                          stroke-width='1'
+                          d='M 350.4971909403073 31.015367396898924 C 345.4971909403073 31.015367396898924 330.93488504155823 41.59550193816344 326.08078307530855 45.12221345191828 L 321.22668110905886 48.64892496567312'></path>
+                    <path fill='none' class='highcharts-data-label-connector highcharts-color-1' stroke='#5BEEFC'
+                          stroke-width='1'
+                          d='M 350.4971909403073 147.98463260310106 C 345.4971909403073 147.98463260310106 330.93488504155823 137.40449806183653 326.08078307530855 133.8777865480817 L 321.22668110905886 130.35107503432687'></path>
+                    <path fill='none' class='highcharts-data-label-connector highcharts-color-2' stroke='#997CFC'
+                          stroke-width='1' d='M 260 189 C 265 189 265 171 265 165 L 265 159'></path>
+                    <path fill='none' class='highcharts-data-label-connector highcharts-color-3' stroke='#FFCF61'
+                          stroke-width='1'
+                          d='M 165.3698766286322 58.75280905969275 C 170.3698766286322 58.75280905969275 187.48889392194496 64.3151149584418 193.1952330197159 66.16921692469148 L 198.9015721174868 68.02331889094117'></path>
+                    <g class='highcharts-label highcharts-data-label highcharts-data-label-color-0 ' data-z-index='1'
+                       transform='translate(355,21)'>
+                      <text x='5' data-z-index='1'
+                            style='font-size:11px;font-weight:bold;color:#777777;cursor:pointer;fill:#777777;' y='16'>
+                        <tspan style='font-weight: bold;' x='5' y='16' class='highcharts-text-outline' fill='#FFFFFF'
+                               stroke='#FFFFFF' stroke-width='2px' stroke-linejoin='round'>平时成绩
+                        </tspan>
+                        <tspan style='font-size: 24px; fill: rgb(38, 155, 255);' x='5' dy='29'
+                               class='highcharts-text-outline' fill='#FFFFFF' stroke='#FFFFFF' stroke-width='2px'
+                               stroke-linejoin='round'>30%
+                        </tspan>
+                        <tspan style='font-weight:bold' x='5' y='16'>平时成绩</tspan>
+                        <tspan style='font-size:24px;fill:#269BFF' x='5' dy='29'>30%</tspan>
+                      </text>
+                    </g>
+                    <g class='highcharts-label highcharts-data-label highcharts-data-label-color-1 ' data-z-index='1'
+                       transform='translate(355,138)'>
+                      <text x='5' data-z-index='1'
+                            style='font-size:11px;font-weight:bold;color:#777777;cursor:pointer;fill:#777777;' y='16'>
+                        <tspan style='font-weight: bold;' x='5' y='16' class='highcharts-text-outline' fill='#FFFFFF'
+                               stroke='#FFFFFF' stroke-width='2px' stroke-linejoin='round'>章测试成绩
+                        </tspan>
+                        <tspan style='font-size: 24px; fill: rgb(91, 238, 252);' x='5' dy='29'
+                               class='highcharts-text-outline' fill='#FFFFFF' stroke='#FFFFFF' stroke-width='2px'
+                               stroke-linejoin='round'>10%
+                        </tspan>
+                        <tspan style='font-weight:bold' x='5' y='16'>章测试成绩</tspan>
+                        <tspan style='font-size:24px;fill:#5BEEFC' x='5' dy='29'>10%</tspan>
+                      </text>
+                    </g>
+                    <g class='highcharts-label highcharts-data-label highcharts-data-label-color-2 ' data-z-index='1'
+                       transform='translate(188,179)'>
+                      <text x='5' data-z-index='1'
+                            style='font-size:11px;font-weight:bold;color:#777777;cursor:pointer;fill:#777777;' y='16'>
+                        <tspan style='font-weight: bold;' x='5' y='16' class='highcharts-text-outline' fill='#FFFFFF'
+                               stroke='#FFFFFF' stroke-width='2px' stroke-linejoin='round'>见面课成绩
+                        </tspan>
+                        <tspan style='font-size: 24px; fill: rgb(153, 124, 252);' x='5' dy='29'
+                               class='highcharts-text-outline' fill='#FFFFFF' stroke='#FFFFFF' stroke-width='2px'
+                               stroke-linejoin='round'>20%
+                        </tspan>
+                        <tspan style='font-weight:bold' x='5' y='16'>见面课成绩</tspan>
+                        <tspan style='font-size:24px;fill:#997CFC' x='5' dy='29'>20%</tspan>
+                      </text>
+                    </g>
+                    <g class='highcharts-label highcharts-data-label highcharts-data-label-color-3 ' data-z-index='1'
+                       transform='translate(82,49)'>
+                      <text x='5' data-z-index='1'
+                            style='font-size:11px;font-weight:bold;color:#777777;cursor:pointer;fill:#777777;' y='16'>
+                        <tspan style='font-weight: bold;' x='5' y='16' class='highcharts-text-outline' fill='#FFFFFF'
+                               stroke='#FFFFFF' stroke-width='2px' stroke-linejoin='round'>期末考试成绩
+                        </tspan>
+                        <tspan style='font-size: 24px; fill: rgb(255, 207, 97);' x='5' dy='29'
+                               class='highcharts-text-outline' fill='#FFFFFF' stroke='#FFFFFF' stroke-width='2px'
+                               stroke-linejoin='round'>40%
+                        </tspan>
+                        <tspan style='font-weight:bold' x='5' y='16'>期末考试成绩</tspan>
+                        <tspan style='font-size:24px;fill:#FFCF61' x='5' dy='29'>40%</tspan>
+                      </text>
+                    </g>
+                  </g>
+                  <g class='highcharts-legend' data-z-index='7'>
+                    <rect fill='none' class='highcharts-legend-box' rx='0' ry='0' x='0' y='0' width='8' height='8'
+                          visibility='hidden'></rect>
+                    <g data-z-index='1'>
+                      <g></g>
+                    </g>
+                  </g>
+                </svg>
+                <ul class='assessment-chares-ex fl'>
+                  <li><em class='charts-ex-icon icon-1'></em><label>平时成绩</label><span>30</span>分
+                  </li>
+                  <li><em class='charts-ex-icon icon-2'></em><label>章测试成绩</label><span>10</span>分
+                  </li>
+                  <li><em class='charts-ex-icon icon-3'></em><label>见面课成绩</label><span>20</span>分
+                  </li>
+                  <li><em class='charts-ex-icon icon-4'></em><label>期末考试成绩</label><span>40</span>分
+                  </li>
+                </ul>
+                <!--                <div class='DownList'>-->
+                <!--                  <p class='questionanswer-num-p'>考核标准<span-->
+                <!--                    class='hintnotes-span'>（该考核标准为课程统一标准，选课方可自定义，请在学堂内查看）</span>-->
+                <!--                  </p>-->
+                <!--                </div>-->
+              </div>
+
+
               <div class='BigBody' v-if='ch3'>
                 <div class='ClassTop'>
                   <div class='wordsShadow'></div>
@@ -364,29 +554,353 @@ const ChChange4 = () => {
                 </div>
                 <div class='classList'>
                   <div class='ListTitle'>
-                    <div class='words'>第一章 基础入门</div>
+                    <div class='words'>第一章 Python简介</div>
                   </div>
-                  <div class='ListLis'>
-                    <div class='icons' style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
-                    <div class='Word' style='position: absolute;'>第一节 Hello! World !!!</div>
+                  <div class='ListLis' @click='GotoHomeClassVideo'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第一节 Python的历史和特点</div>
                     <div class='people'>
-                      <svg t="1715790843461" viewBox="0 0 1035 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'><path d="M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z" p-id="4280" fill="#707070"></path><path d="M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z" p-id="4281" fill="#707070"></path></svg>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
                       <div class='peoplename'>朱大键</div>
                     </div>
                   </div>
                   <div class='ListLis'>
-                    <div class='icons' style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
-                    <div class='Word' style='position: absolute;'>第二节 FOR AND WHILE</div>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第二节 Python的安装和环境配置</div>
                     <div class='people'>
-                      <svg t="1715790843461" viewBox="0 0 1035 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'><path d="M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z" p-id="4280" fill="#707070"></path><path d="M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z" p-id="4281" fill="#707070"></path></svg>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
                       <div class='peoplename'>朱大键</div>
                     </div>
                   </div>
                   <div class='ListLis'>
-                    <div class='icons' style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
-                    <div class='Word' style='position: absolute;'>第三节 函数</div>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第三节 Python的基本语法和数据类型</div>
                     <div class='people'>
-                      <svg t="1715790843461" viewBox="0 0 1035 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'><path d="M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z" p-id="4280" fill="#707070"></path><path d="M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z" p-id="4281" fill="#707070"></path></svg>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                </div>
+                <div class='classList'>
+                  <div class='ListTitle'>
+                    <div class='words'>第二章 变量和数据类型</div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第一节 变量的定义和使用</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第二节 基本数据类型：整数、浮点数、字符串、布尔值</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第三节 数据类型的转换</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                </div>
+                <div class='classList'>
+                  <div class='ListTitle'>
+                    <div class='words'>第三章 运算符和表达式</div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第一节 算术运算符</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第二节 比较运算符</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第三节 逻辑运算符</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第四节 赋值运算符</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                </div>
+                <div class='classList'>
+                  <div class='ListTitle'>
+                    <div class='words'>第四章 控制结构</div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第一节 条件语句</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第二节 循环语句</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第三节 循环控制</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                </div>
+                <div class='classList'>
+                  <div class='ListTitle'>
+                    <div class='words'>第五章 函数</div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第一节 函数的定义和调用</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第二节 参数传递</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第三节 返回值</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                </div>
+                <div class='classList'>
+                  <div class='ListTitle'>
+                    <div class='words'>第六章 列表和元组</div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第一节 列表的定义和操作</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第二节 元组的定义和操作</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
+                      <div class='peoplename'>朱大键</div>
+                    </div>
+                  </div>
+                  <div class='ListLis'>
+                    <div class='icons'
+                         style='width: 0.5vw; height: 1vh;border-radius: 50%; position:absolute; margin-top: 1.65vh'></div>
+                    <div class='Word' style='position: absolute;'>第三节 列表和元组的常用方法</div>
+                    <div class='people'>
+                      <svg t='1715790843461' viewBox='0 0 1035 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                           style='position:absolute;width: 0.8vw; margin-top: 1.2vh; margin-left: -1.2vw'>
+                        <path
+                          d='M257.390617 947.13679H109.732346c14.664691-208.845432 186.595556-373.69679 395.946666-373.69679 49.050864 0 96.079012 9.102222 139.567408 25.78963l44.499753-45.005432-7.079506-3.034075c-12.641975-5.562469-25.78963-10.619259-38.937284-14.664691 86.471111-51.07358 139.567407-144.118519 139.567407-244.748642 0.505679-74.334815-28.823704-146.141235-81.414321-199.237531C650.30321 39.442963 579.508148 10.11358 505.679012 10.11358 431.849877 10.11358 362.066173 39.442963 309.475556 92.539259c-52.084938 53.096296-81.414321 124.902716-80.908642 199.237531-0.505679 100.630123 52.590617 193.675062 139.567407 244.748642-69.783704 22.249877-132.487901 61.69284-183.561481 113.777778-85.459753 86.97679-133.499259 204.294321-132.993581 326.668642 0 16.181728 13.147654 29.329383 28.823704 29.329383H257.896296c16.181728 0 28.823704-13.147654 28.823704-29.329383-0.505679-16.181728-13.147654-29.329383-29.329383-29.835062z m714.018766-427.298765c46.01679 38.937284 54.613333 105.686914 22.249876 154.737777l-7.585185 10.113581-258.907654 308.464197c-4.045432 4.551111-9.102222 8.090864-15.170371 9.607901l-6.068148 1.011359-121.362963 10.11358c-14.159012 1.011358-26.800988-7.585185-31.352098-20.73284l-1.517038-6.573827-11.124938-121.362963c-0.505679-6.068148 0.505679-12.136296 3.539753-17.193086l3.539753-5.05679 258.907655-308.464198c41.465679-50.062222 115.294815-56.13037 164.851358-14.664691z m-186.595556 134.004938L601.758025 871.790617l7.585185 78.885926 78.885926-6.573827 183.055802-217.947654-86.471111-72.312099z m74.334815-87.482469l-6.573827 6.573827-28.823704 34.386173 86.471111 72.312099 28.823704-34.386173c19.721481-23.766914 16.687407-59.164444-7.079506-79.391605-21.238519-17.193086-51.579259-17.193086-72.817778 0.505679zM505.679012 68.772346c120.857284 0 219.464691 100.124444 219.464692 223.004444S626.536296 514.781235 505.679012 514.781235 286.214321 414.65679 286.214321 291.77679 384.821728 68.772346 505.679012 68.772346z'
+                          p-id='4280' fill='#707070'></path>
+                        <path
+                          d='M582.036543 1024c-17.193086 0-32.869136-11.124938-38.431605-27.812346l-0.505679-1.011358-1.517037-8.090864-11.124938-121.362963c-1.011358-8.090864 1.011358-16.181728 4.551111-23.261234l0.505679-1.011358 4.045432-5.56247 258.907654-308.464197c21.744198-25.78963 52.084938-41.971358 85.965433-45.005432 32.869136-3.034074 64.726914 6.573827 90.010864 26.800987l3.034074 2.528395c49.556543 41.971358 60.175802 114.283457 23.766913 167.885433l-0.505679 0.505679-7.585185 10.11358-259.413333 308.969876c-5.05679 6.068148-12.136296 10.619259-20.227161 12.641976h-1.011358l-6.573827 1.011358-121.362963 10.11358c0 1.011358-1.517037 1.011358-2.528395 1.011358z m-18.710123-33.374815c3.034074 8.596543 11.630617 14.159012 20.732839 13.147655l120.857284-10.113581 5.05679-1.011358c3.539753-1.011358 7.079506-3.539753 9.607902-6.068148l258.907654-308.464197 7.079506-9.607902c29.329383-44.499753 21.744198-103.158519-17.698765-138.556049l-3.034074-2.528395c-21.744198-18.204444-49.556543-27.306667-78.380247-24.778272-28.318025 2.528395-54.107654 15.676049-72.312099 37.925926l-258.907654 308.464198-2.528396 4.045432c-2.022716 3.539753-2.528395 7.079506-2.022716 11.124938l11.124939 120.857284 1.517037 5.562469z m-305.935803 25.78963H79.897284c-21.744198 0-38.937284-17.698765-38.937284-39.442963 0-125.408395 48.039506-244.242963 136.027654-333.748148 47.028148-48.039506 104.675556-85.965432 167.885432-109.226667-78.885926-54.613333-126.925432-145.129877-126.419753-241.714568-0.505679-78.380247 29.329383-151.703704 83.942716-206.822716C357.009383 30.340741 428.815802 0 505.679012 0h0.505679c75.851852 0 149.680988 31.352099 202.777284 85.459753 54.613333 55.119012 84.448395 128.442469 83.942716 206.317037 0.505679 96.584691-47.533827 187.606914-126.419753 241.714568 6.573827 2.528395 13.653333 5.05679 20.227161 8.090864l20.732839 9.102222-59.670123 60.681482-6.068148-2.528395c-43.488395-16.687407-88.999506-25.283951-136.027655-25.283951-198.226173 0-365.100247 154.232099-384.821728 353.46963h136.533333c21.744198 0 38.937284 18.204444 38.937284 39.442963 0 22.249877-17.698765 39.948642-38.937284 39.948642z m248.794074-996.187655s-0.505679 0 0 0c-71.80642 0-138.556049 28.318025-189.12395 79.391605-51.07358 51.579259-78.885926 119.845926-78.380247 192.158025-0.505679 96.584691 51.07358 187.101235 134.510617 235.64642l19.721482 11.630617-21.744198 7.079506c-67.760988 21.744198-129.959506 60.175802-179.516049 111.249383-84.448395 85.965432-130.465185 199.237531-130.465186 319.589136 0 10.619259 8.596543 19.215802 18.710124 19.215802h177.493333c10.619259 0 18.710123-8.596543 18.710124-19.215802 0-10.619259-8.596543-19.215802-18.710124-19.215803H99.113086l1.011358-10.619259c15.17037-214.91358 193.675062-383.304691 406.060247-383.304691 47.028148 0 93.044938 8.090864 137.039013 24.272592l29.329382-29.835061c-10.11358-4.045432-20.73284-8.090864-31.857777-11.630618l-21.238519-7.079506 19.215803-11.124938c83.437037-49.050864 135.016296-139.061728 134.510617-235.64642 0.505679-72.312099-27.306667-140.578765-78.380247-192.158025C645.24642 49.050864 576.474074 20.22716 506.184691 20.22716z m94.056297 941.574321l-8.596544-93.044938 192.158025-229.072592 101.641482 85.459753-192.158025 229.072592-93.044938 7.585185z m12.136296-86.471111l6.068148 64.726914 64.726914-5.05679 173.95358-206.822716-70.795062-59.164445-173.95358 206.317037z m299.361975-181.538765l-101.641481-85.459753 35.90321-42.982716 7.079506-7.079506c24.778272-21.238519 60.681481-21.238519 85.965432-0.505679 13.653333 11.630617 21.744198 27.306667 23.766914 45.005432 1.517037 17.698765-4.045432 34.891852-15.170371 48.545185l-35.90321 42.477037zM838.415802 606.309136l70.795062 59.164444 22.249877-26.800987c16.181728-19.721481 13.653333-48.545185-6.068148-65.232593-17.193086-14.664691-41.971358-14.159012-59.670124 0l-5.562469 6.068148-21.744198 26.800988zM505.679012 524.894815c-126.419753 0-229.578272-104.675556-229.578271-233.118025C276.100741 163.334321 379.259259 58.658765 505.679012 58.658765s229.578272 104.675556 229.578272 233.118025c0 128.442469-102.65284 233.118025-229.578272 233.118025z m0-446.008889c-115.294815 0-209.351111 95.573333-209.351111 212.890864 0 117.317531 94.056296 212.890864 209.351111 212.890864 115.294815 0 209.351111-95.573333 209.351111-212.890864 0-117.317531-94.056296-212.890864-209.351111-212.890864z'
+                          p-id='4281' fill='#707070'></path>
+                      </svg>
                       <div class='peoplename'>朱大键</div>
                     </div>
                   </div>
@@ -434,30 +948,35 @@ const ChChange4 = () => {
 ::-webkit-scrollbar {
   display: none;
 }
+
 .none {
   display: none;
 }
+
 .nong {
   width: 2%;
   height: 4vh;
   position: absolute;
-  background: #0e87ff;
+  background: #ff7200;
 }
+
 .beCC {
   path {
-    fill: #0e87ff;
+    fill: #ff7200;
   }
+
   color: #000 !important;
-  background-image: linear-gradient(270deg, rgba(61, 132, 255, 0.00) 0%, rgba(61, 132, 255, .3) 100%);
+  background-image: linear-gradient(270deg, rgba(255, 252, 61, 0) 0%, rgba(250, 141, 62, 0.3) 100%);
 }
+
 .On-Body {
   width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  height: 130%;
+  //overflow-x: hidden;
+  //overflow-y: scroll;
   .MainBody {
     width: 97%;
-    height: 97%;
+    height: 127%;
     border-radius: 0.4vw;
     margin: 1.3vh auto;
     background: #f8f6f6;
@@ -466,7 +985,7 @@ const ChChange4 = () => {
     .on-in {
       position: absolute;
       width: 90%;
-      height: 70vh;
+      height: 130vh;
       z-index: 2;
       overflow-y: auto;
       padding-bottom: 2vh;
@@ -475,77 +994,188 @@ const ChChange4 = () => {
       margin-bottom: 5vh;
       background: #fff;
       border-radius: 0.4vw;
-      box-shadow: 0 4px 6px 0 #6aa999;
+      box-shadow: 0 1px 2px 0 #ff7200;
+
       .on-in-body {
         width: 97%;
         height: 30vh;
         margin: 1vh auto;
+
         .on-in-body-tow {
           width: 96%;
           margin: 2vh auto;
+
           .tow-right {
             margin-left: 15%;
             width: 85%;
             border-left: 1px solid #727070;
+
             .BigBody {
               width: 98%;
               margin-left: 2%;
+
+              .classList:hover {
+                cursor: pointer;
+              }
+
+              .total-score-wrap {
+                border-bottom: 2px solid #d9d9d9;
+                text-align: right;
+                line-height: 4vh;
+                margin-top: -5vh;
+                font-size: 0.85vw;
+
+                span {
+                  font-size: 1.2vw;
+                  color: #ff7200;
+                }
+              }
+
+              .questionanswer-num-p {
+                width: 100%;
+                height: 3vh;
+                padding-left: 1vw;
+                border-left: 4px solid #ff7200;
+                font-size: 1vw;
+                line-height: 3vh;
+
+                .hintnotes-span {
+                  font-size: 0.75vw;
+                  color: #727070;
+                }
+              }
+
+              li:first-child {
+                padding-top: 4vh;
+              }
+
+              li {
+                list-style: none;
+                font-size: 1vw;
+                margin-top: 1.5vh;
+
+                label {
+                  display: inline-block;
+                  vertical-align: middle;
+                  width: 8vw;
+                }
+
+                span {
+                  font-size: 28px;
+                  color: #41B4FF;
+                  margin: -8px 0 0 0;
+                  vertical-align: middle;
+                  display: inline-block;
+                  width: 60px;
+                  text-align: right;
+                }
+              }
+
+              .charts-ex-icon {
+                width: 6px;
+                height: 6px;
+                border: 4px solid #269BFF;
+                border-radius: 10px;
+                display: inline-block;
+                margin-right: 9px;
+
+
+              }
+
+              .icon-2 {
+                border-color: #5BEEFC;
+              }
+
+              .icon-3 {
+                border-color: #997CFC;
+              }
+
+              .icon-4 {
+                border-color: #FFCF61;
+              }
+
+              .DownList {
+                width: 100%;
+                height: 30vh;
+                margin-top: 25vh;
+
+
+              }
+
+              .highcharts-root {
+                float: left;
+                display: block;
+                height: 30vh;
+                width: 65%;
+              }
+
               .ClassTop {
                 width: 96%;
                 margin-left: 5%;
                 height: 5vh;
+
                 .wordsShadow {
                   position: absolute;
                   width: 0.65%;
                   height: 2.8vh;
                   margin-top: 1.3vh;
                   margin-left: -1.5%;
-                  background: #0e87ff;
+                  background: #ff7200;
                 }
+
                 .words {
                   line-height: 5vh;
                   font-size: 1.2vw;
                 }
               }
+
               .classList {
                 width: 96%;
                 margin-left: 3%;
                 margin-top: 3vh;
+
                 .ListTitle {
                   width: 95%;
                   font-size: 0.9vw;
                   font-weight: bolder;
                   border-bottom: 1px solid rgba(114, 112, 112, 0.3);
+
                   .words {
                     margin-left: 5%;
                     margin-bottom: 1vh;
 
                   }
                 }
+
                 .ListLis {
                   width: 95%;
                   height: 4vh;
                   line-height: 4vh;
                   color: #727070;
                   border-bottom: 1px solid rgba(114, 112, 112, 0.3);
+
                   .icons {
                     margin-left: 7%;
                     background: rgba(114, 112, 112, 0.5);
                   }
+
                   .Word {
                     margin-left: 9.5%;
                   }
+
                   .people {
                     position: absolute;
                     margin-left: 45%;
                   }
                 }
               }
+
               .teacherCard {
                 width: 96%;
                 margin-left: 2%;
                 height: 25vh;
                 border-bottom: 1px solid #727070;
+
                 .CardBody {
                   width: 85%;
                   margin-top: 2vh;
@@ -553,14 +1183,17 @@ const ChChange4 = () => {
                   letter-spacing: 2.5px;
                   line-height: 3vh;
                 }
+
                 .CardTitle {
                   width: 100%;
                   height: 10vh;
+
                   .leftTitle {
                     width: 20%;
                     height: 10vh;
                     margin-left: 3%;
                     position: absolute;
+
                     img {
                       position: absolute;
                       width: 5vw;
@@ -569,22 +1202,26 @@ const ChChange4 = () => {
                       border-radius: 50%;
                     }
                   }
+
                   .rightTitle {
                     width: 55%;
                     margin-left: 15%;
                     height: 10vh;
                     position: absolute;
+
                     .peopleName {
                       margin-top: 2.3vh;
                       position: absolute;
                       font-size: 1.2vw;
                     }
+
                     .peopleRole {
                       margin-top: 2.3vh;
                       margin-left: 40%;
                       position: absolute;
                       font-size: 1.2vw;
                     }
+
                     .peopleTop {
                       margin-top: 6.5vh;
                       position: absolute;
@@ -596,13 +1233,16 @@ const ChChange4 = () => {
               }
             }
           }
+
           .tow-left {
             width: 14%;
             height: 30vh;
             position: absolute;
+
             .ChooseButton:hover {
               cursor: pointer;
             }
+
             .ChooseButton {
               width: 100%;
               height: 4vh;
@@ -619,36 +1259,44 @@ const ChChange4 = () => {
             }
           }
         }
+
         .on-in-body-one {
           width: 96%;
           margin: 2vh auto;
           height: 13vh;
           border-bottom: 1px solid #727070;
+
           div {
             width: 23%;
             height: 10vh;
           }
+
           .one {
             margin-left: -2%;
             border-right: 1px solid #727070;
+
             div {
               text-align: center;
             }
+
             position: absolute;
+
             .word {
               width: 100%;
-              color: #0e87ff;
+              color: #ff7200;
               font-size: 1.6vw;
               height: 3vh;
               margin: auto;
               display: block;
             }
+
             .when {
               width: 100%;
               height: 3vh;
               margin: 1.5vh auto;
               display: block;
             }
+
             .updatetime {
               width: 100%;
               margin: -1.2vh auto;
@@ -658,25 +1306,29 @@ const ChChange4 = () => {
               color: #727070;
             }
           }
+
           .tow {
             position: absolute;
             margin-left: 20%;
+
             .tip {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               font-size: 0.85vw;
               margin-top: 0.5vh;
               position: absolute;
               width: 100%;
             }
+
             .tipName {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               position: absolute;
               font-size: 1.4vw;
               margin-top: 3.1vh;
               width: 100%;
             }
+
             .tipNum {
               text-align: center;
               position: absolute;
@@ -686,25 +1338,29 @@ const ChChange4 = () => {
               margin-top: 7.5vh;
             }
           }
+
           .three {
             position: absolute;
             margin-left: 38%;
+
             .tip {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               font-size: 0.85vw;
               margin-top: 0.5vh;
               position: absolute;
               width: 100%;
             }
+
             .tipName {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               position: absolute;
               font-size: 1.4vw;
               margin-top: 3.1vh;
               width: 100%;
             }
+
             .tipNum {
               text-align: center;
               position: absolute;
@@ -714,25 +1370,29 @@ const ChChange4 = () => {
               margin-top: 7.5vh;
             }
           }
+
           .four {
             position: absolute;
             margin-left: 55%;
+
             .tip {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               font-size: 0.85vw;
               margin-top: 0.5vh;
               position: absolute;
               width: 100%;
             }
+
             .tipName {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               position: absolute;
               font-size: 1.4vw;
               margin-top: 3.1vh;
               width: 100%;
             }
+
             .tipNum {
               text-align: center;
               position: absolute;
@@ -742,25 +1402,29 @@ const ChChange4 = () => {
               margin-top: 7.5vh;
             }
           }
+
           .five {
             position: absolute;
             margin-left: 72%;
+
             .tip {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               font-size: 0.85vw;
               margin-top: 0.5vh;
               position: absolute;
               width: 100%;
             }
+
             .tipName {
-              color: #0e87ff;
+              color: #ff7200;
               text-align: center;
               position: absolute;
               font-size: 1.4vw;
               margin-top: 3.1vh;
               width: 100%;
             }
+
             .tipNum {
               text-align: center;
               position: absolute;
@@ -777,16 +1441,19 @@ const ChChange4 = () => {
           height: 2vh;
         }
       }
+
       .on-in-title {
         width: 97%;
         height: 30vh;
         margin: auto;
+
         .right {
           width: 52%;
           height: 27vh;
           right: 3.5%;
           position: absolute;
           margin-top: 3vh;
+
           .select {
             position: absolute;
             width: 10vw;
@@ -794,6 +1461,7 @@ const ChChange4 = () => {
             right: 4vw;
             margin-top: -2.8vh;
           }
+
           .right-top {
             font-size: 1.2vw;
           }
@@ -812,10 +1480,12 @@ const ChChange4 = () => {
           .class-intor {
             margin-top: 2vh;
             width: 20vw;
+
             .point {
               position: absolute;
               margin-left: 7%;
             }
+
             .time {
               position: absolute;
               margin-left: 30%;
@@ -830,11 +1500,13 @@ const ChChange4 = () => {
           .many {
             margin-left: 7%;
             margin-top: 2vh;
+
             .zhang {
               margin-top: -2vh;
               margin-left: 13%;
               position: absolute;
             }
+
             .jie {
               margin-left: 32%;
               margin-top: -2vh;

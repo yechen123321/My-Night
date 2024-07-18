@@ -48,8 +48,32 @@ const router = createRouter({
 
     {
       path: '/student/study/learncenter/homework',
-      name: 'studentPersonal',
+      name: 'studentHomeWork',
       component: () => import('@/components/StudentComponent/StudentStudy/CourseWorks.vue')
+    },
+
+    {
+      path: '/student/study/learncenter/homework/send',
+      name: 'studentHomeWorkSend',
+      component: () => import('@/components/StudentComponent/StudentStudy/SendHomeWork.vue')
+    },
+
+    {
+      path: '/student/study/learncenter/videoview',
+      name: 'studentPersonal',
+      component: () => import('@/components/StudentComponent/StudentClass/VideoView.vue')
+    },
+
+    {
+      path: '/student/study/learncenter/classvideo',
+      name: 'studentClassVideo',
+      component: () => import('@/views/Student/StudentClassVideo.vue')
+    },
+
+    {
+      path: '/student/study/learncenter/classvideo/info',
+      name: 'studentClassVideoInfo',
+      component: () => import('@/components/StudentComponent/StudentClass/ClassInfo.vue')
     },
 
     {
@@ -61,6 +85,11 @@ const router = createRouter({
           path: 'learncenter',
           name: 'learnCenter',
           component: () => import('@/components/StudentComponent/StudentStudy/LearnCenterHomeView.vue')
+        },
+        {
+          path: 'chooseclass',
+          name: 'chooseclass',
+          component: () => import('@/components/StudentComponent/StudentStudy/ChooseClass.vue')
         },
         {
           path: 'myclass',
@@ -157,15 +186,16 @@ const router = createRouter({
 // 3. 具体路径 或 路径对象  拦截到对应的地址
 //    '/login'   { name: 'login' }
 
-// router.beforeEach((to) => {
-//   // 如果没有token, 且访问的是非登录页，拦截到登录，其他情况正常放行
-//   const useStore = useUserStore()
-//   if (!useStore.token && to.path !== '/login') {
-//     if (to.path === '/') {
-//     } else {
-//       return '/login'
-//     }
-//   }
-// })
+router.beforeEach((to) => {
+  // 如果没有token, 且访问的是非登录页，拦截到登录，其他情况正常放行
+  const useStore = sessionStorage.getItem('token')
+  if (!useStore && to.path !== '/login') {
+    if (to.path === '/') {
+      return '/login'
+    } else {
+      return '/login'
+    }
+  }
+})
 
 export default router

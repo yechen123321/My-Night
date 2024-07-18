@@ -167,7 +167,7 @@ const handleSubmit = () => {
 const setToken = (data) => {
   const now = new Date()
   const expiresAt = now.getTime() + 60 * 60 * 1000 // 过期时间为当前时间 + 1 小时
-  localStorage.setItem('token', data.token)
+  sessionStorage.setItem('token', data.token)
   localStorage.setItem('expiresAt', expiresAt.toString())
   localStorage.setItem('StudentNumber', data.number)
   localStorage.setItem('StudentName', data.name)
@@ -180,7 +180,7 @@ const getToken = () => {
     clearToken()
     return null
   }
-  return localStorage.getItem('token')
+  return sessionStorage.getItem('token')
 }
 
 //  检查 Token 是否过期
@@ -197,7 +197,7 @@ const isTokenExpired = () => {
 
 // 清除 Token 和 过期时间戳
 const clearToken = () => {
-  localStorage.removeItem('token')
+  sessionStorage.removeItem('token')
   localStorage.removeItem('expiresAt')
   localStorage.removeItem('StudentNumber')
   localStorage.removeItem('StudentName')

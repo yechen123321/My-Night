@@ -1,14 +1,19 @@
 <script setup>
+import router from '@/router'
 
+const goToTargetPage = () => {
+  // const num = ref(true)
+  router.push('/student/exam/workready')
+}
 </script>
 
 <template>
   <div class='OE'>
     <div class='OE-body'>
-      <div class='OE-title'>
-        <div class='Title-word'>在线考试</div>
-      </div>
-      <div class='title-foot'></div>
+<!--      <div class='OE-title'>-->
+<!--        <div class='Title-word'>在线考试</div>-->
+<!--      </div>-->
+<!--      <div class='title-foot'></div>-->
       <div class='Body-Main'>
         <div class='tips'>目前共有<span style='font-weight: bolder; font-size: 1.3vw'> 1 </span>场考试</div>
         <div class='Exam-Main'>
@@ -23,7 +28,7 @@
                 <div class='midden'>-</div>
                 <div class='last'>2024年9月14日 19:30</div>
               </div>
-              <div class='button'>前往考试 -></div>
+              <div class='button' @click='goToTargetPage'>前往考试 -></div>
             </div>
           </div>
           <div class='Exam-Card'>
@@ -92,13 +97,12 @@
     height: 97%;
     border-radius: 0.5vw;
     margin: 1.3vh auto;
-    background: #f8f6f6;
 
     .Body-Main {
       position: absolute;
       width: 97.5%;
       height: 72vh;
-      margin-top: 15.7vh;
+      margin-top: 1.7vh;
 
       .tips {
         width: 35%;
@@ -128,7 +132,8 @@
             width: 100%;
             height: 14%;
             border-bottom: 1px solid rgba(114, 112, 112, 0.35);
-            background: #6aa999;
+            background: url("/src/assets/StudentInfo/img(1).png") no-repeat;
+            background-size: cover;
 
             .txt {
               position: absolute;
@@ -152,7 +157,7 @@
 
             .button {
               position: absolute;
-              bottom: 1vh;
+              bottom: 2.5vh;
               right: 1vw;
               font-size: 20px;
             }

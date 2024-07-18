@@ -1,7 +1,11 @@
 <script setup>
 import { ref, watch, onBeforeMount } from 'vue'
 import MainTopTitle from '@/components/StudentComponent/MainTopTitle.vue'
+import router from '@/router'
 
+const GotoSendHomeWork = () => {
+  router.push('/student/study/learncenter/homework/send')
+}
 const handleClear = () => {
   // 清除时自动选择第一个选项
   values.value = options[0].value
@@ -300,7 +304,7 @@ const changepp = () => {
               <div class='Other'>74%同学已完成</div>
             </div>
             <div class='GotoWork'>
-              <div class='Goto'>
+              <div class='Goto' @click='GotoSendHomeWork'>
                 去查看
               </div>
             </div>

@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeMount, watch } from 'vue'
 import router from '@/router'
+import OnlineExam from '@/components/StudentComponent/StudentExam/OnlineExam.vue'
 // import emitter from '@/plugins/Bus'
 import { useSharedStore } from '@/stores'
 
@@ -440,7 +441,7 @@ const handleInput = (index) => {
                     d='M716.715 371.285a32 32 0 0 1 2.069 42.966l-2.07 2.282-150.826 150.848a32 32 0 0 1-47.36-42.965l2.09-2.283 150.827-150.848a32 32 0 0 1 45.27 0z'
                     p-id='4350'></path>
                 </svg>
-                <div class='words'>我的错题</div>
+                <div class='words'>在线考试</div>
               </div>
               <div class='Time li' @click='changepp'>
                 <svg style='width: 2vw; margin-left: -29%' t='1715865870396' class='icon' viewBox='0 0 1879 1024'
@@ -569,7 +570,7 @@ const handleInput = (index) => {
             </div>
           </div>
           <div class='Control' v-if='showqq'>
-
+            <OnlineExam></OnlineExam>
           </div>
           <div class='Control' v-if='showpp'>
 
