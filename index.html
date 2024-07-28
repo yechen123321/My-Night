@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <script>
+      document.addEventListener('mousewheel', function (e) {
+        e = e || window.event;
+        if ((e.wheelDelta && event.ctrlKey) || e.detail) {
+          event.preventDefault();
+        }
+      }, {
+        capture: false,
+        passive: false
+      });
+    </script>
+    <style>
+        html {
+            -ms-content-zooming: none;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        body {
+            transform: scale(1);
+            transform-origin: top left;
+            transition: transform 0.25s ease;
+        }
+    </style>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

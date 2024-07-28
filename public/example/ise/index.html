@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Document</title>
+</head>
+<style>
+    .left {
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .box {
+        width: 90%;
+        height: 52vh;
+        border-radius: 2vw;
+        border: 1px solid #727070;
+    }
+
+    #result {
+        width: 90%;
+        height: 90%;
+        margin: 2% auto;
+    }
+
+    #btn_control:hover {
+        cursor: pointer;
+    }
+
+    #btn_control {
+        width: 20%;
+        height: 8vh;
+        margin-left: 35%;
+        font-size: 1.3vw;
+        border: none;
+        color: white;
+        background: #fd9000;
+        font-weight: bold;
+        border-radius: 0.3vw;
+    }
+
+    .output-box {
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+    
+    .lefts {
+        float: left;
+    }
+    
+    .rights {
+        float: left;
+        margin-top: 10%;
+        margin-left: 7vw;
+    }
+
+    #submitButton:hover {
+        cursor: pointer;
+    }
+
+    #submitButton {
+        display: block;
+        width: 50%;
+        height: 8vh;
+        margin-top: 10vh;
+        margin-left: 28%;
+        font-size: 1.3vw;
+        border: none;
+        color: white;
+        background: #fd9000;
+        font-weight: bold;
+        border-radius: 0.3vw;
+    }
+</style>
+<body>
+
+<div class='left'>
+  <div class='box'><div id='result'></div></div>
+
+  <br />
+  <button id='btn_control'>开始录音</button>
+</div>
+
+<div class='output-box' id='result_output'>
+  <div class='lefts'>
+    <p>准确度分：<span id='accuracy_score'>0</span></p>
+    <p>流畅度分：<span id='fluency_score'>0</span></p>
+    <p>完整度分：<span id='integrity_score'>0</span></p>
+    <p>声韵分（仅限中文）：<span id='phone_score'>0</span></p>
+    <p>调型分（仅限中文）：<span id='tone_score'>0</span></p>
+    <p>整体印象分（仅限中文）：<span id='emotion_score'>0</span></p>
+    <p>总分：<span id='total_score'>0</span></p>
+  </div>
+  <div class='rights'>
+    <audio id='audioPlayer' controls></audio>
+    <button id='submitButton'>刷 新</button>
+  </div>
+
+</div>
+<script>
+  const APPID = '4d432e1b' // 这里填写从科大讯飞获取的appid
+  const API_SECRET = 'YTA0M2EwNDgyNGY3Y2Y3MGVkOTFlNDRj'
+  const API_KEY = '4eeea1063b2f6ba480124c1cbe24641a'
+
+</script>
+<script src='./main.js' type='module'></script>
+<script src='../fast-xml-parser.min.js'></script>
+<script src='../crypto-js.js'></script>
+<script src='../../dist/index.umd.js'></script>
+<script src='./index.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+</body>
+</html>
